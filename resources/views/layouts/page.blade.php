@@ -15,6 +15,8 @@
   @yield('content')
   @include('partials.footer')
 
+  <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
   <script>
     // Mobile menu toggle
     function toggleMobileMenu() {

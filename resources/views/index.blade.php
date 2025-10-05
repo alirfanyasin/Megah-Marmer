@@ -404,21 +404,5 @@
     </div>
   </section>
 
-  <!-- Newsletter Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h3 class="text-3xl font-bold text-gray-900 mb-4">Subscribe to our newsletter</h3>
-      <p class="text-gray-600 mb-2">Enjoy <span class="font-bold">£20 off*</span> your first order when you spend £200
-        or more</p>
-      <p class="text-gray-600 mb-8">and receive our offers and news.</p>
 
-      <div class="flex max-w-md mx-auto">
-        <input type="email" placeholder="Your e-mail address"
-          class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-        <button class="bg-black text-white px-8 py-3 rounded-r-lg hover:bg-gray-800 transition duration-300">
-          Subscribe
-        </button>
-      </div>
-    </div>
-  </section>
 @endsection

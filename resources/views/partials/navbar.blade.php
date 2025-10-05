@@ -4,7 +4,9 @@
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <h1 class="text-2xl font-bold text-black">tikamoon</h1>
+        <a href="/">
+          <img src="{{ asset('img/logo-main.jpg') }}" alt="" class="h-10 w-auto">
+        </a>
       </div>
 
       <!-- Search Bar - Desktop -->
@@ -61,7 +63,8 @@
                 <div class="col-span-2">
                   <ul class="space-y-2 text-sm">
                     <li class="submenu-item" onmouseenter="showImage('living-room', 'coffee-table')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Coffee Table</a>
+                      <a href="/category" class="text-gray-600 font-light text-lg hover:text-orange-500">Coffee
+                        Table</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('living-room', 'chairs')">
                       <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Chairs</a>
