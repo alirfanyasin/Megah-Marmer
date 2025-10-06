@@ -6,9 +6,9 @@
       or more</p>
     <p class="text-gray-600 mb-8">and receive our offers and news.</p>
 
-    <div class="flex max-w-md mx-auto">
+    <div class="flex max-w-xl mx-auto">
       <input type="email" placeholder="Your e-mail address"
-        class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+        class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-amber-600 focus:border-amber-600">
       <button class="bg-black text-white px-8 py-3 rounded-r-lg hover:bg-gray-800 transition duration-300">
         Subscribe
       </button>
@@ -20,108 +20,6 @@
 <!-- Footer -->
 <footer class="bg-black text-white py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Main Footer Content -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
-      <!-- Practical Information -->
-      <div>
-        <h4 class="font-bold text-lg mb-4">Practical information</h4>
-        <ul class="space-y-2 text-sm text-gray-300">
-          <li><a href="#" class="hover:text-white">Contact us</a></li>
-          <li><a href="#" class="hover:text-white">Delivery and returns</a></li>
-          <li><a href="#" class="hover:text-white">Payment options</a></li>
-          <li><a href="#" class="hover:text-white">Our materials</a></li>
-          <li><a href="#" class="hover:text-white">Care</a></li>
-          <li><a href="#" class="hover:text-white">Frequently asked questions</a></li>
-          <li><a href="#" class="hover:text-white">Terms and Conditions</a></li>
-          <li><a href="#" class="hover:text-white">Legal notices</a></li>
-          <li><a href="#" class="hover:text-white">Data protection</a></li>
-          <li><a href="#" class="hover:text-white">Cookie preference</a></li>
-          <li><a href="#" class="hover:text-white">#yestikamoon</a></li>
-        </ul>
-      </div>
-
-      <!-- Our Advantages -->
-      <div>
-        <h4 class="font-bold text-lg mb-4">Our advantages</h4>
-        <ul class="space-y-2 text-sm text-gray-300">
-          <li><a href="#" class="hover:text-white">5 year Warranty</a></li>
-          <li><a href="#" class="hover:text-white">Free returns within 60 days</a></li>
-          <li><a href="#" class="hover:text-white">Secure payment</a></li>
-          <li><a href="#" class="hover:text-white">Delivery to your room of choice</a></li>
-          <li><a href="#" class="hover:text-white">Loyalty Programme</a></li>
-        </ul>
-      </div>
-
-      <!-- Our Commitments -->
-      <div>
-        <h4 class="font-bold text-lg mb-4">Our commitments</h4>
-        <ul class="space-y-2 text-sm text-gray-300">
-          <li><a href="#" class="hover:text-white">About us</a></li>
-          <li><a href="#" class="hover:text-white">Our CSR commitments</a></li>
-          <li><a href="#" class="hover:text-white">Eco-rating</a></li>
-          <li><a href="#" class="hover:text-white">FAQs Sustainable Development</a></li>
-          <li><a href="#" class="hover:text-white">Certification FSC®</a></li>
-          <li><a href="#" class="hover:text-white">The circular Atelier</a></li>
-          <li><a href="#" class="hover:text-white">Our FSC® certified products</a></li>
-        </ul>
-      </div>
-
-      <!-- Inspiration -->
-      <div>
-        <h4 class="font-bold text-lg mb-4">Inspiration</h4>
-        <ul class="space-y-2 text-sm text-gray-300">
-          <li><a href="#" class="hover:text-white">Blog</a></li>
-          <li><a href="#" class="hover:text-white">Our news</a></li>
-          <li><a href="#" class="hover:text-white">Views</a></li>
-          <li><a href="#" class="hover:text-white">You and Tikamoon</a></li>
-          <li><a href="#" class="hover:text-white">The mag</a></li>
-          <li><a href="#" class="hover:text-white">Our catalogues</a></li>
-          <li><a href="#" class="hover:text-white">Newsletter</a></li>
-        </ul>
-      </div>
-
-      <!-- Social Networks -->
-      <div>
-        <h4 class="font-bold text-lg mb-4">Social networks</h4>
-        <ul class="space-y-2 text-sm text-gray-300">
-          <li><a href="#" class="hover:text-white">Facebook</a></li>
-          <li><a href="#" class="hover:text-white">Instagram</a></li>
-          <li><a href="#" class="hover:text-white">Pinterest</a></li>
-          <li><a href="#" class="hover:text-white">Youtube</a></li>
-        </ul>
-
-        <div class="mt-8">
-          <h5 class="font-bold mb-4">Media and collaborations</h5>
-          <p class="text-sm text-gray-300 mb-2">Careers</p>
-        </div>
-      </div>
-
-      <!-- Customer Reviews -->
-      <div>
-        <h4 class="font-bold text-lg mb-4">Our customer reviews</h4>
-        <div class="bg-white rounded-lg p-4">
-          <div class="flex items-center mb-2">
-            <span class="text-blue-600 font-bold text-lg">Verified Reviews</span>
-          </div>
-          <div class="flex items-center mb-2">
-            <div class="flex text-yellow-400">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <span class="text-black ml-2 font-bold">4.6/5</span>
-          </div>
-        </div>
-
-        <div class="mt-4 flex gap-2">
-          <button class="bg-white text-black px-4 py-2 rounded text-sm">Media and collaborations</button>
-          <button class="bg-gray-700 text-white px-4 py-2 rounded text-sm">Business Space</button>
-        </div>
-      </div>
-    </div>
-
     <!-- Room Categories -->
     <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12 text-sm">
       <!-- Living Room -->
@@ -194,49 +92,35 @@
       </div>
     </div>
 
-    <!-- Payment Methods -->
+    <!-- Social Media -->
     <div class="mb-8">
-      <h5 class="font-bold mb-4">Payment</h5>
+      <h5 class="font-bold mb-4">Social Media</h5>
       <div class="flex flex-wrap gap-4">
-        <div class="bg-white p-2 rounded">
-          <img
-            src="https://placeholder-image-service.onrender.com/image/60x40?prompt=Mastercard payment method logo with red and yellow circles&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-            alt="Mastercard payment option logo" class="h-6">
+        <div class="bg-white w-10 h-10 flex justify-center items-center rounded">
+          <a href="" class="text-black">
+            <iconify-icon icon="gg:facebook" width="30" height="30"></iconify-icon>
+          </a>
         </div>
-        <div class="bg-white p-2 rounded">
-          <img
-            src="https://placeholder-image-service.onrender.com/image/60x40?prompt=Klarna payment service logo in pink color&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-            alt="Klarna buy now pay later service logo" class="h-6">
+        <div class="bg-white w-10 h-10 flex justify-center items-center rounded">
+          <a href="" class="text-black">
+            <iconify-icon icon="ri:instagram-fill" width="30" height="30"></iconify-icon>
+          </a>
         </div>
-        <div class="bg-white p-2 rounded">
-          <img
-            src="https://placeholder-image-service.onrender.com/image/60x40?prompt=Visa payment method logo in blue and white colors&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-            alt="Visa credit card payment option logo" class="h-6">
+        <div class="bg-white w-10 h-10 flex justify-center items-center rounded">
+          <a href="" class="text-black">
+            <iconify-icon icon="ic:sharp-tiktok" width="30" height="30"></iconify-icon>
+          </a>
         </div>
-        <div class="bg-white p-2 rounded">
-          <img
-            src="https://placeholder-image-service.onrender.com/image/60x40?prompt=American Express payment logo with blue background&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-            alt="American Express credit card payment logo" class="h-6">
+        <div class="bg-white w-10 h-10 flex justify-center items-center rounded">
+          <a href="" class="text-black">
+            <iconify-icon icon="ri:whatsapp-fill" width="30" height="30"></iconify-icon>
+          </a>
         </div>
-        <div class="bg-white p-2 rounded">
-          <img
-            src="https://placeholder-image-service.onrender.com/image/60x40?prompt=PayPal digital payment service logo in blue and dark blue colors&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-            alt="PayPal online payment platform logo" class="h-6">
-        </div>
-        <div class="bg-white p-2 rounded">
-          <img
-            src="https://placeholder-image-service.onrender.com/image/60x40?prompt=Apple Pay mobile payment service logo with black Apple icon&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-            alt="Apple Pay mobile payment service logo" class="h-6">
-        </div>
+
       </div>
     </div>
 
-    <!-- Trust Badge -->
-    <div class="mb-8">
-      <img
-        src="https://placeholder-image-service.onrender.com/image/120x80?prompt=Trust badge with stars indicating verified and secure shopping experience&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-        alt="Trust badge showing security and customer satisfaction ratings" class="h-12">
-    </div>
+
 
     <!-- Disclaimer -->
     <div class="border-t border-gray-700 pt-8 mb-8">
@@ -252,20 +136,11 @@
     <div class="border-t border-gray-700 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
-          <h2 class="text-2xl font-bold">tikamoon</h2>
+          <h2 class="text-2xl font-bold">Megah Marmer</h2>
         </div>
 
         <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-300">
-          <a href="#" class="hover:text-white">tikamoon.com</a>
-          <a href="#" class="hover:text-white">tikamoon.de</a>
-          <a href="#" class="hover:text-white">tikamoon.co.uk</a>
-          <a href="#" class="hover:text-white">tikamoon.it</a>
-          <a href="#" class="hover:text-white">tikamoon.es</a>
-          <a href="#" class="hover:text-white">tikamoon.nl</a>
-          <a href="#" class="hover:text-white">tikamoon.ch</a>
-          <a href="#" class="hover:text-white">tikamoon.at</a>
-          <a href="#" class="hover:text-white">tikamoon.be</a>
-          <a href="#" class="hover:text-white">tikamoon.co</a>
+          Copyright © 2025 Megah Marmer. All rights reserved.
         </div>
       </div>
     </div>

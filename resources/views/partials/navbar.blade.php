@@ -22,23 +22,34 @@
 
       <!-- Right Navigation -->
       <div class="hidden md:flex items-center space-x-6">
-        <div class="flex items-center text-sm text-gray-600 hover:text-orange-500 transition-colors cursor-pointer">
-          <i class="fas fa-map-marker-alt mr-1"></i>
-          Our locations
+        <div class="flex items-center text-sm text-gray-600 hover:text-amber-600 transition-colors cursor-pointer">
+          <a href="/our-locations">
+            <i class="fas fa-map-marker-alt mr-1"></i>
+            Our locations
+          </a>
         </div>
-        <div class="flex items-center space-x-4">
-          <div class="relative cursor-pointer hover:text-orange-500 transition-colors">
+        <div class="flex items-center space-x-2">
+          {{-- <div class="relative cursor-pointer hover:text-amber-600 transition-colors">
             <i class="fas fa-bell text-gray-600"></i>
             <span
               class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">2</span>
-          </div>
-          <i class="fas fa-comment text-gray-600 cursor-pointer hover:text-orange-500 transition-colors"></i>
-          <i class="fas fa-user text-gray-600 cursor-pointer hover:text-orange-500 transition-colors"></i>
-          <i class="fas fa-heart text-gray-600 cursor-pointer hover:text-orange-500 transition-colors"></i>
-          <div class="flex items-center text-sm text-gray-600 hover:text-orange-500 transition-colors cursor-pointer">
-            <i class="fas fa-shopping-basket mr-1"></i>
-            Basket
-          </div>
+          </div> --}}
+          <a href="">
+            <iconify-icon icon="uil:facebook" width="24" height="24"
+              class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
+          </a>
+          <a href="">
+            <iconify-icon icon="ant-design:instagram-filled" width="26" height="26"
+              class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
+          </a>
+          <a href="">
+            <iconify-icon icon="ic:sharp-tiktok" width="24" height="24"
+              class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
+          </a>
+          <a href="">
+            <iconify-icon icon="mage:whatsapp-filled" width="24" height="24"
+              class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
+          </a>
         </div>
       </div>
 
