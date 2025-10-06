@@ -15,7 +15,7 @@
     </a>
 
     <!-- Category Menu -->
-    {{-- <div class="mb-2">
+    <div class="mb-2">
       <button onclick="toggleMenu('category')"
         class="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-800 transition-colors rounded">
         <div class="flex items-center">
@@ -33,13 +33,13 @@
           <span class="text-sm">Dining Room</span>
         </a>
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Kategori</span>
+          <span class="text-sm">Bathroom</span>
         </a>
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Stok</span>
+          <span class="text-sm">Garden</span>
         </a>
       </div>
-    </div> --}}
+    </div>
 
     <!-- Products Menu -->
     <div class="mb-2">

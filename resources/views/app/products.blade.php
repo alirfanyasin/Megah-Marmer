@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Products')
 @section('content')
   <div class="px-2 sm:px-3 lg:px-2 py-8">
     <!-- Header Section -->

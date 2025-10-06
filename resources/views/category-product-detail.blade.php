@@ -1,5 +1,5 @@
 @extends('layouts.page')
-
+@section('title', 'Products')
 @section('content')
   {{-- Hero Section with Image Gallery --}}
   <section class="container mx-auto px-4 py-8">

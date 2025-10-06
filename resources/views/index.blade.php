@@ -1,7 +1,5 @@
 @extends('layouts.page')
-
-@section('title', 'tikamoon - creator of furniture')
-
+@section('title', 'Home')
 @section('content')
 
   <!-- Hero Section -->
@@ -22,7 +20,7 @@
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">tikamoon, creator of furniture</h2>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Megah Marmer, creator of furniture</h2>
         <h3 class="text-3xl font-bold text-gray-900 mb-8">Our worlds</h3>
 
         <!-- Category Filters -->

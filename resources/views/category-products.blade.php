@@ -1,17 +1,16 @@
 @extends('layouts.page')
+@section('title', 'Category Products')
 @section('content')
   <div>
-
     <section id="category-desc" class="max-w-5xl mx-auto my-10 space-y-4 px-4 text-center">
       <h2 class="text-2xl font-semibold">TV Stands</h2>
       <p class="text-base">Ideal for organising multimedia storage, your Designer TV stand is perfect for supporting a
         television, hi-fi,
         home cinema, etc. With its very designer look, this type of solid wood furniture is available oiled, natural or
         varnished, suspended or on legs, which means it fits in perfectly with any living room or dining room. Whatever
-        the design style of the house – contemporary, Scandinavian, vintage, modern or more classic – Tikamoon TV units
+        the design style of the house - contemporary, Scandinavian, vintage, modern or more classic – Tikamoon TV units
         add a chic touch to your interior...</p>
     </section>
-
     <section class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         @for ($i = 0; $i < 12; $i++)

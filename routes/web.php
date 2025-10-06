@@ -1,43 +1,31 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OurLocationController;
+use App\Http\Controllers\CategoryProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
+// Guest Routes
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category/{id}/products', [CategoryProductController::class, 'index']);
+Route::get('/our-locations', [OurLocationController::class, 'index']);
+
+// Admin Login Routes
+Route::middleware(['guest'])->group(function () {
+    Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/admin/login', [LoginController::class, 'authenticate'])->name('post.login');
+    Route::post('/admin/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
-Route::get('/category', function () {
-    return view('category-products');
-});
-
-Route::get('/product/detail', function () {
-    return view('product-detail');
-});
-
-Route::get('/our-locations', function () {
-    return view('our-locations');
-});
-
-
-Route::get('/admin/login', function () {
-    return view('auth.login');
-});
-
-
-Route::prefix('app')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('app.dashboard');
+// Admin Routes
+Route::prefix('app')
+    ->middleware(['auth'])
+    ->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index']);
+        Route::get('/products', [AdminProductController::class, 'index']);
     });
-
-    Route::get('/products', function () {
-        return view('app.products');
-    });
-
-    Route::get('/transactions', function () {
-        return view('app.transactions');
-    });
-
-    Route::get('/settings', function () {
-        return view('app.settings');
-    });
-});

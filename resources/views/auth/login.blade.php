@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Furniture Store</title>
+  <title>Login - Megah Marmer</title>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
@@ -20,7 +20,7 @@
         </div>
 
         <!-- Form -->
-        <form action="" method="POST" class="space-y-6">
+        <form action="{{ route('post.login') }}" method="POST" class="space-y-6">
           @csrf
 
           <!-- Email Input -->
