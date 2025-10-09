@@ -198,32 +198,5 @@
         </div>
       @endforelse
     </div>
-
-    <!-- Pagination -->
-    <div
-      class="mt-12 flex flex-col sm:flex-row items-center justify-between bg-white shadow border border-gray-200 px-8 py-6 gap-4">
-      <div class="text-sm text-gray-600">
-        Menampilkan <span class="font-bold text-gray-900">1-12</span> dari <span
-          class="font-bold text-gray-900">156</span> produk
-      </div>
-
-      <div class="flex gap-2">
-        <button
-          class="px-5 py-3 border border-gray-300 hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          disabled>
-          <i class="fas fa-chevron-left"></i>
-        </button>
-
-        <button class="px-5 py-3 bg-amber-600 text-white font-semibold shadow">1</button>
-        <button class="px-5 py-3 border border-gray-300 hover:bg-gray-100 transition-colors">2</button>
-        <button class="px-5 py-3 border border-gray-300 hover:bg-gray-100 transition-colors">3</button>
-        <span class="px-5 py-3 text-gray-500">...</span>
-        <button class="px-5 py-3 border border-gray-300 hover:bg-gray-100 transition-colors">13</button>
-
-        <button class="px-5 py-3 border border-gray-300 hover:bg-gray-100 transition-colors">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
   </div>
 @endsection

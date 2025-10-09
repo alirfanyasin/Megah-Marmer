@@ -54,13 +54,17 @@
           <span class="bg-red-900 text-white text-xs font-semibold px-3 py-1 rounded">
             Sale -20%
           </span>
-          <span class="text-sm text-gray-600 ml-2">Until 06/10</span>
         </div>
 
         {{-- Product Title --}}
         <div>
           <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Celeste</h1>
-          <p class="text-lg text-gray-600">Solid pine TV unit - 180 cm</p>
+          <p class="text-md text-gray-600">The Adam TV unit is crafted from untreated teak sourced from Indonesia.
+            Featuring a closed niche and a
+            removable
+            shelf, it's ideal as a practical storage piece. You'll appreciate its sophisticated look and classic, elegant
+            lines, with added charm in its natural beige tone. For added convenience, it includes a sliding door and a
+            cable</p>
         </div>
 
         {{-- Dimensions --}}
@@ -185,22 +189,15 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
-            Add to basket
+            Order Now
           </button>
-        </div>
-
-        {{-- Delivery Info --}}
-        <div class="bg-gray-50 p-4 rounded-lg">
-          <p class="text-sm text-gray-700">
-            <span class="font-semibold">Delivery within 10 working days</span> : Delivery from £49.90
-          </p>
         </div>
       </div>
     </div>
   </section>
 
   {{-- Features Section --}}
-  <section class="bg-gray-50 py-16 mt-10">
+  {{-- <section class="bg-gray-50 py-16 mt-10">
     <div class="container mx-auto w-10/12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
         <div class="flex items-center justify-center gap-4 text-gray-600">
@@ -222,10 +219,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   {{-- Product Description --}}
-  <section class="px-4 py-16">
+  {{-- <section class="px-4 py-16">
     <div class="container mx-auto w-10/12 grid grid-cols-1 md:grid-cols-3 gap-10">
       <div class="md:col-span-2 space-y-6">
         <div class="flex items-center gap-3">
@@ -254,7 +251,7 @@
           class="w-full h-full object-cover rounded-lg">
       </div>
     </div>
-  </section>
+  </section> --}}
 
 
   <!-- Our Selection Section -->
