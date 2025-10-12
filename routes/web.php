@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\Settings\ManageCategoryMenuController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\Settings\LocationController;
+use App\Http\Controllers\Admin\Settings\SocialMediaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -84,5 +85,12 @@ Route::prefix('app')
             Route::get('/location/{id}/edit', [LocationController::class, 'edit'])->name('app.settings.location.edit');
             Route::put('/location/{id}/update', [LocationController::class, 'update'])->name('app.settings.location.update');
             Route::delete('/location/{id}/destroy', [LocationController::class, 'destroy'])->name('app.settings.location.destroy');
+
+            // Social Media
+            Route::get('/social-media', [SocialMediaController::class, 'index'])->name('app.settings.social-media.index');
+            Route::post('/social-media', [SocialMediaController::class, 'store'])->name('app.settings.social-media.store');
+            Route::get('/social-media/{id}/edit', [SocialMediaController::class, 'edit'])->name('app.settings.social-media.edit');
+            Route::put('/social-media/{id}/update', [SocialMediaController::class, 'update'])->name('app.settings.social-media.update');
+            Route::delete('/social-media/{id}/destroy', [SocialMediaController::class, 'destroy'])->name('app.settings.social-media.destroy');
         });
     });

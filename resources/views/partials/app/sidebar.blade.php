@@ -114,8 +114,10 @@
       @php
         $settingsHasActiveCategory = request()->routeIs('settings.manage-category-menu');
         $settingsHasActiveLocation = request()->routeIs('app.settings.location.index');
+        $settingsHasActiveSocialMedia = request()->routeIs('app.settings.social-media.index');
 
-        $isSettingsMenuActive = $settingsHasActiveCategory || $settingsHasActiveLocation;
+        $isSettingsMenuActive =
+            $settingsHasActiveCategory || $settingsHasActiveLocation || $settingsHasActiveSocialMedia;
       @endphp
 
       <div id="settings-menu" class="{{ $isSettingsMenuActive ? '' : 'hidden' }} bg-gray-800 mt-1 rounded">
@@ -127,7 +129,8 @@
           class="{{ $settingsHasActiveLocation ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Location</span>
         </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+        <a href="{{ route('app.settings.social-media.index') }}"
+          class="{{ $settingsHasActiveSocialMedia ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Social Media</span>
         </a>
       </div>
