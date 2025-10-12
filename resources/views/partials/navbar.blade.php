@@ -28,23 +28,18 @@
             Our locations
           </a>
         </div>
+
+        @php
+          $socialMedias = \App\Models\SocialMedia::all();
+        @endphp
         <div class="flex items-center space-x-2">
-          <a href="">
-            <iconify-icon icon="uil:facebook" width="24" height="24"
-              class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
-          </a>
-          <a href="">
-            <iconify-icon icon="ant-design:instagram-filled" width="26" height="26"
-              class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
-          </a>
-          <a href="">
-            <iconify-icon icon="ic:sharp-tiktok" width="24" height="24"
-              class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
-          </a>
-          <a href="">
-            <iconify-icon icon="mage:whatsapp-filled" width="24" height="24"
-              class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
-          </a>
+          @foreach ($socialMedias as $socialMedia)
+            <a href="{{ $socialMedia->link }}" target="_blank">
+              <iconify-icon icon="{{ $socialMedia->icon }}" width="24" height="24"
+                class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
+            </a>
+          @endforeach
+
         </div>
       </div>
 
