@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('name');
             $table->string('address');
-            $table->string('google_map');
-            $table->string('phone');
+            $table->longText('google_map');
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }

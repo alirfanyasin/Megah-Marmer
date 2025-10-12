@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\Settings\ManageCategoryMenuController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\Settings\LocationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -35,6 +36,8 @@ Route::prefix('app')
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/products', [AdminProductController::class, 'index'])->name('products.index');
 
+
+
         // Category Menu
         Route::prefix('category')->group(function () {
             Route::get('/{id}/sub-menu', [AdminCategoryController::class, 'index'])->name('category-sub-menu.index');
@@ -58,6 +61,7 @@ Route::prefix('app')
 
         // Settings Routes
         Route::prefix('settings')->group(function () {
+            // Manage Category Menu
             Route::get('/manage-category-menu', [ManageCategoryMenuController::class, 'index'])
                 ->name('settings.manage-category-menu');
 
@@ -72,5 +76,13 @@ Route::prefix('app')
 
             Route::delete('/manage-category-menu/{id}/destroy', [ManageCategoryMenuController::class, 'destroy'])
                 ->name('settings.manage-category-menu.destroy');
+
+
+            // Location
+            Route::get('/location', [LocationController::class, 'index'])->name('app.settings.location.index');
+            Route::post('/location', [LocationController::class, 'store'])->name('app.settings.location.store');
+            Route::get('/location/{id}/edit', [LocationController::class, 'edit'])->name('app.settings.location.edit');
+            Route::put('/location/{id}/update', [LocationController::class, 'update'])->name('app.settings.location.update');
+            Route::delete('/location/{id}/destroy', [LocationController::class, 'destroy'])->name('app.settings.location.destroy');
         });
     });

@@ -11,5 +11,6 @@ class Location extends Model
         'address',
         'google_map',
         'image',
+        'phone'
     ];
 }

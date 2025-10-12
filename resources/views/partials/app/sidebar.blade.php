@@ -112,22 +112,24 @@
           class="transition-transform"></iconify-icon>
       </button>
       @php
-        $settingsHasActive = request()->routeIs('settings.manage-category-menu');
+        $settingsHasActiveCategory = request()->routeIs('settings.manage-category-menu');
+        $settingsHasActiveLocation = request()->routeIs('app.settings.location.index');
+
+        $isSettingsMenuActive = $settingsHasActiveCategory || $settingsHasActiveLocation;
       @endphp
-      <div id="settings-menu" class="{{ $settingsHasActive ? '' : 'hidden' }} bg-gray-800 mt-1 rounded">
+
+      <div id="settings-menu" class="{{ $isSettingsMenuActive ? '' : 'hidden' }} bg-gray-800 mt-1 rounded">
         <a href="{{ route('settings.manage-category-menu') }}"
-          class="{{ request()->routeIs('settings.manage-category-menu') ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+          class="{{ $settingsHasActiveCategory ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Manage Category Menu</span>
         </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+        <a href="{{ route('app.settings.location.index') }}"
+          class="{{ $settingsHasActiveLocation ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Location</span>
         </a>
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Social Media</span>
         </a>
-        {{-- <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Notifikasi</span>
-        </a> --}}
       </div>
     </div>
   </nav>

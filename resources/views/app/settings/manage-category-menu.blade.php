@@ -43,14 +43,14 @@
     <div class="flex justify-between items-center mb-6">
       <div>
         <h1 class="text-2xl font-bold text-gray-700 mb-1">Manage Category Menu</h1>
-        <p class="text-gray-500 text-sm">Kelola kategori menu untuk sistem Anda</p>
+        <p class="text-gray-500 text-sm">Manage menu categories for your system</p>
       </div>
       <button onclick="openModal('add')"
-        class="bg-amber-600 hover:bg-amber-700 text-white px-2 md:px-4 py-2 rounded flex items-center gap-2 transition-colors">
+        class="bg-amber-600 hover:bg-amber-700 hover:cursor-pointer text-white px-2 md:px-4 py-2 rounded flex items-center gap-2 transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
         </svg>
-        <span class="md:block hidden">Tambah Kategori</span>
+        <span class="md:block hidden">Add Category</span>
       </button>
     </div>
 
@@ -73,7 +73,7 @@
           <thead class="bg-gray-50">
             <tr>
               <th class="px-6 py-3 text-left w-32 text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
-              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Kategori
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name
               </th>
               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
             </tr>
@@ -95,7 +95,7 @@
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex gap-2">
                     <button onclick="openModal('edit', {{ $menuItem->id }})"
-                      class="text-blue-600 hover:text-blue-900 transition-colors" title="Edit">
+                      class="text-blue-600 hover:cursor-pointer hover:text-blue-900 transition-colors" title="Edit">
                       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
@@ -103,7 +103,7 @@
                       </svg>
                     </button>
                     <button onclick="confirmDelete({{ $menuItem->id }})"
-                      class="text-red-600 hover:text-red-900 transition-colors" title="Hapus">
+                      class="text-red-600 hover:cursor-pointer hover:text-red-900 transition-colors" title="Hapus">
                       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
@@ -127,10 +127,11 @@
   </div>
 
   {{-- Modal Add/Edit --}}
-  <div id="categoryModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+  <div id="categoryModal"
+    class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white rounded shadow-xl max-w-md w-full">
       <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
-        <h3 id="modalTitle" class="text-xl font-semibold text-gray-600">Tambah Kategori</h3>
+        <h3 id="modalTitle" class="text-xl font-semibold text-gray-600">Add Category</h3>
         <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -140,13 +141,13 @@
       <form id="categoryForm" method="POST" action="{{ route('settings.manage-category-menu.store') }}"
         enctype="multipart/form-data">
         @csrf
-        <input type="hidden" id="methodField" name="_method" value="">
+        <div id="methodFieldContainer"></div>
         <div class="px-6 py-4 space-y-4">
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-600 mb-2">Nama Kategori</label>
+            <label for="name" class="block text-sm font-medium text-gray-600 mb-2">Category Name</label>
             <input type="text" id="name" name="name" required
               class="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
-              placeholder="Masukkan nama kategori">
+              placeholder="Enter category name">
             @error('name')
               <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
             @enderror
@@ -156,7 +157,6 @@
             <input type="file" id="image" name="image" accept="image/*"
               class="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-amber-600 file:text-white hover:file:bg-amber-700">
             <p class="text-xs text-gray-400 mt-1">Format: JPG, PNG, GIF, JPEG, WEBP, AVIF (Max: 2MB)</p>
-            <p id="imageRequired" class="text-xs text-red-500 mt-1 hidden">* Image wajib diisi untuk kategori baru</p>
             @error('image')
               <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
             @enderror
@@ -169,12 +169,12 @@
         </div>
         <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200">
           <button type="button" onclick="closeModal()"
-            class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors">
-            Batal
+            class="px-4 py-2 bg-gray-200 text-gray-700 hover:cursor-pointer rounded hover:bg-gray-300 transition-colors">
+            Cancel
           </button>
           <button type="submit"
-            class="px-4 py-2 bg-amber-600 text-white rounded hover:bg-orange-600 transition-colors">
-            Simpan
+            class="px-4 py-2 bg-amber-600 hover:cursor-pointer text-white rounded hover:bg-amber-700 transition-colors">
+            Save
           </button>
         </div>
       </form>
@@ -182,7 +182,8 @@
   </div>
 
   {{-- Modal Delete Confirmation --}}
-  <div id="deleteModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+  <div id="deleteModal"
+    class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white rounded shadow-xl max-w-md w-full">
       <div class="px-6 py-4">
         <div class="flex items-center gap-4">
@@ -194,22 +195,23 @@
             </svg>
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-semibold text-gray-600 mb-1">Konfirmasi Hapus</h3>
-            <p class="text-sm text-gray-400">Apakah Anda yakin ingin menghapus kategori ini? Tindakan ini tidak dapat
-              dibatalkan.</p>
+            <h3 class="text-lg font-semibold text-gray-600 mb-1">Confirm Delete</h3>
+            <p class="text-sm text-gray-400">Are you sure you want to delete this category? This action cannot be undone.
+            </p>
           </div>
         </div>
       </div>
       <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200">
         <button onclick="closeDeleteModal()"
-          class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors">
-          Batal
+          class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:cursor-pointer hover:bg-gray-300 transition-colors">
+          Cancel
         </button>
         <form id="deleteForm" method="POST" action="#" class="inline">
           @csrf
           @method('DELETE')
-          <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors">
-            Hapus
+          <button type="submit"
+            class="px-4 py-2 bg-red-500 hover:cursor-pointer text-white rounded hover:bg-red-600 transition-colors">
+            Yes, Delete
           </button>
         </form>
       </div>
@@ -234,25 +236,26 @@
       const modal = document.getElementById('categoryModal');
       const form = document.getElementById('categoryForm');
       const title = document.getElementById('modalTitle');
-      const methodField = document.getElementById('methodField');
+      const methodFieldContainer = document.getElementById('methodFieldContainer');
       const imagePreview = document.getElementById('imagePreview');
       const imageInput = document.getElementById('image');
-      const imageRequired = document.getElementById('imageRequired');
+
+      // Reset form
+      form.reset();
+      imagePreview.classList.add('hidden');
+      methodFieldContainer.innerHTML = '';
 
       if (mode === 'add') {
-        title.textContent = 'Tambah Kategori';
-        form.action = '/app/settings/manage-category-menu/store';
-        methodField.value = '';
-        form.reset();
-        imagePreview.classList.add('hidden');
+        title.textContent = 'Add Category';
+        form.action = '{{ route('settings.manage-category-menu.store') }}';
         imageInput.required = true;
-        imageRequired.classList.remove('hidden');
       } else if (mode === 'edit') {
-        title.textContent = 'Edit Kategori';
+        title.textContent = 'Edit Category';
         form.action = `/app/settings/manage-category-menu/${id}/update`;
-        methodField.value = 'PUT';
         imageInput.required = false;
-        imageRequired.classList.add('hidden');
+
+        // Add PUT method for edit
+        methodFieldContainer.innerHTML = '<input type="hidden" name="_method" value="PUT">';
 
         // Fetch data menggunakan AJAX
         fetch(`/app/settings/manage-category-menu/${id}/edit`)
