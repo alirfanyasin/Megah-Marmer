@@ -233,7 +233,7 @@
 
   {{-- Modal Delete Confirmation --}}
   <div id="deleteModal"
-    class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+    class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white rounded shadow-2xl max-w-md w-full transform transition-all" onclick="event.stopPropagation()">
       <div class="px-6 py-4">
         <div class="flex items-start gap-4">

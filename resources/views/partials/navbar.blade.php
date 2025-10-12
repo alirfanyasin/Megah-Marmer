@@ -29,11 +29,6 @@
           </a>
         </div>
         <div class="flex items-center space-x-2">
-          {{-- <div class="relative cursor-pointer hover:text-amber-600 transition-colors">
-            <i class="fas fa-bell text-gray-600"></i>
-            <span
-              class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">2</span>
-          </div> --}}
           <a href="">
             <iconify-icon icon="uil:facebook" width="24" height="24"
               class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
@@ -63,297 +58,51 @@
     </div>
 
     <!-- Main Navigation with Dropdown -->
+    @php
+      $categoriesMenu = \App\Models\Category::all();
+    @endphp
     <nav class="hidden md:block">
       <div class="flex items-center justify-between text-sm space-x-4 py-4 font-medium border-t border-gray-100">
-        <!-- Living Room -->
-        <div class="nav-item relative">
-          <a href="#" class="nav-link text-gray-900 hover:text-orange-500 transition-colors py-2">Living Room</a>
-          <div class="dropdown-menu fixed left-0 right-0">
-            <div class="dropdown-content mt-4 p-8 max-w-7xl mx-auto">
-              <div class="grid grid-cols-3 gap-8">
-                <div class="col-span-2">
-                  <ul class="space-y-2 text-sm">
-                    <li class="submenu-item" onmouseenter="showImage('living-room', 'coffee-table')">
-                      <a href="/category" class="text-gray-600 font-light text-lg hover:text-orange-500">Coffee
-                        Table</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('living-room', 'chairs')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Chairs</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('living-room', 'living-decor')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Living Decor</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('living-room', 'side-table')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Side Table</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('living-room', 'mirrors')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Mirrors</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('living-room', 'accessories')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Accessories</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="relative">
-                  <div class="rounded-lg overflow-hidden h-56">
-                    <img id="living-room-coffee-table"
-                      src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=400&h=300&fit=crop"
-                      alt="Coffee Table" class="submenu-image active w-full h-full object-cover">
-                    <img id="living-room-chairs"
-                      src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=300&fit=crop"
-                      alt="Chairs" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="living-room-living-decor"
-                      src="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=400&h=300&fit=crop"
-                      alt="Living Decor" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="living-room-side-table"
-                      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop"
-                      alt="Side Table" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="living-room-mirrors"
-                      src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=400&h=300&fit=crop"
-                      alt="Mirrors" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="living-room-accessories"
-                      src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop"
-                      alt="Accessories" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Dining Room & Kitchen -->
-        <div class="nav-item relative">
-          <a href="#" class="nav-link text-gray-900 hover:text-orange-500 transition-colors py-2">Dining Room &
-            Kitchen</a>
-          <div class="dropdown-menu fixed left-0 right-0">
-            <div class="dropdown-content mt-4 p-8 max-w-7xl mx-auto">
-              <div class="grid grid-cols-3 gap-8">
-                <div class="col-span-2">
-                  <ul class="space-y-2 text-sm">
-                    <li class="submenu-item" onmouseenter="showImage('dining-room', 'dining-table')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Dining
-                        Table</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('dining-room', 'chairs')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Chairs</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('dining-room', 'accessories')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Accessories</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('dining-room', 'mirrors')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Mirrors</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="relative">
-                  <div class="rounded-lg overflow-hidden h-56">
-                    <img id="dining-room-dining-table"
-                      src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&h=300&fit=crop"
-                      alt="Dining Table" class="submenu-image active w-full h-full object-cover">
-                    <img id="dining-room-chairs"
-                      src="https://images.unsplash.com/photo-1503602642458-232111445657?w=400&h=300&fit=crop"
-                      alt="Dining Chairs" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="dining-room-accessories"
-                      src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=400&h=300&fit=crop"
-                      alt="Accessories" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="dining-room-mirrors"
-                      src="https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=400&h=300&fit=crop"
-                      alt="Mirrors" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
+        @foreach ($categoriesMenu as $categoryMenu)
+          <div class="nav-item relative">
+            <a href="#"
+              class="nav-link text-gray-900 hover:text-orange-500 transition-colors py-2">{{ $categoryMenu->name }}</a>
+            <div class="dropdown-menu fixed left-0 right-0">
+              <div class="dropdown-content mt-4 p-8 max-w-7xl mx-auto">
+                <div class="grid grid-cols-3 gap-8">
+                  <div class="col-span-2">
+                    <ul class="space-y-2 text-sm">
+                      @foreach ($categoryMenu->categorySub as $index => $categorySubMenu)
+                        <li class="submenu-item"
+                          onmouseenter="showImage('category-{{ $categoryMenu->id }}', 'sub-{{ $categorySubMenu->id }}')">
+                          <a href="{{ route('category.products', ['id_category' => $categoryMenu->id, 'id_sub_category' => $categorySubMenu->id]) }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">{{ $categorySubMenu->name }}</a>
+                        </li>
+                      @endforeach
+                    </ul>
+                  </div>
+                  <div class="relative">
+                    <div class="rounded-lg overflow-hidden h-56">
+                      @foreach ($categoryMenu->categorySub as $index => $categorySubMenuImage)
+                        @if ($categorySubMenuImage->image && file_exists(public_path('storage/' . $categorySubMenuImage->image)))
+                          <img id="category-{{ $categoryMenu->id }}-sub-{{ $categorySubMenuImage->id }}"
+                            src="{{ asset('storage/' . $categorySubMenuImage->image) }}"
+                            alt="{{ $categorySubMenuImage->name }}"
+                            class="submenu-image {{ $index === 0 ? 'active' : 'absolute top-0 left-0' }} w-full h-full object-cover">
+                        @else
+                          <img id="category-{{ $categoryMenu->id }}-sub-{{ $categorySubMenuImage->id }}"
+                            src="{{ $categorySubMenuImage->image }}" alt="{{ $categorySubMenuImage->name }}"
+                            class="submenu-image {{ $index === 0 ? 'active' : 'absolute top-0 left-0' }} w-full h-full object-cover">
+                        @endif
+                      @endforeach
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Bathroom -->
-        <div class="nav-item relative">
-          <a href="#" class="nav-link text-gray-900 hover:text-orange-500 transition-colors py-2">Bathroom</a>
-          <div class="dropdown-menu fixed left-0 right-0">
-            <div class="dropdown-content mt-4 p-8 max-w-7xl mx-auto">
-              <div class="grid grid-cols-3 gap-8">
-                <div class="col-span-2">
-                  <h4 class="text-gray-600 mb-3 font-light text-lg">Washbasins</h4>
-                  <ul class="space-y-2 text-sm pl-4">
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'round')">
-                      <a href="#" class="text-gray-600 font-light text-md hover:text-orange-500">Round</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'square')">
-                      <a href="#" class="text-gray-600 font-light text-md hover:text-orange-500">Square</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'rectangle')">
-                      <a href="#" class="text-gray-600 font-light text-md hover:text-orange-500">Rectangle</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'oval')">
-                      <a href="#" class="text-gray-600 font-light text-md hover:text-orange-500">Oval</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'standing-sink')">
-                      <a href="#" class="text-gray-600 font-light text-md hover:text-orange-500">Standing
-                        Sink</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'hanging-washbasin')">
-                      <a href="#" class="text-gray-600 font-light text-md hover:text-orange-500">Hanging
-                        Washbasin</a>
-                    </li>
-                  </ul>
-                  <ul class="space-y-2 text-sm mt-4">
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'vanity-unit')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Compact Vanity
-                        Unit</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'bathtub')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Bathtub</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'bathroom-decor')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Bathroom
-                        Decor</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('bathroom', 'mirrors')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Mirrors</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="relative">
-                  <div class="rounded-lg overflow-hidden h-72">
-                    <img id="bathroom-round"
-                      src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=400&h=400&fit=crop"
-                      alt="Round Sink" class="submenu-image active w-full h-full object-cover">
-                    <img id="bathroom-square"
-                      src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&h=400&fit=crop"
-                      alt="Square Sink" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="bathroom-rectangle"
-                      src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=400&fit=crop"
-                      alt="Rectangle Sink" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="bathroom-oval"
-                      src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=400&fit=crop"
-                      alt="Oval Sink" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="bathroom-standing-sink"
-                      src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=400&h=400&fit=crop"
-                      alt="Standing Sink" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="bathroom-hanging-washbasin"
-                      src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=400&h=400&fit=crop"
-                      alt="Hanging Washbasin" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="bathroom-vanity-unit"
-                      src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&h=400&fit=crop"
-                      alt="Vanity Unit" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="bathroom-bathtub"
-                      src="https://images.unsplash.com/photo-1564540583246-934409427776?w=400&h=400&fit=crop"
-                      alt="Bathtub" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="bathroom-bathroom-decor"
-                      src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=400&fit=crop"
-                      alt="Bathroom Decor" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="bathroom-mirrors"
-                      src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=400&h=400&fit=crop"
-                      alt="Bathroom Mirrors" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Garden -->
-        <div class="nav-item relative">
-          <a href="#" class="nav-link text-gray-900 hover:text-orange-500 transition-colors py-2">Garden</a>
-          <div class="dropdown-menu fixed left-0 right-0">
-            <div class="dropdown-content mt-4 p-8 max-w-7xl mx-auto">
-              <div class="grid grid-cols-3 gap-8">
-                <div class="col-span-2">
-                  <ul class="space-y-2 text-sm">
-                    <li class="submenu-item" onmouseenter="showImage('garden', 'garden-table')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Garden
-                        Table</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('garden', 'garden-chairs')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Garden
-                        Chairs</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('garden', 'garden-decor')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Garden
-                        Decor</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('garden', 'garden-lamp')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Garden Lamp</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('garden', 'fountain')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Fountain</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('garden', 'garden-tile')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Garden Tile</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="relative">
-                  <div class="rounded-lg overflow-hidden h-56">
-                    <img id="garden-garden-table"
-                      src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&h=300&fit=crop"
-                      alt="Garden Table" class="submenu-image active w-full h-full object-cover">
-                    <img id="garden-garden-chairs"
-                      src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=400&h=300&fit=crop"
-                      alt="Garden Chairs" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="garden-garden-decor"
-                      src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=300&fit=crop"
-                      alt="Garden Decor" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="garden-garden-lamp"
-                      src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=400&h=300&fit=crop"
-                      alt="Garden Lamp" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="garden-fountain"
-                      src="https://images.unsplash.com/photo-1591868708593-29c0c7d9d6c5?w=400&h=300&fit=crop"
-                      alt="Fountain" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="garden-garden-tile"
-                      src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=400&h=300&fit=crop"
-                      alt="Garden Tile" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Wall & Tiles -->
-        <div class="nav-item relative">
-          <a href="#" class="nav-link text-gray-900 hover:text-orange-500 transition-colors py-2">Wall &
-            Tiles</a>
-          <div class="dropdown-menu fixed left-0 right-0">
-            <div class="dropdown-content mt-4 p-8 max-w-7xl mx-auto">
-              <div class="grid grid-cols-3 gap-8">
-                <div class="col-span-2">
-                  <ul class="space-y-2 text-sm">
-                    <li class="submenu-item" onmouseenter="showImage('wall-tiles', 'parquet')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Parquet</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('wall-tiles', 'mosaics')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Mosaics</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('wall-tiles', 'wall-cladding')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Wall
-                        Cladding</a>
-                    </li>
-                    <li class="submenu-item" onmouseenter="showImage('wall-tiles', 'tiles')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Tiles</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="relative">
-                  <div class="rounded-lg overflow-hidden h-56">
-                    <img id="wall-tiles-parquet"
-                      src="https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?w=400&h=300&fit=crop"
-                      alt="Parquet" class="submenu-image active w-full h-full object-cover">
-                    <img id="wall-tiles-mosaics"
-                      src="https://images.unsplash.com/photo-1621856726086-19cbd7e39c1e?w=400&h=300&fit=crop"
-                      alt="Mosaics" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="wall-tiles-wall-cladding"
-                      src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=400&h=300&fit=crop"
-                      alt="Wall Cladding" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="wall-tiles-tiles"
-                      src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&h=300&fit=crop"
-                      alt="Tiles" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach
 
         <!-- Our Solid Stone -->
         <div class="nav-item relative">
@@ -462,41 +211,32 @@
                 <div class="col-span-2">
                   <ul class="space-y-2 text-sm">
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'polish')">
-                      <a href="#"
-                        class="text-gray-600 font-light text-lg font-light text-lg hover:text-orange-500">Polish</a>
+                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Polish</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'doff')">
-                      <a href="#"
-                        class="text-gray-600 font-light text-lg font-light text-lg hover:text-orange-500">Doff Or
+                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Doff Or
                         Matte</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'acid')">
-                      <a href="#"
-                        class="text-gray-600 font-light text-lg font-light text-lg hover:text-orange-500">Acid</a>
+                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Acid</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'hammered')">
-                      <a href="#"
-                        class="text-gray-600 font-light text-lg font-light text-lg hover:text-orange-500">Hammered</a>
+                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Hammered</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'burning')">
-                      <a href="#"
-                        class="text-gray-600 font-light text-lg font-light text-lg hover:text-orange-500">Burning</a>
+                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Burning</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'texture')">
-                      <a href="#"
-                        class="text-gray-600 font-light text-lg font-light text-lg hover:text-orange-500">Texture</a>
+                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Texture</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'groove')">
-                      <a href="#"
-                        class="text-gray-600 font-light text-lg font-light text-lg hover:text-orange-500">Groove</a>
+                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Groove</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'stripe')">
-                      <a href="#"
-                        class="text-gray-600 font-light text-lg font-light text-lg hover:text-orange-500">Stripe</a>
+                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Stripe</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'combination')">
-                      <a href="#"
-                        class="text-gray-600 font-light text-lg font-light text-lg hover:text-orange-500">Combination</a>
+                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Combination</a>
                     </li>
                   </ul>
                 </div>
@@ -683,91 +423,22 @@
           </div>
         </div>
 
-        <!-- Living Room -->
-        <div class="mobile-nav-item">
-          <button onclick="toggleMobileDropdown('living-room')"
-            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
-            <span>Living Room</span>
-            <i id="living-room-icon" class="fas fa-chevron-down text-sm transition-transform"></i>
-          </button>
-          <div id="living-room-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Coffee Table</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Chairs</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Living Decor</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Side Table</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Mirrors</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Accessories</a>
+        <!-- Dynamic Mobile Menu -->
+        @foreach ($categoriesMenu as $categoryMenu)
+          <div class="mobile-nav-item">
+            <button onclick="toggleMobileDropdown('category-{{ $categoryMenu->id }}')"
+              class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
+              <span>{{ $categoryMenu->name }}</span>
+              <i id="category-{{ $categoryMenu->id }}-icon"
+                class="fas fa-chevron-down text-sm transition-transform"></i>
+            </button>
+            <div id="category-{{ $categoryMenu->id }}-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
+              @foreach ($categoryMenu->categorySub as $categorySubMenu)
+                <a href="/category" class="block px-3 py-2 text-sm text-gray-600">{{ $categorySubMenu->name }}</a>
+              @endforeach
+            </div>
           </div>
-        </div>
-
-        <!-- Dining Room & Kitchen -->
-        <div class="mobile-nav-item">
-          <button onclick="toggleMobileDropdown('dining-room')"
-            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
-            <span>Dining Room & Kitchen</span>
-            <i id="dining-room-icon" class="fas fa-chevron-down text-sm transition-transform"></i>
-          </button>
-          <div id="dining-room-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Dining Table</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Chairs</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Accessories</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Mirrors</a>
-          </div>
-        </div>
-
-        <!-- Bathroom -->
-        <div class="mobile-nav-item">
-          <button onclick="toggleMobileDropdown('bathroom')"
-            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
-            <span>Bathroom</span>
-            <i id="bathroom-icon" class="fas fa-chevron-down text-sm transition-transform"></i>
-          </button>
-          <div id="bathroom-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600 font-medium">Washbasins</a>
-            <a href="#" class="block px-3 py-2 text-xs text-gray-500 pl-6">Round</a>
-            <a href="#" class="block px-3 py-2 text-xs text-gray-500 pl-6">Square</a>
-            <a href="#" class="block px-3 py-2 text-xs text-gray-500 pl-6">Rectangle</a>
-            <a href="#" class="block px-3 py-2 text-xs text-gray-500 pl-6">Oval</a>
-            <a href="#" class="block px-3 py-2 text-xs text-gray-500 pl-6">Standing Sink</a>
-            <a href="#" class="block px-3 py-2 text-xs text-gray-500 pl-6">Hanging Washbasin</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Compact Vanity Unit</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Bathtub</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Bathroom Decor</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Mirrors</a>
-          </div>
-        </div>
-
-        <!-- Garden -->
-        <div class="mobile-nav-item">
-          <button onclick="toggleMobileDropdown('garden')"
-            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
-            <span>Garden</span>
-            <i id="garden-icon" class="fas fa-chevron-down text-sm transition-transform"></i>
-          </button>
-          <div id="garden-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Garden Table</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Garden Chairs</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Garden Decor</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Garden Lamp</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Fountain</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Garden Tile</a>
-          </div>
-        </div>
-
-        <!-- Wall & Tiles -->
-        <div class="mobile-nav-item">
-          <button onclick="toggleMobileDropdown('wall-tiles')"
-            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
-            <span>Wall & Tiles</span>
-            <i id="wall-tiles-icon" class="fas fa-chevron-down text-sm transition-transform"></i>
-          </button>
-          <div id="wall-tiles-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Parquet</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Mosaics</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Wall Cladding</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Tiles</a>
-          </div>
-        </div>
+        @endforeach
 
         <!-- Our Solid Stone -->
         <div class="mobile-nav-item">

@@ -10,12 +10,14 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurLocationController;
 use App\Http\Controllers\CategoryProductController;
+use App\Http\Controllers\CategorySubProductController;
 use Illuminate\Support\Facades\Route;
 
 // Guest Routes
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/category', [CategoryController::class, 'index']);
-Route::get('/category/{id}/products', [CategoryProductController::class, 'index']);
+Route::get('/category/sub/{id_category}/products', [CategorySubProductController::class, 'index'])->name('category.sub');
+Route::get('/category/{id_category}/{id_sub_category}/products', [CategoryProductController::class, 'index'])->name('category.products');
+Route::get('/category/{id_category}/{id_sub_category}/products/{id_product}/show', [CategoryProductController::class, 'show'])->name('category.products.detail');
 Route::get('/our-locations', [OurLocationController::class, 'index']);
 
 // Admin Login Routes

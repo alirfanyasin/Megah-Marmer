@@ -3,28 +3,30 @@
 @section('content')
   <div>
     <section id="category-desc" class="max-w-5xl mx-auto my-10 space-y-4 px-4 text-center">
-      <h2 class="text-2xl font-semibold">TV Stands</h2>
-      <p class="text-base">Ideal for organising multimedia storage, your Designer TV stand is perfect for supporting a
+      <h2 class="text-2xl font-semibold">{{ $categorySub->name }}</h2>
+      {{-- <p class="text-base">Ideal for organising multimedia storage, your Designer TV stand is perfect for supporting a
         television, hi-fi,
         home cinema, etc. With its very designer look, this type of solid wood furniture is available oiled, natural or
         varnished, suspended or on legs, which means it fits in perfectly with any living room or dining room. Whatever
         the design style of the house - contemporary, Scandinavian, vintage, modern or more classic – Tikamoon TV units
-        add a chic touch to your interior...</p>
+        add a chic touch to your interior...</p> --}}
     </section>
     <section class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        @for ($i = 0; $i < 12; $i++)
+        @foreach ($products as $product)
           <div class="overflow-hidden transition-shadow duration-300 group">
-            <a href="/product/detail" class="block">
+            <a href="{{ route('category.products.detail', ['id_category' => $category->id, 'id_sub_category' => $categorySub->id, 'id_product' => $product->id]) }}"
+              class="block">
               <div class="relative overflow-hidden bg-gray-100">
                 <!-- Badge Sale -->
-                <div class="absolute top-4 left-4 bg-red-900 text-white px-3 py-1 rounded-md text-sm font-semibold z-10">
-                  Sale -20%
-                </div>
+                @if ($product->discount !== 0)
+                  <div class="absolute top-4 left-4 bg-red-900 text-white px-3 py-1 rounded-md text-sm font-semibold z-10">
+                    Sale -{{ $product->discount }}%
+                  </div>
+                @endif
 
                 <!-- Product Image -->
-                <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=400&h=400&fit=crop"
-                  alt="Product Image"
+                <img src="{{ asset('storage/' . $product->image[0]) }}" alt="Product Image"
                   class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105">
 
                 <!-- Icon Buttons (Love & Eye) - Muncul saat hover -->
@@ -47,16 +49,23 @@
 
               <!-- Product Info -->
               <div class="p-4">
-                <h3 class="text-xl font-bold text-gray-900 mb-1">Adam</h3>
-                <p class="text-gray-600 text-sm mb-3">TV unit in solid teak, 120 cm</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-1">{{ $product->name }}</h3>
+                <p class="text-gray-600 text-sm mb-3">{{ Str::substr($product->description, 0, 100) }}</p>
                 <div class="flex items-center gap-2">
-                  <p class="text-red-900 font-bold text-lg">£399</p>
-                  <p class="text-gray-400 line-through text-sm">£499</p>
+                  @if ($product->discount !== 0)
+                    <p class="text-red-900 font-bold text-lg">Rp.
+                      {{ number_format($product->price * (1 - $product->discount / 100), 0, ',', '.') }}</p>
+                    <p class="text-gray-400 line-through text-sm">{{ number_format($product->price) }}</p>
+                  @else
+                    <p class="text-red-900 font-bold text-lg">Rp.
+                      {{ number_format($product->price, 0, ',', '.') }}</p>
+                  @endif
                 </div>
               </div>
             </a>
           </div>
-        @endfor
+        @endforeach
+
 
       </div>
     </section>

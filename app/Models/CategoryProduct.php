@@ -56,4 +56,9 @@ class CategoryProduct extends Model
     {
         return $this->belongsTo(CategorySub::class);
     }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

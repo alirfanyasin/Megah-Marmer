@@ -23,73 +23,21 @@
     <!-- Room Categories -->
     <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12 text-sm">
       <!-- Living Room -->
-      <div>
-        <h5 class="font-bold mb-4">Living Room</h5>
-        <ul class="space-y-1 text-gray-300">
-          <li><a href="#" class="hover:text-white">TV Stands</a></li>
-          <li><a href="#" class="hover:text-white">Coffee Tables</a></li>
-          <li><a href="#" class="hover:text-white">Console Tables</a></li>
-          <li><a href="#" class="hover:text-white">Bookcases</a></li>
-          <li><a href="#" class="hover:text-white">Sofas</a></li>
-          <li><a href="#" class="hover:text-white">Armchair & Bench</a></li>
-          <li><a href="#" class="hover:text-white">Side Tables</a></li>
-          <li><a href="#" class="hover:text-white">Mirrors</a></li>
-        </ul>
-      </div>
-
-      <!-- Dining Room -->
-      <div>
-        <h5 class="font-bold mb-4">Dining Room</h5>
-        <ul class="space-y-1 text-gray-300">
-          <li><a href="#" class="hover:text-white">Sideboards</a></li>
-          <li><a href="#" class="hover:text-white">Dining Tables</a></li>
-          <li><a href="#" class="hover:text-white">Chairs</a></li>
-          <li><a href="#" class="hover:text-white">Cupboards</a></li>
-          <li><a href="#" class="hover:text-white">Kitchen Dressers and Cabinets</a></li>
-          <li><a href="#" class="hover:text-white">Mirrors</a></li>
-        </ul>
-      </div>
-
-      <!-- Bathroom -->
-      <div>
-        <h5 class="font-bold mb-4">Bathroom</h5>
-        <ul class="space-y-1 text-gray-300">
-          <li><a href="#" class="hover:text-white">Bathroom washbasin unit</a></li>
-          <li><a href="#" class="hover:text-white">Compact Vanity unit</a></li>
-          <li><a href="#" class="hover:text-white">Washbasins</a></li>
-          <li><a href="#" class="hover:text-white">Cupboards</a></li>
-          <li><a href="#" class="hover:text-white">Bathroom Cabinet</a></li>
-          <li><a href="#" class="hover:text-white">Shelving</a></li>
-          <li><a href="#" class="hover:text-white">Mirrors</a></li>
-          <li><a href="#" class="hover:text-white">Towel Rail</a></li>
-        </ul>
-      </div>
-
-      <!-- Bedroom -->
-      <div>
-        <h5 class="font-bold mb-4">Bedroom</h5>
-        <ul class="space-y-1 text-gray-300">
-          <li><a href="#" class="hover:text-white">Bed & Headboard</a></li>
-          <li><a href="#" class="hover:text-white">Bedside Tables</a></li>
-          <li><a href="#" class="hover:text-white">Chests of Drawers</a></li>
-          <li><a href="#" class="hover:text-white">Cupboards & Wardrobes</a></li>
-          <li><a href="#" class="hover:text-white">Console Tables</a></li>
-          <li><a href="#" class="hover:text-white">Bookcases</a></li>
-          <li><a href="#" class="hover:text-white">Office Desks</a></li>
-          <li><a href="#" class="hover:text-white">Mirrors</a></li>
-        </ul>
-      </div>
-
-      <!-- Garden -->
-      <div>
-        <h5 class="font-bold mb-4">Garden</h5>
-        <ul class="space-y-1 text-gray-300">
-          <li><a href="#" class="hover:text-white">Garden Tables</a></li>
-          <li><a href="#" class="hover:text-white">Garden Chairs</a></li>
-          <li><a href="#" class="hover:text-white">Lounge Sets</a></li>
-          <li><a href="#" class="hover:text-white">Garden Furniture Set</a></li>
-        </ul>
-      </div>
+      @php
+        $categories = \App\Models\Category::all();
+      @endphp
+      @foreach ($categories as $category)
+        <div>
+          <h5 class="font-bold mb-4">{{ $category->name }}</h5>
+          <ul class="space-y-1 text-gray-300">
+            @foreach ($category->categorySub as $subCategory)
+              <li><a
+                  href="{{ route('category.products', ['id_category' => $category->id, 'id_sub_category' => $subCategory->id]) }}"
+                  class="hover:text-white">{{ $subCategory->name }}</a></li>
+            @endforeach
+          </ul>
+        </div>
+      @endforeach
     </div>
 
     <!-- Social Media -->

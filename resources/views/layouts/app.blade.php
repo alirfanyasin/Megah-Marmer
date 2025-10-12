@@ -54,4 +54,16 @@
       }
     });
   </script>
+  <script>
+    // Blok klik kanan
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Blok kombinasi tombol umum (Ctrl/Cmd+S, Ctrl/Cmd+P, Ctrl/Cmd+U)
+    document.addEventListener('keydown', e => {
+      const k = e.key.toLowerCase();
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(k)) {
+        e.preventDefault();
+      }
+    });
+  </script>
 </body>

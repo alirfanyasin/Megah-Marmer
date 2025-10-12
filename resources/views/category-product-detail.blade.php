@@ -5,32 +5,23 @@
   <section class="container mx-auto px-4 py-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {{-- Left Side - Image Gallery (Scrollable) --}}
+      @php
+        $images = is_array($product->image) ? $product->image : json_decode($product->image, true);
+      @endphp
       <div class="space-y-4">
         {{-- Main Image --}}
-        <div class="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
-          <img src="{{ asset('img/product/meja-01.avif') }}" alt="Celeste TV Unit"
+        <div class="relative aspect-square bg-gray-100 rounded overflow-hidden">
+          <img src="{{ asset('storage/' . $images[0]) }}" alt="Celeste TV Unit"
             class="w-full h-full object-cover cursor-pointer">
         </div>
 
         {{-- Thumbnail Grid --}}
         <div class="grid grid-cols-2 gap-4">
-          <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition">
-            <img src="{{ asset('img/product/meja-02.avif') }}" alt="Celeste TV Unit View 2"
-              class="w-full h-full object-cover">
-          </div>
-          <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition">
-            <img src="{{ asset('img/product/meja-04.avif') }}" alt="Celeste TV Unit View 3"
-              class="w-full h-full object-cover">
-          </div>
-          <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition">
-            <img src="{{ asset('img/product/meja-03.avif') }}" alt="Celeste TV Unit View 4"
-              class="w-full h-full object-cover">
-          </div>
-          <div
-            class="relative aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition">
-            <img src="{{ asset('img/product/meja-05.avif') }}" alt="Celeste TV Unit View 5"
-              class="w-full h-full object-cover">
-          </div>
+          @foreach (array_slice($images, 1) as $thumb)
+            <div class="aspect-square bg-gray-100 rounded overflow-hidden cursor-pointer hover:opacity-80 transition">
+              <img src="{{ asset('storage/' . $thumb) }}" alt="Product Thumbnail" class="w-full h-full object-cover">
+            </div>
+          @endforeach
         </div>
       </div>
 
@@ -41,30 +32,31 @@
           <ol class="flex flex-wrap items-center gap-2">
             <li><a href="/" class="hover:text-gray-900">Home</a></li>
             <li>›</li>
-            <li><a href="/living-room" class="hover:text-gray-900">Living room</a></li>
+            <li><a href="{{ route('category.sub', ['id_category' => $category->id]) }}"
+                class="hover:text-gray-900">{{ $category->name }}</a></li>
             <li>›</li>
-            <li><a href="/tv-stands" class="hover:text-gray-900">TV Stands</a></li>
+            <li><a
+                href="{{ route('category.products', ['id_category' => $category->id, 'id_sub_category' => $categorySub->id]) }}"
+                class="hover:text-gray-900">{{ $categorySub->name }}</a></li>
             <li>›</li>
-            <li class="text-gray-900">Celeste - Solid pine TV unit - 180 cm</li>
+            <li class="text-gray-900">{{ $product->name }}</li>
           </ol>
         </nav>
 
         {{-- Sale Badge --}}
-        <div class="inline-block">
-          <span class="bg-red-900 text-white text-xs font-semibold px-3 py-1 rounded">
-            Sale -20%
-          </span>
-        </div>
+        @if ($product->discount != 0)
+          <div class="inline-block">
+            <span class="bg-red-900 text-white text-xs font-semibold px-3 py-1 rounded">
+              Sale -{{ $product->discount }}%
+            </span>
+          </div>
+        @endif
+
 
         {{-- Product Title --}}
         <div>
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Celeste</h1>
-          <p class="text-md text-gray-600">The Adam TV unit is crafted from untreated teak sourced from Indonesia.
-            Featuring a closed niche and a
-            removable
-            shelf, it's ideal as a practical storage piece. You'll appreciate its sophisticated look and classic, elegant
-            lines, with added charm in its natural beige tone. For added convenience, it includes a sliding door and a
-            cable</p>
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{{ $product->name }}</h1>
+          <p class="text-md text-gray-600">{{ $product->description }}</p>
         </div>
 
         {{-- Dimensions --}}
@@ -78,7 +70,7 @@
             </div>
             <div>
               <p class="text-xs text-gray-500">Height</p>
-              <p class="text-sm font-semibold text-gray-900">50cm</p>
+              <p class="text-sm font-semibold text-gray-900">{{ $product->height }}cm</p>
             </div>
           </div>
           <div class="flex items-center gap-3">
@@ -89,7 +81,7 @@
             </div>
             <div>
               <p class="text-xs text-gray-500">Width</p>
-              <p class="text-sm font-semibold text-gray-900">180cm</p>
+              <p class="text-sm font-semibold text-gray-900">{{ $product->width }}cm</p>
             </div>
           </div>
           <div class="flex items-center gap-3">
@@ -101,84 +93,36 @@
             </div>
             <div>
               <p class="text-xs text-gray-500">Depth</p>
-              <p class="text-sm font-semibold text-gray-900">50cm</p>
+              <p class="text-sm font-semibold text-gray-900">{{ $product->depth }}cm</p>
             </div>
           </div>
         </div>
 
-        {{-- Reviews and Certifications --}}
-        <div class="flex flex-wrap items-center gap-4">
-          <div class="flex items-center gap-2">
-            <div class="flex text-yellow-400">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-              </svg>
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-              </svg>
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-              </svg>
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-              </svg>
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-              </svg>
-            </div>
-            <a href="#reviews" class="text-sm text-gray-700 hover:underline">122 Reviews</a>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">Eco-friendly grade</span>
-          </div>
-        </div>
 
         {{-- Features --}}
         <ul class="space-y-3">
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="text-sm text-gray-700">Solid pine certified FSC<sup>®</sup>. Responsible forest
-              management</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="text-sm text-gray-700">Easy to maintain: pre-coated with a protective varnish</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="text-sm text-gray-700">Practical and functional: unit with smart storage solutions</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="text-sm text-gray-700">Pre-assembled</span>
-          </li>
+          @foreach ($product->description_point as $index => $point)
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-gray-700">{{ $point }}</span>
+            </li>
+          @endforeach
         </ul>
 
         {{-- Price --}}
         <div class="flex items-baseline gap-3">
-          <span class="text-3xl font-bold text-red-900">£699</span>
-          <span class="text-xl text-gray-400 line-through">£879</span>
+          @if ($product->discount !== 0)
+            <span class="text-3xl font-bold text-red-900">Rp.
+              {{ number_format($product->price * (1 - $product->discount / 100), 0, ',', '.') }}</span>
+            <span class="text-xl text-gray-400 line-through">Rp.
+              {{ number_format($product->price, 0, ',', '.') }}</span>
+          @else
+            <span class="text-3xl font-bold text-red-900">Rp. {{ number_format($product->price, 0, ',', '.') }}</span>
+          @endif
         </div>
 
         {{-- Action Buttons --}}
@@ -276,30 +220,29 @@
       <!-- Product Grid -->
       <div class="relative">
         <div class="product-carousel flex gap-3 overflow-x-hidden">
-          @for ($i = 0; $i < 12; $i++)
-            <!-- Product 1 -->
+          @foreach ($recommendationProducts as $recomprod)
             <div class="flex-shrink-0 w-60 bg-white rounded-lg overflow-hidden shadow-lg group">
-              <a href="">
+              <a
+                href="{{ route('category.products.detail', ['id_category' => $category->id, 'id_sub_category' => $categorySub->id, 'id_product' => $recomprod->id]) }}">
                 <div class="relative">
-                  <img
-                    src="https://placeholder-image-service.onrender.com/image/320x300?prompt=Wooden bed frame with slatted headboard, neutral bedding, and modern bedroom styling&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                    alt="Théodore wooden bed frame with vertical slat headboard design"
+                  <img src="{{ asset('storage/' . $recomprod->image[0]) }}" alt="{{ $recomprod->name }}"
                     class="w-full h-80 object-cover">
                   <div
                     class="absolute bottom-4 left-4 text-white right-4 z-10 group-hover:-translate-y-2 transition-all duration-300">
                     <div class="flex items-center justify-between text-sm">
                       <div>
-                        <h4 class="font-semibold">Samson</h4>
-                        <p class="font-light">Lorem ipsum dolor sit.</p>
+                        <h4 class="font-semibold">{{ $recomprod->name }}</h4>
+                        <p class="font-light">{{ Str::substr($recomprod->description, 0, 28) }}</p>
+
+                        <p class="font-semibold text-sm">Rp. {{ number_format($recomprod->price, 0, ',', '.') }}</p>
                       </div>
-                      <p class="font-semibold text-sm">£699</p>
                     </div>
                   </div>
-                  <div class="absolute bg-gradient-to-t from-black/90 to-white/0 bottom-0 right-0 h-1/3 left-0"></div>
+                  <div class="absolute bg-gradient-to-t from-black/90 to-white/0 bottom-0 right-0 h-2/3 left-0"></div>
                 </div>
               </a>
             </div>
-          @endfor
+          @endforeach
         </div>
       </div>
     </div>

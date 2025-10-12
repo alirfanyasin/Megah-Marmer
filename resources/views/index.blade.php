@@ -9,15 +9,16 @@
       <div class="text-center text-white">
         <h2 class="text-5xl md:text-6xl font-bold mb-4">10% off the entire website*</h2>
         <p class="text-xl md:text-2xl mb-8">with code <span class="font-bold">SITE259</span></p>
-        <button class="bg-black text-white px-8 py-3 rounded hover:bg-gray-800 transition duration-300">
+        <a href="#our-world-selection"
+          class="bg-black text-white px-8 py-3 rounded hover:bg-gray-800 transition duration-300">
           Shop now
-        </button>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Our Worlds Section -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-white" id="our-world-selection">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-gray-900 mb-4">Megah Marmer, creator of furniture</h2>
@@ -26,74 +27,32 @@
         <!-- Category Filters -->
         <div class="flex flex-wrap justify-center gap-4 mb-8">
           <button class="bg-black text-white px-6 py-2 rounded-full">All</button>
-          <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-300">Living Room</button>
-          <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-300">Dining Room</button>
-          <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-300">Bathroom</button>
-          <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-300">Bedroom</button>
-          <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-300">Garden</button>
-          <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-300">Decor</button>
+          @foreach ($categories as $categoryMenu)
+            <a href="{{ route('category.sub', ['id_category' => $categoryMenu->id]) }}"
+              class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-300">{{ $categoryMenu->name }}</a>
+          @endforeach
         </div>
       </div>
 
       <!-- Category Grid -->
       <div class="relative">
         <div class="worlds-carousel flex gap-6 overflow-x-hidden">
-          <div class="flex-shrink-0 w-80 relative rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/320x400?prompt=Modern minimalist living room with wooden furniture, neutral colors, and clean design aesthetic&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Living room interior with modern furniture and warm wooden elements"
-              class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end">
-              <h4 class="text-white text-xl font-bold p-6">Living Room</h4>
-            </div>
-          </div>
+          @foreach ($categories as $category)
+            <a href="{{ route('category.sub', ['id_category' => $category->id]) }}"
+              class="flex-shrink-0 w-80 relative rounded-lg overflow-hidden">
+              @if ($category->image && file_exists(public_path('storage/' . $category->image)))
+                <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+              @else
+                <img src="{{ $category->image }}" alt="{{ $category->name }}"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+              @endif
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end">
+                <h4 class="text-white text-xl font-bold p-4 w-full">{{ $category->name }}</h4>
+              </div>
+            </a>
+          @endforeach
 
-          <div class="flex-shrink-0 w-80 relative rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/320x400?prompt=Elegant dining room with wooden table, modern chairs, and warm ambient lighting&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Dining room with wooden table and contemporary seating arrangement" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end">
-              <h4 class="text-white text-xl font-bold p-6">Dining room</h4>
-            </div>
-          </div>
-
-          <div class="flex-shrink-0 w-80 relative rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/320x400?prompt=Modern bathroom with wooden vanity, circular mirror, and contemporary fixtures&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Contemporary bathroom featuring wooden vanity and modern design elements"
-              class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end">
-              <h4 class="text-white text-xl font-bold p-6">Bathroom</h4>
-            </div>
-          </div>
-
-          <div class="flex-shrink-0 w-80 relative rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/320x400?prompt=Cozy bedroom with wooden headboard, neutral bedding, and minimalist decor&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Serene bedroom with wooden headboard and natural textures" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end">
-              <h4 class="text-white text-xl font-bold p-6">Bedroom</h4>
-            </div>
-          </div>
-
-          <div class="flex-shrink-0 w-80 relative rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/320x400?prompt=Outdoor garden furniture with wooden table and chairs in natural setting&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Garden furniture set with wooden table and seating in outdoor environment"
-              class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end">
-              <h4 class="text-white text-xl font-bold p-6">Garden</h4>
-            </div>
-          </div>
-
-          <div class="flex-shrink-0 w-80 relative rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/320x400?prompt=Decorative accessories including ceramic vases, wooden bowls, and modern home decor items&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Collection of modern home decor accessories and decorative objects" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end">
-              <h4 class="text-white text-xl font-bold p-6">Decor</h4>
-            </div>
-          </div>
         </div>
 
         <!-- Navigation Buttons -->
@@ -114,14 +73,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between mb-8">
         <div>
-          <h3 class="text-3xl font-bold text-gray-900 mb-4">Our selection</h3>
-          <div class="flex flex-wrap gap-4">
+          <h3 class="text-3xl font-bold text-gray-900 mb-2">Our selection</h3>
+          <div class="flex flex-wrap">
+            The best choice for product recommendations for you
+          </div>
+          {{-- <div class="flex flex-wrap gap-4">
             <button class="bg-black text-white px-4 py-2 rounded">New arrivals</button>
             <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Premium</button>
             <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Bestseller</button>
             <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Bathroom</button>
             <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Home Decor</button>
-          </div>
+          </div> --}}
         </div>
         <div class="flex gap-2">
           <button
@@ -138,58 +100,28 @@
       <!-- Product Grid -->
       <div class="relative">
         <div class="product-carousel flex gap-6 overflow-x-hidden">
-          <!-- Product 1 -->
-          <div class="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative">
-              <img
-                src="https://placeholder-image-service.onrender.com/image/320x300?prompt=Wooden bed frame with slatted headboard, neutral bedding, and modern bedroom styling&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                alt="Théodore wooden bed frame with vertical slat headboard design" class="w-full h-64 object-cover">
-              <div class="absolute bottom-4 left-4 bg-black bg-opacity-75 text-white p-3 rounded">
-                <h4 class="font-bold">Théodore</h4>
-                <p class="text-lg font-bold">£699</p>
-              </div>
+          @foreach ($recommendationProducts as $recomprod)
+            <div class="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden shadow-lg group">
+              <a
+                href="{{ route('category.products.detail', ['id_category' => $recomprod->categorySub->category->id, 'id_sub_category' => $recomprod->categorySub->id, 'id_product' => $recomprod->id]) }}">
+                <div class="relative">
+                  <img src="{{ asset('storage/' . $recomprod->image[0]) }}" alt="{{ $recomprod->name }}"
+                    class="w-full h-64 object-cover group-hover:scale-105 transition-all duration-300">
+                  <div
+                    class="absolute bottom-4 left-4 text-white right-4 z-10 group-hover:-translate-y-2 transition-all duration-300">
+                    <div class="flex items-center justify-between text-sm">
+                      <div>
+                        <h4 class="font-semibold">{{ $recomprod->name }}</h4>
+                        <p class="font-light">{{ Str::substr($recomprod->description, 0, 38) }}</p>
+                        <p class="font-semibold text-sm">Rp. {{ number_format($recomprod->price, 0, ',', '.') }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute bg-gradient-to-t from-black/90 to-white/0 bottom-0 right-0 h-2/3 left-0"></div>
+                </div>
+              </a>
             </div>
-          </div>
-
-          <!-- Product 2 -->
-          <div class="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative">
-              <img
-                src="https://placeholder-image-service.onrender.com/image/320x300?prompt=Round wooden dining table with smooth finish and modern minimalist design&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                alt="Fanie round wooden dining table with contemporary design" class="w-full h-64 object-cover">
-              <div class="absolute bottom-4 left-4 bg-black bg-opacity-75 text-white p-3 rounded">
-                <h4 class="font-bold">Fanie</h4>
-                <p class="text-lg font-bold">£279</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 3 -->
-          <div class="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative">
-              <img
-                src="https://placeholder-image-service.onrender.com/image/320x300?prompt=Modern bathroom vanity with wooden cabinet, round mirror, and contemporary fixtures&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                alt="Jill bathroom vanity unit with wooden cabinet and circular mirror" class="w-full h-64 object-cover">
-              <div class="absolute bottom-4 left-4 bg-black bg-opacity-75 text-white p-3 rounded">
-                <h4 class="font-bold">Jill</h4>
-                <p class="text-lg font-bold">£299</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 4 -->
-          <div class="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative">
-              <img
-                src="https://placeholder-image-service.onrender.com/image/320x300?prompt=Modern sectional sofa in beige color with modular design and comfortable cushions&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                alt="Dario modular sectional sofa with neutral upholstery and contemporary styling"
-                class="w-full h-64 object-cover">
-              <div class="absolute bottom-4 left-4 bg-black bg-opacity-75 text-white p-3 rounded">
-                <h4 class="font-bold">Dario</h4>
-                <p class="text-lg font-bold">£2,399</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -197,101 +129,47 @@
 
   <!-- Right Now Section -->
   <section class="py-16 bg-white relative">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-0 left-0 w-96 h-96 bg-yellow-200 rounded-full transform -translate-x-48 -translate-y-48">
-      </div>
-      <div
-        class="absolute bottom-0 right-0 w-96 h-96 bg-orange-200 rounded-full transform translate-x-48 translate-y-48">
-      </div>
-    </div>
+
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="mb-8">
-        <h3 class="text-4xl font-bold text-gray-900 mb-2">Right now</h3>
-        <p class="text-gray-600">Discover our latest news</p>
+        <h3 class="text-4xl font-bold text-gray-900 mb-2">Our Category Products</h3>
+        <p class="text-gray-600">Best category for and have</p>
       </div>
 
       <!-- News Grid -->
       <div class="relative">
         <div class="news-carousel flex gap-6 overflow-x-hidden">
-          <!-- News Item 1 -->
-          <div class="flex-shrink-0 w-96 bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative h-64">
-              <img
-                src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Modern living room with beige sofa, wooden furniture, and contemporary interior design&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                alt="Contemporary living space featuring modern sofa and wooden furniture elements"
-                class="w-full h-full object-cover">
-              <div class="absolute bottom-4 left-4 text-white">
-                <h4 class="text-xl font-bold mb-2">The sofa defines your living space.</h4>
-                <p class="text-sm mb-2">Sofa is the heart of the home. Timeless design, European craftsmanship.
-                  Oeko-Tex®
-                  certified fabrics.</p>
-                <button class="text-white underline hover:no-underline">Discover</button>
+          @foreach ($categorySubDatas as $subCategoryData)
+            <div class="flex-shrink-0 w-96 bg-white rounded-lg overflow-hidden shadow-lg">
+              <div class="relative h-64">
+                @if ($subCategoryData->image && file_exists(public_path('storage/' . $subCategoryData->image)))
+                  <img src="{{ asset('storage/' . $subCategoryData->image) }}"
+                    alt="Contemporary living space featuring modern sofa and wooden furniture elements"
+                    class="w-full h-full object-cover">
+                @else
+                  <img src="{{ $subCategoryData->image }}"
+                    alt="Contemporary living space featuring modern sofa and wooden furniture elements"
+                    class="w-full h-full object-cover">
+                @endif
+                <div class="absolute bottom-4 left-4 text-white">
+                  <h4 class="text-xl font-bold mb-2">{{ $subCategoryData->name }}</h4>
+                  {{-- <p class="text-sm mb-2">Sofa is the heart of the home. Timeless design, European craftsmanship.
+                    Oeko-Tex®
+                    certified fabrics.</p> --}}
+                </div>
               </div>
             </div>
-          </div>
-
-          <!-- News Item 2 -->
-          <div class="flex-shrink-0 w-96 bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative h-64">
-              <img
-                src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Modern dining chairs with woven cane back design and wooden frame&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                alt="Contemporary dining chairs featuring woven cane details and natural wood construction"
-                class="w-full h-full object-cover">
-              <div class="absolute bottom-4 left-4 text-white">
-                <h4 class="text-xl font-bold">New arrivals - Chairs</h4>
-              </div>
-            </div>
-          </div>
-
-          <!-- News Item 3 -->
-          <div class="flex-shrink-0 w-96 bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative h-64">
-              <img
-                src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Organized home office workspace with wooden desk, storage solutions, and modern decor&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                alt="Well-organized home office with wooden furniture and contemporary storage solutions"
-                class="w-full h-full object-cover">
-              <div class="absolute bottom-4 left-4 text-white">
-                <h4 class="text-xl font-bold">Organised workspace, clear mind</h4>
-              </div>
-            </div>
-          </div>
-
-          <!-- News Item 4 -->
-          <div class="flex-shrink-0 w-96 bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative h-64">
-              <img
-                src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Modern bedroom with wooden bed frame, neutral bedding, and minimalist decor&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                alt="Serene bedroom featuring wooden bed frame with clean lines and neutral color palette"
-                class="w-full h-full object-cover">
-              <div class="absolute bottom-4 left-4 text-white">
-                <h4 class="text-xl font-bold">New arrivals - Bedroom</h4>
-              </div>
-            </div>
-          </div>
-
-          <!-- News Item 5 -->
-          <div class="flex-shrink-0 w-96 bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="relative h-64">
-              <img
-                src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Warm interior with golden lighting, wooden elements, and cozy atmosphere&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-                alt="Interior space with warm golden lighting and wooden architectural elements"
-                class="w-full h-full object-cover">
-              <div class="absolute bottom-4 left-4 text-white">
-                <h4 class="text-xl font-bold">Paris Design Week</h4>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
 
         <!-- Navigation Buttons -->
         <button
-          class="news-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
+          class="news-prev hover:cursor-pointer absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
           <i class="fas fa-chevron-left"></i>
         </button>
         <button
-          class="news-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
+          class="news-next hover:cursor-pointer absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
           <i class="fas fa-chevron-right"></i>
         </button>
       </div>
@@ -326,19 +204,110 @@
     </div>
   </section>
 
-  <!-- Instagram Section -->
+
+  {{-- Discover --}}
+  <section class="bg-cover relative bg-center bg-[url('../../public/img/bg-wood2.jpg')] min-h-screen">
+    <div class="absolute bg-gradient-to-b from-black/70 to-white/0 bottom-0 right-0 top-0 h-full left-0"></div>
+
+    <div class="py-8 md:py-12 lg:py-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <header class="mb-6 md:mb-8">
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">Right now</h3>
+          <p class="text-sm sm:text-base text-gray-300">Discover our latest news</p>
+        </header>
+
+        <!-- First Grid Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
+          <!-- Item 1 - Full width on mobile, 1 col on larger screens -->
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
+            <img
+              src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+              alt="Living space sofa"
+              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+            <div
+              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
+              The sofa defines your living space.
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
+            <img
+              src="https://images.unsplash.com/photo-1600494448850-6013c64ba722?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
+              alt="DARIO modular sofa"
+              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+            <div
+              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
+              The DARIO modular sofa is thoughtfully designed.
+            </div>
+          </div>
+
+          <!-- Item 3 - Spans 2 cols on tablet/desktop, full width on mobile -->
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group sm:col-span-2">
+            <img
+              src="https://images.unsplash.com/photo-1683731332610-23d833f5871f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+              alt="Favourite furniture pieces"
+              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+            <div
+              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
+              Rediscover your favourite pieces
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Grid Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <!-- Item 4 - Spans 2 cols on tablet/desktop, full width on mobile -->
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group sm:col-span-2">
+            <img
+              src="https://images.unsplash.com/photo-1525906336592-11c866dd1d4a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+              alt="FSC certified forest"
+              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+            <div
+              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
+              What does it mean when a forest is FSC® certified?
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
+            <img
+              src="https://images.unsplash.com/photo-1615506430606-b37113426217?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+              alt="New coffee tables"
+              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+            <div
+              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
+              New arrivals - Coffee tables
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
+            <img
+              src="https://images.unsplash.com/photo-1605885795793-097ffaee6b7c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
+              alt="New chairs" class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+            <div
+              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
+              New arrivals - Chairs
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bg-gradient-to-t from-black/70 to-white/0 bottom-0 right-0 top-0 h-full left-0"></div>
+  </section>
+
+  <!-- New Products Section -->
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center mb-8">
         <div class="flex-1">
           <div class="flex items-center mb-4">
-            <i class="fab fa-instagram text-2xl mr-3"></i>
             <div>
-              <h3 class="text-2xl font-bold text-gray-900">Get inspired by our Instagram community's</h3>
-              <p class="text-gray-600">interiors!</p>
+              <h3 class="text-2xl font-bold text-gray-900">Our Newest Products</h3>
+              <p class="text-gray-600">Check out our latest and high-quality products.!</p>
             </div>
           </div>
-          <p class="text-gray-600">Share your photos with <span class="font-bold">#tikamoon</span></p>
         </div>
 
         <div class="flex gap-2">
@@ -353,54 +322,33 @@
         </div>
       </div>
 
-      <!-- Instagram Grid -->
+      <!-- New Products Grid -->
       <div class="relative">
         <div class="instagram-carousel flex gap-4 overflow-x-hidden">
-          <div class="flex-shrink-0 w-64 h-64 rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/250x250?prompt=Cozy living room corner with armchair, side table, and warm home decor styling&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Cozy living room corner featuring comfortable seating and warm home styling"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-          </div>
-
-          <div class="flex-shrink-0 w-64 h-64 rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/250x250?prompt=Modern fireplace area with comfortable seating and contemporary home decor&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Modern fireplace area with comfortable furniture and contemporary interior design"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-          </div>
-
-          <div class="flex-shrink-0 w-64 h-64 rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/250x250?prompt=Elegant bedroom setup with neutral bedding, wooden furniture, and soft textures&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Elegant bedroom with neutral colors, wooden furniture, and comfortable bedding arrangement"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-          </div>
-
-          <div class="flex-shrink-0 w-64 h-64 rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/250x250?prompt=Modern sideboard with decorative objects, books, and contemporary home styling&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Contemporary sideboard with decorative accessories and modern home decor styling"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-          </div>
-
-          <div class="flex-shrink-0 w-64 h-64 rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/250x250?prompt=Stylish dining area with wooden table, modern chairs, and elegant table setting&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Stylish dining area featuring wooden table with contemporary chairs and elegant place settings"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-          </div>
-
-          <div class="flex-shrink-0 w-64 h-64 rounded-lg overflow-hidden">
-            <img
-              src="https://placeholder-image-service.onrender.com/image/250x250?prompt=Modern living room with sectional sofa, coffee table, and contemporary lighting&id=b6a1e093-d7b6-45de-b73e-11a84be2f980&customer_id=cus_T5erY4giU34L4o"
-              alt="Contemporary living room with sectional sofa and modern coffee table arrangement"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-          </div>
+          @foreach ($newProducts as $newProduct)
+            <div class="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden shadow-lg group">
+              <a
+                href="{{ route('category.products.detail', ['id_category' => $newProduct->categorySub->category->id, 'id_sub_category' => $newProduct->categorySub->id, 'id_product' => $newProduct->id]) }}">
+                <div class="relative">
+                  <img src="{{ asset('storage/' . $newProduct->image[0]) }}" alt="{{ $newProduct->name }}"
+                    class="w-full h-64 object-cover group-hover:scale-105 transition-all duration-300">
+                  <div
+                    class="absolute bottom-4 left-4 text-white right-4 z-10 group-hover:-translate-y-2 transition-all duration-300">
+                    <div class="flex items-center justify-between text-sm">
+                      <div>
+                        <h4 class="font-semibold">{{ $newProduct->name }}</h4>
+                        <p class="font-light">{{ Str::substr($newProduct->description, 0, 38) }}</p>
+                        <p class="font-semibold text-sm">Rp. {{ number_format($newProduct->price, 0, ',', '.') }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute bg-gradient-to-t from-black/90 to-white/0 bottom-0 right-0 h-2/3 left-0"></div>
+                </div>
+              </a>
+            </div>
+          @endforeach
         </div>
       </div>
     </div>
   </section>
-
-
 @endsection
