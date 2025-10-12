@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\Settings\ManageCategoryMenuController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\Settings\LocationController;
+use App\Http\Controllers\Admin\Settings\PhoneNumberController;
 use App\Http\Controllers\Admin\Settings\SocialMediaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
@@ -92,5 +93,12 @@ Route::prefix('app')
             Route::get('/social-media/{id}/edit', [SocialMediaController::class, 'edit'])->name('app.settings.social-media.edit');
             Route::put('/social-media/{id}/update', [SocialMediaController::class, 'update'])->name('app.settings.social-media.update');
             Route::delete('/social-media/{id}/destroy', [SocialMediaController::class, 'destroy'])->name('app.settings.social-media.destroy');
+
+            // Phone Number
+            Route::get('/phone-number', [PhoneNumberController::class, 'index'])->name('app.settings.phone-number.index');
+            Route::post('/phone-number', [PhoneNumberController::class, 'store'])->name('app.settings.phone-number.store');
+            Route::get('/phone-number/{id}/edit', [PhoneNumberController::class, 'edit'])->name('app.settings.phone-number.edit');
+            Route::put('/phone-number/{id}/update', [PhoneNumberController::class, 'update'])->name('app.settings.phone-number.update');
+            Route::delete('/phone-number/{id}/destroy', [PhoneNumberController::class, 'destroy'])->name('app.settings.phone-number.destroy');
         });
     });
