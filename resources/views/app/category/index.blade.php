@@ -154,7 +154,7 @@
 
   {{-- Modal Add/Edit --}}
   <div id="categoryModal"
-    class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+    class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-white rounded shadow-2xl max-w-md w-full transform transition-all" onclick="event.stopPropagation()">
       <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
         <h3 id="modalTitle" class="text-xl font-semibold text-gray-800">Add Sub Category</h3>
