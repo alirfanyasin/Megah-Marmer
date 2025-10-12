@@ -31,6 +31,25 @@ class LocationController extends Controller
             'image.max' => 'Maximum image size is 4MB',
         ]);
 
+        // Convert phone
+        $convertTo62 = function (?string $number) {
+            if (!$number) return null;
+            // Ambil hanya angka dan plus
+            $number = preg_replace('/[^0-9+]/', '', $number ?? '');
+            // +62 -> 62
+            if (strpos($number, '+62') === 0) {
+                $number = '62' . substr($number, 3);
+            }
+            // 0xxx -> 62xxx
+            elseif (strpos($number, '0') === 0) {
+                $number = '62' . substr($number, 1);
+            }
+            // Sisakan angka saja
+            return preg_replace('/[^0-9]/', '', $number);
+        };
+
+        $validated['phone'] = $convertTo62($validated['phone']);
+
         // Extract src from iframe if provided
         if ($request->google_map) {
             $validated['google_map'] = $this->extractSrcFromIframe($request->google_map);
@@ -50,11 +69,9 @@ class LocationController extends Controller
     {
         // Check if input contains iframe tag
         if (strpos($input, '<iframe') !== false) {
-            // Extract src attribute from iframe
             preg_match('/src="([^"]+)"/', $input, $matches);
             return $matches[1] ?? $input;
         }
-        // If it's already a URL, return as is
         return $input;
     }
 
@@ -96,6 +113,25 @@ class LocationController extends Controller
             'image.mimes' => 'Image format must be: JPG, JPEG, PNG, GIF, WEBP, AVIF',
             'image.max' => 'Maximum image size is 4MB',
         ]);
+
+        // Convert phone
+        $convertTo62 = function (?string $number) {
+            if (!$number) return null;
+            // Ambil hanya angka dan plus
+            $number = preg_replace('/[^0-9+]/', '', $number ?? '');
+            // +62 -> 62
+            if (strpos($number, '+62') === 0) {
+                $number = '62' . substr($number, 3);
+            }
+            // 0xxx -> 62xxx
+            elseif (strpos($number, '0') === 0) {
+                $number = '62' . substr($number, 1);
+            }
+            // Sisakan angka saja
+            return preg_replace('/[^0-9]/', '', $number);
+        };
+
+        $validated['phone'] = $convertTo62($validated['phone']);
 
         // Extract src from iframe if provided
         if ($request->google_map) {

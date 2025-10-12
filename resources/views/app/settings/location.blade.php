@@ -270,7 +270,7 @@
               class="w-full h-48 object-cover rounded border border-gray-300">
           </div>
         </div>
-        <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200 sticky bottom-0 bg-white">
+        <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200 sticky bottom-0 bg-gray-50">
           <button type="button" onclick="closeModal()"
             class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors cursor-pointer">
             Cancel
@@ -304,7 +304,7 @@
           </div>
         </div>
       </div>
-      <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200">
+      <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200 border-gray-50">
         <button onclick="closeDeleteModal()"
           class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors cursor-pointer">
           Cancel
