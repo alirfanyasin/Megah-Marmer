@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\CategorySubController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\Admin\Settings\ManageCategoryMenuController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -19,13 +22,53 @@ Route::get('/our-locations', [OurLocationController::class, 'index']);
 Route::middleware(['guest'])->group(function () {
     Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
     Route::post('/admin/login', [LoginController::class, 'authenticate'])->name('post.login');
+});
+Route::middleware(['auth'])->group(function () {
     Route::post('/admin/logout', [LoginController::class, 'logout'])->name('logout');
 });
-
 // Admin Routes
 Route::prefix('app')
     ->middleware(['auth'])
     ->group(function () {
-        Route::get('/dashboard', [DashboardController::class, 'index']);
-        Route::get('/products', [AdminProductController::class, 'index']);
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/products', [AdminProductController::class, 'index'])->name('products.index');
+
+        // Category Menu
+        Route::prefix('category')->group(function () {
+            Route::get('/{id}/sub-menu', [AdminCategoryController::class, 'index'])->name('category-sub-menu.index');
+            Route::post('/{id}/sub-menu/store', [CategorySubController::class, 'store'])->name('category-sub-menu.store');
+            Route::get('/{id}/sub-menu/edit', [CategorySubController::class, 'edit'])->name('category-sub-menu.edit');
+            Route::put('/{id}/sub-menu/update', [CategorySubController::class, 'update'])->name('category-sub-menu.update');
+            Route::delete('/{id}/sub-menu/destroy', [CategorySubController::class, 'destroy'])->name('category-sub-menu.destroy');
+        });
+
+        // Product Routes
+        Route::prefix('products')->group(function () {
+            Route::get('/category/{id_category}/{id_sub_category}/sub', [AdminProductController::class, 'index'])->name('app.products.index');
+            Route::get('/category/{id_category}/{id_sub_category}/sub/{id_product}/show', [AdminProductController::class, 'show'])->name('app.products.show');
+            Route::get('/category/{id_category}/{id_sub_category}/sub/create', [AdminProductController::class, 'create'])->name('app.products.create');
+            Route::post('/category/store/{id_sub_category}/sub', [AdminProductController::class, 'store'])->name('app.products.store');
+            Route::get('/category/{id_product}/edit/', [AdminProductController::class, 'edit'])->name('app.products.edit');
+            Route::put('/category/{id_product}/update', [AdminProductController::class, 'update'])->name('app.products.update');
+            Route::delete('/category/{id_product}/destroy', [AdminProductController::class, 'destroy'])->name('app.products.destroy');
+        });
+
+
+        // Settings Routes
+        Route::prefix('settings')->group(function () {
+            Route::get('/manage-category-menu', [ManageCategoryMenuController::class, 'index'])
+                ->name('settings.manage-category-menu');
+
+            Route::post('/manage-category-menu/store', [ManageCategoryMenuController::class, 'store'])
+                ->name('settings.manage-category-menu.store');
+
+            Route::get('/manage-category-menu/{id}/edit', [ManageCategoryMenuController::class, 'edit'])
+                ->name('settings.manage-category-menu.edit');
+
+            Route::put('/manage-category-menu/{id}/update', [ManageCategoryMenuController::class, 'update'])
+                ->name('settings.manage-category-menu.update');
+
+            Route::delete('/manage-category-menu/{id}/destroy', [ManageCategoryMenuController::class, 'destroy'])
+                ->name('settings.manage-category-menu.destroy');
+        });
     });

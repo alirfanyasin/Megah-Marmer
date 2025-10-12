@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->json('image');
-            $table->string('description');
+            $table->text('description');
             $table->json('description_point');
-            $table->decimal('price', 8, 2);
+            $table->unsignedBigInteger('price');
             $table->integer('discount')->default(0);
-            $table->string('height');
-            $table->string('width');
-            $table->string('depth');
+            $table->decimal('height', 8, 2)->nullable();
+            $table->decimal('width', 8, 2)->nullable();
+            $table->decimal('depth', 8, 2)->nullable();
             $table->foreignId('category_sub_id')->constrained('category_subs')->onDelete('cascade');
             $table->timestamps();
         });

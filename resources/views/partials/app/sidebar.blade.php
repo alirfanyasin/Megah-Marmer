@@ -8,8 +8,8 @@
 
   <nav class="p-4">
     <!-- Dashboard -->
-    <a href="#"
-      class="flex items-center px-4 py-3 bg-amber-600 text-white mb-2 hover:bg-amber-700 transition-colors rounded">
+    <a href="{{ route('dashboard') }}"
+      class="{{ request()->routeIs('dashboard') ? 'actived' : '' }} flex items-center px-4 py-3 transition-colors rounded">
       <iconify-icon icon="material-symbols-light:dashboard-outline-rounded" width="24" height="24"></iconify-icon>
       <span class="ml-3 font-medium">Dashboard</span>
     </a>
@@ -25,24 +25,28 @@
         <iconify-icon icon="ep:arrow-down-bold" width="12" height="12" id="category-icon"
           class="transition-transform"></iconify-icon>
       </button>
-      <div id="category-menu" class="hidden bg-gray-800 mt-1 rounded">
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Living Room</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Dining Room</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Bathroom</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Garden</span>
-        </a>
+      @php
+        $dataCategory = \App\Models\Category::all();
+        $categoryHasActive = false;
+        foreach ($dataCategory as $cat) {
+            if (request()->routeIs('category-sub-menu.index') && request()->route('id') == $cat->id) {
+                $categoryHasActive = true;
+                break;
+            }
+        }
+      @endphp
+      <div id="category-menu" class="{{ $categoryHasActive ? '' : 'hidden' }} bg-gray-800 mt-1 rounded">
+        @foreach ($dataCategory as $categoryMenu)
+          <a href="{{ route('category-sub-menu.index', ['id' => $categoryMenu->id]) }}"
+            class="{{ request()->routeIs('category-sub-menu.index') && request()->route('id') == $categoryMenu->id ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+            <span class="text-sm">{{ $categoryMenu->name }}</span>
+          </a>
+        @endforeach
       </div>
     </div>
 
     <!-- Products Menu -->
-    <div class="mb-2">
+    {{-- <div class="mb-2">
       <button onclick="toggleMenu('products')"
         class="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-800 transition-colors rounded">
         <div class="flex items-center">
@@ -59,17 +63,11 @@
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Tambah Produk</span>
         </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Kategori</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Stok</span>
-        </a>
       </div>
-    </div>
+    </div> --}}
 
     <!-- Orders Menu -->
-    <div class="mb-2">
+    {{-- <div class="mb-2">
       <button onclick="toggleMenu('orders')"
         class="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-800 transition-colors rounded">
         <div class="flex items-center">
@@ -93,36 +91,13 @@
           <span class="text-sm">Selesai</span>
         </a>
       </div>
-    </div>
+    </div> --}}
 
-    <!-- Customers Menu -->
-    <div class="mb-2">
-      <button onclick="toggleMenu('customers')"
-        class="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-800 transition-colors rounded">
-        <div class="flex items-center">
-          <iconify-icon icon="ph:users-three" width="24" height="24"></iconify-icon>
-          <span class="ml-3 font-medium">Pelanggan</span>
-        </div>
-        <iconify-icon icon="ep:arrow-down-bold" width="12" height="12" id="customers-icon"
-          class="transition-transform"></iconify-icon>
-      </button>
-      <div id="customers-menu" class="hidden bg-gray-800 mt-1 rounded">
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Semua Pelanggan</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Tambah Pelanggan</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Member VIP</span>
-        </a>
-      </div>
-    </div>
 
-    <!-- Analytics -->
+    <!-- Subscribers -->
     <a href="#" class="flex items-center px-4 py-3 hover:bg-gray-800 transition-colors mb-2 rounded">
-      <iconify-icon icon="flowbite:chart-outline" width="24" height="24"></iconify-icon>
-      <span class="ml-3 font-medium">Analitik</span>
+      <iconify-icon icon="ph:users-three" width="24" height="24"></iconify-icon>
+      <span class="ml-3 font-medium">Subscribers</span>
     </a>
 
     <!-- Settings Menu -->
@@ -131,26 +106,73 @@
         class="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-800 transition-colors rounded">
         <div class="flex items-center">
           <iconify-icon icon="gravity-ui:gear" width="24" height="24"></iconify-icon>
-          <span class="ml-3 font-medium">Pengaturan</span>
+          <span class="ml-3 font-medium">Settings</span>
         </div>
         <iconify-icon icon="ep:arrow-down-bold" width="12" height="12" id="settings-icon"
           class="transition-transform"></iconify-icon>
       </button>
-      <div id="settings-menu" class="hidden bg-gray-800 mt-1 rounded">
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Profil Toko</span>
+      @php
+        $settingsHasActive = request()->routeIs('settings.manage-category-menu');
+      @endphp
+      <div id="settings-menu" class="{{ $settingsHasActive ? '' : 'hidden' }} bg-gray-800 mt-1 rounded">
+        <a href="{{ route('settings.manage-category-menu') }}"
+          class="{{ request()->routeIs('settings.manage-category-menu') ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+          <span class="text-sm">Manage Category Menu</span>
         </a>
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Pembayaran</span>
+          <span class="text-sm">Location</span>
         </a>
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Pengiriman</span>
+          <span class="text-sm">Social Media</span>
         </a>
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+        {{-- <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Notifikasi</span>
-        </a>
+        </a> --}}
       </div>
     </div>
   </nav>
 </aside>
 <!-- End Sidebar -->
+
+
+<style>
+  .actived {
+    color: white;
+    background-color: #d97706;
+  }
+
+  .actived:hover {
+    background-color: #b45309;
+  }
+</style>
+
+<script>
+  // Auto-expand menus on page load if they have active items
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check each menu for active items
+    const menus = ['category', 'products', 'orders', 'settings'];
+
+    menus.forEach(menuId => {
+      const menu = document.getElementById(menuId + '-menu');
+      const icon = document.getElementById(menuId + '-icon');
+
+      if (menu && !menu.classList.contains('hidden')) {
+        // If menu is not hidden (has active item), rotate the icon
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  function toggleMenu(menuId) {
+    const menu = document.getElementById(menuId + '-menu');
+    const icon = document.getElementById(menuId + '-icon');
+
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      menu.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+</script>

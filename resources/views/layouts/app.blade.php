@@ -16,7 +16,7 @@
     @include('partials.app.sidebar')
 
     <!-- Overlay for mobile -->
-    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden" onclick="toggleSidebar()">
+    <div id="overlay" class="fixed inset-0 bg-black/50 bg-opacity-50 z-40 hidden lg:hidden" onclick="toggleSidebar()">
     </div>
 
     <!-- Main Content -->
@@ -32,19 +32,6 @@
   </div>
 
   <script>
-    function toggleMenu(menuId) {
-      const menu = document.getElementById(menuId + '-menu');
-      const icon = document.getElementById(menuId + '-icon');
-
-      if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
-      } else {
-        menu.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
-      }
-    }
-
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
