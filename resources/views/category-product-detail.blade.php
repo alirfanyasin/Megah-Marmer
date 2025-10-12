@@ -127,14 +127,17 @@
 
         {{-- Action Buttons --}}
         <div class="gap-3">
-          <button
-            class="flex-1 bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-            </svg>
-            Order Now
-          </button>
+          <a href="https://wa.me/{{ $phoneNumber->phone_number }}?text=Halo%20saya%20tertarik%20dengan%20produk%20Anda"
+            target="_blank" class="inline-block">
+            <div
+              class="transition flex items-center justify-center gap-2 bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              Order Now
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -233,7 +236,6 @@
                       <div>
                         <h4 class="font-semibold">{{ $recomprod->name }}</h4>
                         <p class="font-light">{{ Str::substr($recomprod->description, 0, 28) }}</p>
-
                         <p class="font-semibold text-sm">Rp. {{ number_format($recomprod->price, 0, ',', '.') }}</p>
                       </div>
                     </div>
