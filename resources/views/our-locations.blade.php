@@ -40,7 +40,7 @@
                 Product in store
               </button>
               @if ($location->phone)
-                <a href="https://wa.me/{{ $location->phone }}?text=Halo%20"
+                <a href="https://wa.me/{{ $location->phone }}?text=Halo%20" target="_blank"
                   class="bg-gray-200 text-gray-700 p-3 flex hover:cursor-pointer items-center justify-center rounded-md hover:bg-gray-300 transition">
                   <iconify-icon icon="mdi-light:phone" width="24" height="24"></iconify-icon>
                 </a>
