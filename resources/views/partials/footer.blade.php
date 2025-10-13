@@ -58,12 +58,18 @@
     <div class="mb-8">
       <h5 class="font-bold mb-4">Social Media</h5>
       <div class="flex flex-wrap gap-4">
-        <div class="bg-white w-10 h-10 flex justify-center items-center rounded">
-          <a href="" class="text-black">
-            <iconify-icon icon="gg:facebook" width="30" height="30"></iconify-icon>
-          </a>
-        </div>
-        <div class="bg-white w-10 h-10 flex justify-center items-center rounded">
+        @php
+          $socialMedia = \App\Models\SocialMedia::all();
+        @endphp
+
+        @foreach ($socialMedia as $sm)
+          <div class="bg-white w-10 h-10 flex justify-center items-center rounded">
+            <a href="{{ $sm->link }}" class="text-black" target="_blank">
+              <iconify-icon icon="{{ $sm->icon }}" width="30" height="30"></iconify-icon>
+            </a>
+          </div>
+        @endforeach
+        {{-- <div class="bg-white w-10 h-10 flex justify-center items-center rounded">
           <a href="" class="text-black">
             <iconify-icon icon="ri:instagram-fill" width="30" height="30"></iconify-icon>
           </a>
@@ -77,7 +83,7 @@
           <a href="" class="text-black">
             <iconify-icon icon="ri:whatsapp-fill" width="30" height="30"></iconify-icon>
           </a>
-        </div>
+        </div> --}}
 
       </div>
     </div>

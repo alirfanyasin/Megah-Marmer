@@ -39,13 +39,12 @@
                 class="text-gray-600 cursor-pointer hover:text-amber-600 transition-colors"></iconify-icon>
             </a>
           @endforeach
-
         </div>
       </div>
 
       <!-- Mobile menu button -->
       <div class="md:hidden">
-        <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-orange-500 transition-colors">
+        <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-orange-500 transition-colors p-2">
           <i id="hamburger" class="fas fa-bars text-xl"></i>
           <i id="close-btn" class="fas fa-times text-xl hidden"></i>
         </button>
@@ -422,85 +421,186 @@
         @foreach ($categoriesMenu as $categoryMenu)
           <div class="mobile-nav-item">
             <button onclick="toggleMobileDropdown('category-{{ $categoryMenu->id }}')"
-              class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
+              class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50 rounded-lg">
               <span>{{ $categoryMenu->name }}</span>
               <i id="category-{{ $categoryMenu->id }}-icon"
-                class="fas fa-chevron-down text-sm transition-transform"></i>
+                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
             </button>
             <div id="category-{{ $categoryMenu->id }}-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
               @foreach ($categoryMenu->categorySub as $categorySubMenu)
-                <a href="/category" class="block px-3 py-2 text-sm text-gray-600">{{ $categorySubMenu->name }}</a>
+                <a href="{{ route('category.products', ['id_category' => $categoryMenu->id, 'id_sub_category' => $categorySubMenu->id]) }}"
+                  class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">
+                  {{ $categorySubMenu->name }}
+                </a>
               @endforeach
             </div>
           </div>
         @endforeach
 
-        <!-- Our Solid Stone -->
+        <!-- Our Solid Stone Mobile -->
         <div class="mobile-nav-item">
           <button onclick="toggleMobileDropdown('solid-stone')"
-            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
+            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50 rounded-lg">
             <span>Our Solid Stone</span>
-            <i id="solid-stone-icon" class="fas fa-chevron-down text-sm transition-transform"></i>
+            <i id="solid-stone-icon" class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
           </button>
           <div id="solid-stone-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600 font-medium">Marble</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600 font-medium">Onyx</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Granite Local</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Petrified Wood</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">River Stone</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Lava Stone</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Lime Stone</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Ziolit Stone</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600 font-medium">Terrazzo</a>
+            <div class="py-1">
+              <h4 class="px-3 py-2 text-xs font-semibold text-gray-900 uppercase">Marble</h4>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">All
+                Marble</a>
+            </div>
+            <div class="py-1">
+              <h4 class="px-3 py-2 text-xs font-semibold text-gray-900 uppercase">Onyx</h4>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">All
+                Onyx</a>
+            </div>
+            <div class="py-1">
+              <h4 class="px-3 py-2 text-xs font-semibold text-gray-900 uppercase">Other Stones</h4>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Granite
+                Local</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Petrified
+                Wood</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">River
+                Stone</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Lava
+                Stone</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Lime
+                Stone</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Ziolit
+                Stone</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Terrazzo</a>
+            </div>
           </div>
         </div>
 
-        <!-- Our Finishing -->
+        <!-- Our Finishing Mobile -->
         <div class="mobile-nav-item">
           <button onclick="toggleMobileDropdown('finishing')"
-            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
+            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50 rounded-lg">
             <span>Our Finishing</span>
-            <i id="finishing-icon" class="fas fa-chevron-down text-sm transition-transform"></i>
+            <i id="finishing-icon" class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
           </button>
           <div id="finishing-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Polish</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Doff Or Matte</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Acid</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Hammered</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Burning</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Texture</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Groove</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Stripe</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Combination</a>
+            <a href="#"
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Polish</a>
+            <a href="#"
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Doff
+              Or Matte</a>
+            <a href="#"
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Acid</a>
+            <a href="#"
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Hammered</a>
+            <a href="#"
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Burning</a>
+            <a href="#"
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Texture</a>
+            <a href="#"
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Groove</a>
+            <a href="#"
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Stripe</a>
+            <a href="#"
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Combination</a>
           </div>
         </div>
 
-        <!-- About Us -->
+        <!-- About Us Mobile -->
         <div class="mobile-nav-item">
           <button onclick="toggleMobileDropdown('about-us')"
-            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50">
+            class="flex justify-between items-center w-full px-3 py-2 text-gray-900 hover:bg-gray-50 rounded-lg">
             <span>About Us</span>
-            <i id="about-us-icon" class="fas fa-chevron-down text-sm transition-transform"></i>
+            <i id="about-us-icon" class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
           </button>
           <div id="about-us-dropdown" class="mobile-dropdown pl-6 bg-gray-50">
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Our Story</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Our Commitments</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Our Team</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Stone Storage</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Our Factory</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Warehouse</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600 font-medium">Our Production</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600 font-medium">Packaging</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Stuffing Area</a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-600">Contact Us</a>
+            <div class="py-1">
+              <h4 class="px-3 py-2 text-xs font-semibold text-gray-900 uppercase">Company</h4>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Our
+                Story</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Our
+                Commitments</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Our
+                Team</a>
+            </div>
+            <div class="py-1">
+              <h4 class="px-3 py-2 text-xs font-semibold text-gray-900 uppercase">Facilities</h4>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Stone
+                Storage</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Our
+                Factory</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Warehouse</a>
+            </div>
+            <div class="py-1">
+              <h4 class="px-3 py-2 text-xs font-semibold text-gray-900 uppercase">Production</h4>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Sawing
+                Machine</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Production
+                Process</a>
+            </div>
+            <div class="py-1">
+              <h4 class="px-3 py-2 text-xs font-semibold text-gray-900 uppercase">Packaging</h4>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Standard</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Moulded
+                Foam</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Wood</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Plywood</a>
+            </div>
+            <div class="py-1 border-t border-gray-200 mt-2">
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Stuffing
+                Area</a>
+              <a href="#"
+                class="block px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-white rounded transition-colors">Contact
+                Us</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location & Social Media - Mobile -->
+        <div class="border-t border-gray-200 pt-4 mt-4">
+          <a href="/our-locations"
+            class="flex items-center px-3 py-2 text-sm text-gray-600 hover:text-orange-500 hover:bg-gray-50 rounded-lg transition-colors">
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            Our Locations
+          </a>
+
+          @php
+            $socialMedias = \App\Models\SocialMedia::all();
+          @endphp
+          <div class="flex items-center space-x-4 px-3 py-3">
+            <span class="text-xs text-gray-500">Follow us:</span>
+            @foreach ($socialMedias as $socialMedia)
+              <a href="{{ $socialMedia->link }}" target="_blank">
+                <iconify-icon icon="{{ $socialMedia->icon }}" width="20" height="20"
+                  class="text-gray-600 hover:text-orange-500 transition-colors"></iconify-icon>
+              </a>
+            @endforeach
           </div>
         </div>
       </div>
     </div>
   </div>
 </header>
-
-
 
 <style>
   .dropdown-menu {
@@ -560,11 +660,22 @@
     .mobile-dropdown {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease;
+      transition: max-height 0.3s ease-in-out;
     }
 
     .mobile-dropdown.active {
-      max-height: 800px;
+      max-height: 1000px;
+    }
+
+    /* Ensure icons don't overlap with text */
+    #hamburger,
+    #close-btn {
+      display: block;
+    }
+
+    #hamburger.hidden,
+    #close-btn.hidden {
+      display: none;
     }
   }
 </style>
@@ -598,18 +709,38 @@
     const dropdown = document.getElementById(menuId + '-dropdown');
     const icon = document.getElementById(menuId + '-icon');
 
-    dropdown.classList.toggle('active');
-    icon.classList.toggle('rotate-180');
+    if (dropdown && icon) {
+      dropdown.classList.toggle('active');
+      icon.classList.toggle('rotate-180');
+    }
   }
 
+  // Close mobile menu when clicking outside
   document.addEventListener('click', function(event) {
     const mobileMenu = document.getElementById('mobile-menu');
-    const menuButton = event.target.closest('button');
+    const menuButton = event.target.closest('button[onclick="toggleMobileMenu()"]');
+    const clickInsideMenu = mobileMenu && mobileMenu.contains(event.target);
 
-    if (!mobileMenu.contains(event.target) && !menuButton) {
+    // If click is outside menu and not on the menu button, close the menu
+    if (!clickInsideMenu && !menuButton && mobileMenu && !mobileMenu.classList.contains('hidden')) {
       mobileMenu.classList.add('hidden');
       document.getElementById('hamburger').classList.remove('hidden');
       document.getElementById('close-btn').classList.add('hidden');
+    }
+  });
+
+  // Prevent menu close when clicking inside dropdowns
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', function(event) {
+        // Allow clicks on links to navigate
+        if (event.target.tagName === 'A') {
+          return;
+        }
+        // Prevent other clicks from bubbling up
+        event.stopPropagation();
+      });
     }
   });
 </script>
