@@ -8,8 +8,8 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\Settings\LocationController;
 use App\Http\Controllers\Admin\Settings\PhoneNumberController;
 use App\Http\Controllers\Admin\Settings\SocialMediaController;
+use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurLocationController;
 use App\Http\Controllers\CategoryProductController;
@@ -22,6 +22,8 @@ Route::get('/category/sub/{id_category}/products', [CategorySubProductController
 Route::get('/category/{id_category}/{id_sub_category}/products', [CategoryProductController::class, 'index'])->name('category.products');
 Route::get('/category/{id_category}/{id_sub_category}/products/{id_product}/show', [CategoryProductController::class, 'show'])->name('category.products.detail');
 Route::get('/our-locations', [OurLocationController::class, 'index']);
+Route::post('/subscribe', [SubscribeController::class, 'store'])->name('app.subscribe.store');
+
 
 // Admin Login Routes
 Route::middleware(['guest'])->group(function () {
@@ -59,6 +61,10 @@ Route::prefix('app')
             Route::put('/category/{id_product}/update', [AdminProductController::class, 'update'])->name('app.products.update');
             Route::delete('/category/{id_product}/destroy', [AdminProductController::class, 'destroy'])->name('app.products.destroy');
         });
+
+        // Subscribe
+        Route::get('/subscribe', [SubscribeController::class, 'index'])->name('app.subscribe.index');
+        Route::get('/subscribe/{id}/destroy', [SubscribeController::class, 'destroy'])->name('app.destroy');
 
 
         // Settings Routes

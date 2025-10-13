@@ -1,4 +1,5 @@
 <!-- Newsletter Section -->
+
 <section class="py-16 bg-gray-50">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h3 class="text-3xl font-bold text-gray-900 mb-4">Subscribe to our newsletter</h3>
@@ -6,13 +7,26 @@
       or more</p>
     <p class="text-gray-600 mb-8">and receive our offers and news.</p>
 
-    <div class="flex max-w-xl mx-auto">
-      <input type="email" placeholder="Your e-mail address"
-        class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-amber-600 focus:border-amber-600">
-      <button class="bg-black text-white px-8 py-3 rounded-r-lg hover:bg-gray-800 transition duration-300">
-        Subscribe
-      </button>
-    </div>
+    @if (session('success'))
+      <div class="bg-green-100 text-green-700 p-3 rounded max-w-xl mx-auto mb-4 border border-green-300">
+        {{ session('success') }}
+      </div>
+    @endif
+
+    <form action="{{ route('app.subscribe.store') }}" method="POST">
+      @csrf
+      <div class="flex max-w-xl mx-auto">
+        <input type="email" name="email" placeholder="Your e-mail address"
+          class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-amber-600 focus:border-amber-600">
+        @error('email')
+          <small class="text-red-500 font-light">{{ $message }}</small>
+        @enderror
+        <button type="submit"
+          class="bg-black text-white hover:cursor-pointer px-8 py-3 rounded-r-lg hover:bg-gray-800 transition duration-300">
+          Subscribe
+        </button>
+      </div>
+    </form>
   </div>
 </section>
 
