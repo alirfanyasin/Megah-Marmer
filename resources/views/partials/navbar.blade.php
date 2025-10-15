@@ -20,6 +20,34 @@
         </div>
       </div>
 
+
+      {{-- <div x-data="liveSearch()" class="relative w-full">
+        <input type="text" x-model="q" @input.debounce.300ms="fetchResults" @keydown.arrow-down.prevent="move(1)"
+          @keydown.arrow-up.prevent="move(-1)" @keydown.enter.prevent="go()" @focus="open = true"
+          @click.outside="open = false" placeholder="Search for a product or service..."
+          class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200" />
+
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <i class="fas fa-search text-gray-400"></i>
+        </div>
+
+        <!-- Dropdown Results -->
+        <template x-if="open && results.length">
+          <ul class="absolute z-50 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+            <template x-for="(item, i) in results" :key="item.id">
+              <li>
+                <a :href="item.url" @mouseenter="highlight(i)" :class="i === index ? 'bg-orange-50' : 'bg-white'"
+                  class="block px-4 py-2 hover:bg-orange-50">
+                  <div class="font-medium" x-text="item.name"></div>
+                  <div class="text-xs text-gray-500" x-text="item.address"></div>
+                </a>
+              </li>
+            </template>
+            <li class="px-4 py-2 text-xs text-gray-500 border-t">Press ↑/↓ to navigate • Enter to open</li>
+          </ul>
+        </template>
+      </div> --}}
+
       <!-- Right Navigation -->
       <div class="hidden md:flex items-center space-x-6">
         <div class="flex items-center text-sm text-gray-600 hover:text-amber-600 transition-colors cursor-pointer">
@@ -743,4 +771,62 @@
       });
     }
   });
+</script>
+
+
+<script>
+  function liveSearch() {
+    return {
+      q: '',
+      results: [],
+      index: -1,
+      open: false,
+      controller: null,
+
+      async fetchResults() {
+        this.index = -1;
+        if (!this.q.trim()) {
+          this.results = [];
+          return;
+        }
+
+        // Abort request sebelumnya biar responsif
+        if (this.controller) this.controller.abort();
+        this.controller = new AbortController();
+
+        try {
+          const res = await fetch(`{{ route('search') }}?q=${encodeURIComponent(this.q)}`, {
+            headers: {
+              'Accept': 'application/json'
+            },
+            signal: this.controller.signal
+          });
+          if (!res.ok) throw new Error('Network error');
+          this.results = await res.json();
+          this.open = true;
+        } catch (e) {
+          if (e.name !== 'AbortError') console.error(e);
+        }
+      },
+
+      move(step) {
+        if (!this.results.length) return;
+        this.index = (this.index + step + this.results.length) % this.results.length;
+        this.open = true;
+      },
+
+      highlight(i) {
+        this.index = i;
+      },
+
+      go() {
+        if (this.index >= 0 && this.results[this.index]) {
+          window.location = this.results[this.index].url;
+        } else if (this.q.trim()) {
+          // opsional: arahkan ke halaman hasil penuh
+          window.location = `{{ url('/search') }}?q=${encodeURIComponent(this.q)}`;
+        }
+      }
+    }
+  }
 </script>

@@ -27,3 +27,11 @@
         @apply bg-gray-200 text-gray-700 px-6 py-2 rounded hover:bg-gray-300 transition duration-300;
     }
 }
+
+
+body {
+  user-select: none;
+  -webkit-user-select: none; /* untuk Safari dan Chrome */
+  -moz-user-select: none;    /* untuk Firefox */
+  -ms-user-select: none;     /* untuk Internet Explorer */
+}

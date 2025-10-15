@@ -216,9 +216,7 @@
           <p class="text-sm sm:text-base text-gray-300">Discover our latest news</p>
         </header>
 
-        <!-- First Grid Row -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
-          <!-- Item 1 - Full width on mobile, 1 col on larger screens -->
           <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
             <img
               src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
@@ -230,7 +228,6 @@
             </div>
           </div>
 
-          <!-- Item 2 -->
           <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
             <img
               src="https://images.unsplash.com/photo-1600494448850-6013c64ba722?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
@@ -242,7 +239,6 @@
             </div>
           </div>
 
-          <!-- Item 3 - Spans 2 cols on tablet/desktop, full width on mobile -->
           <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group sm:col-span-2">
             <img
               src="https://images.unsplash.com/photo-1683731332610-23d833f5871f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
@@ -255,9 +251,7 @@
           </div>
         </div>
 
-        <!-- Second Grid Row -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <!-- Item 4 - Spans 2 cols on tablet/desktop, full width on mobile -->
           <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group sm:col-span-2">
             <img
               src="https://images.unsplash.com/photo-1525906336592-11c866dd1d4a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
@@ -269,7 +263,6 @@
             </div>
           </div>
 
-          <!-- Item 5 -->
           <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
             <img
               src="https://images.unsplash.com/photo-1615506430606-b37113426217?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
@@ -281,7 +274,6 @@
             </div>
           </div>
 
-          <!-- Item 6 -->
           <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
             <img
               src="https://images.unsplash.com/photo-1605885795793-097ffaee6b7c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"

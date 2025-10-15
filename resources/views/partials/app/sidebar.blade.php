@@ -66,18 +66,28 @@
       </div>
     </div> --}}
 
-    <!-- Orders Menu -->
-    {{-- <div class="mb-2">
-      <button onclick="toggleMenu('orders')"
+
+
+
+    <!-- Subscribers -->
+    <a href="{{ route('app.subscribe.index') }}"
+      class="{{ request()->routeIs('app.subscribe.index') ? 'actived' : '' }} flex items-center px-4 py-3 hover:bg-gray-800 transition-colors mb-2 rounded">
+      <iconify-icon icon="ph:users-three" width="24" height="24"></iconify-icon>
+      <span class="ml-3 font-medium">Subscribers</span>
+    </a>
+
+    <!-- About Us Menu -->
+    <div class="mb-2">
+      <button onclick="toggleMenu('about-us')"
         class="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-800 transition-colors rounded">
         <div class="flex items-center">
-          <iconify-icon icon="mdi:cart-outline" width="24" height="24"></iconify-icon>
-          <span class="ml-3 font-medium">Pesanan</span>
+          <iconify-icon icon="ix:about" width="24" height="24"></iconify-icon>
+          <span class="ml-3 font-medium">About Us</span>
         </div>
         <iconify-icon icon="ep:arrow-down-bold" width="12" height="12" id="orders-icon"
           class="transition-transform"></iconify-icon>
       </button>
-      <div id="orders-menu" class="hidden bg-gray-800 mt-1 rounded">
+      <div id="about-us-menu" class="hidden bg-gray-800 mt-1 rounded">
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Semua Pesanan</span>
         </a>
@@ -91,15 +101,7 @@
           <span class="text-sm">Selesai</span>
         </a>
       </div>
-    </div> --}}
-
-
-    <!-- Subscribers -->
-    <a href="{{ route('app.subscribe.index') }}"
-      class="{{ request()->routeIs('app.subscribe.index') ? 'actived' : '' }} flex items-center px-4 py-3 hover:bg-gray-800 transition-colors mb-2 rounded">
-      <iconify-icon icon="ph:users-three" width="24" height="24"></iconify-icon>
-      <span class="ml-3 font-medium">Subscribers</span>
-    </a>
+    </div>
 
     <!-- Settings Menu -->
     <div class="mb-2">
@@ -142,6 +144,10 @@
           class="{{ $settingsHasActivePhoneNumber ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Phone Number</span>
         </a>
+        <a href="{{ route('app.settings.phone-number.index') }}"
+          class="{{ $settingsHasActivePhoneNumber ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+          <span class="text-sm">Home Image</span>
+        </a>
       </div>
     </div>
   </nav>
@@ -164,7 +170,7 @@
   // Auto-expand menus on page load if they have active items
   document.addEventListener('DOMContentLoaded', function() {
     // Check each menu for active items
-    const menus = ['category', 'products', 'orders', 'settings'];
+    const menus = ['category', 'products', 'orders', 'settings', 'about-us'];
 
     menus.forEach(menuId => {
       const menu = document.getElementById(menuId + '-menu');
