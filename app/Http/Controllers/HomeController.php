@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\CategoryProduct;
 use App\Models\CategorySub;
+use App\Models\HomeImage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,6 +20,8 @@ class HomeController extends Controller
         $categorySubDatas = CategorySub::all();
 
         $newProducts = CategoryProduct::latest()->get();
-        return view('index', compact('categories', 'recommendationProducts', 'categorySubDatas', 'newProducts'));
+
+        $homeImageData = HomeImage::first();
+        return view('index', compact('categories', 'recommendationProducts', 'categorySubDatas', 'newProducts', 'homeImageData'));
     }
 }

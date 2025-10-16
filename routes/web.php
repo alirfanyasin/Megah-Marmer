@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\Settings\ManageCategoryMenuController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\Settings\HomeImageController;
 use App\Http\Controllers\Admin\Settings\LocationController;
 use App\Http\Controllers\Admin\Settings\PhoneNumberController;
 use App\Http\Controllers\Admin\Settings\SocialMediaController;
@@ -109,5 +110,11 @@ Route::prefix('app')
             Route::get('/phone-number/{id}/edit', [PhoneNumberController::class, 'edit'])->name('app.settings.phone-number.edit');
             Route::put('/phone-number/{id}/update', [PhoneNumberController::class, 'update'])->name('app.settings.phone-number.update');
             Route::delete('/phone-number/{id}/destroy', [PhoneNumberController::class, 'destroy'])->name('app.settings.phone-number.destroy');
+
+            // Home Image
+            Route::get('/home-image', [HomeImageController::class, 'index'])->name('app.settings.home-image.index');
+            Route::get('/home-image/{id}/edit', [HomeImageController::class, 'edit'])->name('app.settings.home-image.edit');
+            Route::put('/home-image/{id}/update', [HomeImageController::class, 'update'])->name('app.settings.home-image.update');
+            // Route::delete('/home-image/{id}/destroy', [HomeImageController::class, 'destroy'])->name('app.settings.home-image.destroy');
         });
     });

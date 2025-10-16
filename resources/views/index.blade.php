@@ -3,12 +3,12 @@
 @section('content')
 
   <!-- Hero Section -->
-  <section class="relative min-h-screen bg-cover bg-center bg-[url('../../public/img/bg-hero.jpg')]">
+  <section class="relative min-h-screen bg-cover bg-center bg-[url('../../public/storage/{{ $homeImageData->hero_img }}')]">
     <div class="absolute inset-0 bg-black/50"></div>
     <div class="relative z-10 flex items-center justify-center min-h-screen">
       <div class="text-center text-white">
-        <h2 class="text-5xl md:text-6xl font-bold mb-4">10% off the entire website*</h2>
-        <p class="text-xl md:text-2xl mb-8">with code <span class="font-bold">SITE259</span></p>
+        <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
+        <p class="text-xl md:text-2xl mb-8">{{ $homeImageData->description }}</p>
         <a href="#our-world-selection"
           class="bg-black text-white px-8 py-3 rounded hover:bg-gray-800 transition duration-300">
           Shop now

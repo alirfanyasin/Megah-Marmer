@@ -119,12 +119,15 @@
         $settingsHasActiveLocation = request()->routeIs('app.settings.location.index');
         $settingsHasActiveSocialMedia = request()->routeIs('app.settings.social-media.index');
         $settingsHasActivePhoneNumber = request()->routeIs('app.settings.phone-number.index');
+        $settingsHasActiveHomeImage = request()->routeIs('app.settings.home-image.index');
+
 
         $isSettingsMenuActive =
             $settingsHasActiveCategory ||
             $settingsHasActiveLocation ||
             $settingsHasActiveSocialMedia ||
-            $settingsHasActivePhoneNumber;
+            $settingsHasActivePhoneNumber ||
+            $settingsHasActiveHomeImage;
       @endphp
 
       <div id="settings-menu" class="{{ $isSettingsMenuActive ? '' : 'hidden' }} bg-gray-800 mt-1 rounded">
@@ -144,8 +147,8 @@
           class="{{ $settingsHasActivePhoneNumber ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Phone Number</span>
         </a>
-        <a href="{{ route('app.settings.phone-number.index') }}"
-          class="{{ $settingsHasActivePhoneNumber ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+        <a href="{{ route('app.settings.home-image.index') }}"
+          class="{{ $settingsHasActiveHomeImage ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Home Image</span>
         </a>
       </div>
