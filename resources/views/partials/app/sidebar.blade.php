@@ -68,7 +68,6 @@
 
 
 
-
     <!-- Subscribers -->
     <a href="{{ route('app.subscribe.index') }}"
       class="{{ request()->routeIs('app.subscribe.index') ? 'actived' : '' }} flex items-center px-4 py-3 hover:bg-gray-800 transition-colors mb-2 rounded">
@@ -87,15 +86,20 @@
         <iconify-icon icon="ep:arrow-down-bold" width="12" height="12" id="orders-icon"
           class="transition-transform"></iconify-icon>
       </button>
-      <div id="about-us-menu" class="hidden bg-gray-800 mt-1 rounded">
-        <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Semua Pesanan</span>
+
+      @php
+        $aboutHasActiveOurStory = request()->routeIs('app.about.our-story.index');
+        $isAboutMenuActive = $aboutHasActiveOurStory;
+      @endphp
+      <div id="about-us-menu" class="{{ $isAboutMenuActive ? '' : 'hidden' }} bg-gray-800 mt-1 rounded">
+        <a href="{{ route('app.about.our-story.index') }}"  class="{{ $aboutHasActiveOurStory ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+          <span class="text-sm">Our Story</span>
         </a>
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Pending</span>
+          <span class="text-sm">Our Commitments</span>
         </a>
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
-          <span class="text-sm">Diproses</span>
+          <span class="text-sm">Our Team</span>
         </a>
         <a href="#" class="flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Selesai</span>

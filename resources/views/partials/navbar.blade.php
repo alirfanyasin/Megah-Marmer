@@ -309,7 +309,7 @@
                     <div>
                       <ul class="space-y-2 text-sm">
                         <li class="submenu-item" onmouseenter="showImage('about', 'story')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Our
+                          <a href="{{ route('about.our-story.index') }}" class="text-gray-600 font-light text-lg hover:text-orange-500">Our
                             Story</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'commitments')">

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\OurStoryController;
+use App\Http\Controllers\Admin\About\OurStoryController as AdminOurStoryController;
+
 use App\Http\Controllers\Admin\CategorySubController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
@@ -27,6 +30,15 @@ Route::get('/our-locations', [OurLocationController::class, 'index'])->name('our
 Route::post('/subscribe', [SubscribeController::class, 'store'])->name('app.subscribe.store');
 
 Route::get('/search', [SearchController::class, 'index'])->name('search'); // JSON
+
+
+// About us
+Route::prefix('about')->group(function () {
+    Route::get('/our-story', [OurStoryController::class, 'index'])->name('about.our-story.index');
+    Route::post('/our-story', [OurStoryController::class, 'store'])->name('about.our-story.store');
+    Route::get('/our-story/{}', [OurStoryController::class, 'store'])->name('about.our-story.store');
+    Route::post('/our-story', [OurStoryController::class, 'store'])->name('about.our-story.store');
+});
 
 
 // Admin Login Routes
@@ -116,5 +128,15 @@ Route::prefix('app')
             Route::get('/home-image/{id}/edit', [HomeImageController::class, 'edit'])->name('app.settings.home-image.edit');
             Route::put('/home-image/{id}/update', [HomeImageController::class, 'update'])->name('app.settings.home-image.update');
             // Route::delete('/home-image/{id}/destroy', [HomeImageController::class, 'destroy'])->name('app.settings.home-image.destroy');
+        });
+
+
+        // About us for admin
+        Route::prefix('about')->group(function () {
+            Route::get('/our-story', [AdminOurStoryController::class, 'index'])->name('app.about.our-story.index');
+            Route::post('/our-story', [AdminOurStoryController::class, 'store'])->name('app.about.our-story.store');
+            Route::get('/our-story/{id}/edit', [AdminOurStoryController::class, 'edit'])->name('app.about.our-story.edit');
+            Route::put('/our-story/{id}/update', [AdminOurStoryController::class, 'update'])->name('app.about.our-story.update');
+            Route::delete('/our-story/{id}/destroy', [AdminOurStoryController::class, 'destroy'])->name('app.about.our-story.destroy');
         });
     });
