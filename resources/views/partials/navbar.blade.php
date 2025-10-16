@@ -139,8 +139,31 @@
                       <h4 class="font-semibold text-gray-900 mb-3">Marble</h4>
                       <ul class="space-y-1 text-xs">
                         <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">All
-                            Marble</a>
+                          <a href="{{ route('oss.black-marble') }}" class="text-gray-600 font-light text-lg hover:text-orange-500">Black</a>
+                        </li>
+                         <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                          <a href="{{ route('oss.cream-marble') }}" class="text-gray-600 font-light text-lg hover:text-orange-500">Cream</a>
+                        </li>
+                         <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                          <a href="{{ route('oss.gray-pg-marble') }}" class="text-gray-600 font-light text-lg hover:text-orange-500">Grey PG</a>
+                        </li>
+                         <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Grey DK</a>
+                        </li>
+                         <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Grey DR</a>
+                        </li>
+                         <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Light Grey</a>
+                        </li>
+                         <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Red</a>
+                        </li>
+                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Cocoa Brown</a>
+                        </li>
+                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Traventine</a>
                         </li>
                       </ul>
                     </div>
@@ -148,8 +171,16 @@
                       <h4 class="font-semibold text-gray-900 mb-3">Onyx</h4>
                       <ul class="space-y-1 text-xs">
                         <li class="submenu-item" onmouseenter="showImage('stone', 'onyx')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">All
-                            Onyx</a>
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Sunset Onyx</a>
+                        </li>
+                        <li class="submenu-item" onmouseenter="showImage('stone', 'onyx')">
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Ivory</a>
+                        </li>
+                        <li class="submenu-item" onmouseenter="showImage('stone', 'onyx')">
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Onyx BW</a>
+                        </li>
+                        <li class="submenu-item" onmouseenter="showImage('stone', 'onyx')">
+                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Onyx PCT</a>
                         </li>
                       </ul>
                     </div>

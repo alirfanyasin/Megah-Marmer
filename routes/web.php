@@ -19,6 +19,7 @@ use App\Http\Controllers\OurLocationController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\CategorySubProductController;
 use App\Http\Controllers\OurCommitmentsController;
+use App\Http\Controllers\OurSolidStoneController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,11 @@ Route::prefix('about')->group(function () {
     Route::get('/our-commitments', [OurCommitmentsController::class, 'index'])->name('about.our-commitments.index');
 });
 
+Route::prefix('our-solid-stone')->group(function () {
+    Route::get('/marbel-black', [OurSolidStoneController::class, 'black_marble'])->name('oss.black-marble');
+    Route::get('/marbel-cream', [OurSolidStoneController::class, 'cream_marble'])->name('oss.cream-marble');
+    Route::get('/marbel-gray-pg', [OurSolidStoneController::class, 'gray_pg_marble'])->name('oss.gray-pg-marble');
+});
 
 // Admin Login Routes
 Route::middleware(['guest'])->group(function () {

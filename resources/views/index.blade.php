@@ -3,7 +3,8 @@
 @section('content')
 
   <!-- Hero Section -->
-  <section class="relative min-h-screen bg-cover bg-center bg-[url('../../public/storage/{{ $homeImageData->hero_img }}')]">
+  <section class="relative min-h-screen bg-cover bg-center"
+    style="background-image: url('{{ asset('storage/' . $homeImageData->hero_img) }}');">
     <div class="absolute inset-0 bg-black/50"></div>
     <div class="relative z-10 flex items-center justify-center min-h-screen">
       <div class="text-center text-white">
