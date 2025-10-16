@@ -313,7 +313,7 @@
                             Story</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'commitments')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Our
+                          <a href="{{ route('about.our-commitments.index') }}" class="text-gray-600 font-light text-lg hover:text-orange-500">Our
                             Commitments</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'team')">

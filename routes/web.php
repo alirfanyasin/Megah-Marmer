@@ -18,6 +18,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurLocationController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\CategorySubProductController;
+use App\Http\Controllers\OurCommitmentsController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,9 +36,7 @@ Route::get('/search', [SearchController::class, 'index'])->name('search'); // JS
 // About us
 Route::prefix('about')->group(function () {
     Route::get('/our-story', [OurStoryController::class, 'index'])->name('about.our-story.index');
-    Route::post('/our-story', [OurStoryController::class, 'store'])->name('about.our-story.store');
-    Route::get('/our-story/{}', [OurStoryController::class, 'store'])->name('about.our-story.store');
-    Route::post('/our-story', [OurStoryController::class, 'store'])->name('about.our-story.store');
+    Route::get('/our-commitments', [OurCommitmentsController::class, 'index'])->name('about.our-commitments.index');
 });
 
 
