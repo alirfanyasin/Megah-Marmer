@@ -8,8 +8,9 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
+  {{-- <link rel="stylesheet" href="{{ asset('css/search.css') }}">
+  <script src="{{ asset('js/global-search.js') }}"></script> --}}
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   @stack('css')
 </head>
 
@@ -65,7 +66,7 @@
       initCarousel('.news-carousel', '.news-prev', '.news-next');
     });
   </script>
-  <script>
+  {{-- <script>
     // Blok klik kanan
     document.addEventListener('contextmenu', e => e.preventDefault());
 
@@ -76,7 +77,7 @@
         e.preventDefault();
       }
     });
-  </script>
+  </script> --}}
 
   @stack('js')
 </body>

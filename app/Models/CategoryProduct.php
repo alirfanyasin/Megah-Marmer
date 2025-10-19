@@ -50,8 +50,6 @@ class CategoryProduct extends Model
             : Storage::url($first);
     }
 
-
-
     public function categorySub(): BelongsTo
     {
         return $this->belongsTo(CategorySub::class);

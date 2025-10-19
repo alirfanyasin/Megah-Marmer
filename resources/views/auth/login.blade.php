@@ -50,7 +50,7 @@
           </div>
 
           <!-- Remember & Forgot -->
-          <div class="flex items-center justify-between">
+          {{-- <div class="flex items-center justify-between">
             <label class="flex items-center">
               <input type="checkbox" name="remember"
                 class="w-4 h-4 text-amber-600 border-gray-300 rounded focus:ring-amber-500">
@@ -59,7 +59,7 @@
             <a href="" class="text-sm text-amber-600 hover:text-amber-700 font-medium">
               Lupa password?
             </a>
-          </div>
+          </div> --}}
 
           <!-- Submit Button -->
           <button type="submit"

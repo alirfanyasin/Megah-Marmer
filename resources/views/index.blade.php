@@ -27,7 +27,8 @@
 
         <!-- Category Filters -->
         <div class="flex flex-wrap justify-center gap-4 mb-8">
-          <button class="bg-black text-white px-6 py-2 rounded-full">All</button>
+          <a href="{{ route('products.all') }}"
+            class="bg-black text-white px-6 py-2 hover:cursor-pointer rounded-full">All</a>
           @foreach ($categories as $categoryMenu)
             <a href="{{ route('category.sub', ['id_category' => $categoryMenu->id]) }}"
               class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-300">{{ $categoryMenu->name }}</a>

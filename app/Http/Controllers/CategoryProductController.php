@@ -29,6 +29,36 @@ class CategoryProductController extends Controller
         $phoneNumber = PhoneNumber::first();
 
 
+
         return view('category-product-detail', compact('category', 'categorySub', 'product', 'recommendationProducts', 'phoneNumber'));
+    }
+
+
+    public function allProducts(Request $request)
+    {
+        $search = $request->input('search');
+
+        $query = CategoryProduct::query()
+            ->with(['categorySub.category'])
+            ->orderByDesc('id');
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%")
+                    // cari berdasarkan nama subkategori
+                    ->orWhereHas('categorySub', function ($sub) use ($search) {
+                        $sub->where('name', 'like', "%{$search}%");
+                    })
+                    // cari berdasarkan nama kategori utama
+                    ->orWhereHas('categorySub.category', function ($cat) use ($search) {
+                        $cat->where('name', 'like', "%{$search}%");
+                    });
+            });
+        }
+
+        $allProducts = $query->paginate(12)->withQueryString();
+
+        return view('products-all', compact('allProducts', 'search'));
     }
 }

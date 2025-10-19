@@ -1,0 +1,35 @@
+/* public/css/search.css */
+
+#search-dropdown, #mobile-search-dropdown {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+#search-dropdown:not(.hidden), 
+#mobile-search-dropdown:not(.hidden) {
+    max-height: 500px;
+    opacity: 1;
+}
+
+#search-list li:hover,
+#mobile-search-list li:hover {
+    background-color: #FFF7ED; /* orange-50 */
+}
+
+/* Smooth scrollbar */
+#search-list::-webkit-scrollbar,
+#mobile-search-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#search-list::-webkit-scrollbar-thumb,
+#mobile-search-list::-webkit-scrollbar-thumb {
+    background-color: #D1D5DB;
+    border-radius: 3px;
+}
+
+/* Loading animation */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

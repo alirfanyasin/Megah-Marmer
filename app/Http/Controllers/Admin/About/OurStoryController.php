@@ -20,7 +20,7 @@ class OurStoryController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|mimes:jpeg,png,jpg,gif,avif,webp|max:2048',
             'order' => 'required|integer|min:0',
             'is_active' => 'boolean'
         ]);
@@ -50,7 +50,7 @@ class OurStoryController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|mimes:jpeg,png,jpg,gif,avif,webp|max:2048',
             'order' => 'required|integer|min:0',
             'is_active' => 'boolean'
         ]);

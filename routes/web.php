@@ -20,6 +20,7 @@ use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\CategorySubProductController;
 use App\Http\Controllers\OurCommitmentsController;
 use App\Http\Controllers\OurSolidStoneController;
+use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,17 +28,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/category/sub/{id_category}/products', [CategorySubProductController::class, 'index'])->name('category.sub');
 Route::get('/category/{id_category}/{id_sub_category}/products', [CategoryProductController::class, 'index'])->name('category.products');
+Route::get('/products/all', [CategoryProductController::class, 'allProducts'])->name('products.all');
 Route::get('/category/{id_category}/{id_sub_category}/products/{id_product}/show', [CategoryProductController::class, 'show'])->name('category.products.detail');
 Route::get('/our-locations', [OurLocationController::class, 'index'])->name('our-locations');
 Route::post('/subscribe', [SubscribeController::class, 'store'])->name('app.subscribe.store');
 
-Route::get('/search', [SearchController::class, 'index'])->name('search'); // JSON
+Route::get('/search', [SearchController::class, 'index'])
+    ->middleware('throttle:60,1')
+    ->name('search');
 
 
 // About us
 Route::prefix('about')->group(function () {
     Route::get('/our-story', [OurStoryController::class, 'index'])->name('about.our-story.index');
     Route::get('/our-commitments', [OurCommitmentsController::class, 'index'])->name('about.our-commitments.index');
+    Route::get('/our-team', [OurTeamController::class, 'index'])->name('about.our-team.index');
 });
 
 Route::prefix('our-solid-stone')->group(function () {

@@ -8,6 +8,7 @@ use Laravel\Scout\Searchable;
 class Location extends Model
 {
     use Searchable;
+
     protected $fillable = [
         'name',
         'address',
@@ -16,19 +17,21 @@ class Location extends Model
         'phone'
     ];
 
-    public function searchableAs(): string
-    {
-        return 'locations';
-    }
-
+    /**
+     * Get the indexable data array for the model.
+     */
     public function toSearchableArray()
     {
         return [
-            'id'        => $this->id,
-            'name'      => $this->name,
-            'address'   => $this->address,
-            'phone'     => $this->phone,
-            'google_map' => $this->google_map,
+            'id' => $this->id,
+            'name' => $this->name,
+            'address' => $this->address,
+            'phone' => $this->phone,
         ];
+    }
+
+    public function searchableAs()
+    {
+        return 'locations_index';
     }
 }
