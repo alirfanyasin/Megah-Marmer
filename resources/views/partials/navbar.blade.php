@@ -113,37 +113,42 @@
                     <div>
                       <h4 class="font-semibold text-gray-900 mb-3">Marble</h4>
                       <ul class="space-y-1 text-xs">
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                        <li class="submenu-item" onmouseenter="showImage('marble', 'black')">
                           <a href="{{ route('oss.black-marble') }}"
                             class="text-gray-600 font-light text-lg hover:text-orange-500">Black</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
+                        <li class="submenu-item" onmouseenter="showImage('marble', 'cream')">
                           <a href="{{ route('oss.cream-marble') }}"
                             class="text-gray-600 font-light text-lg hover:text-orange-500">Cream</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
-                          <a href="{{ route('oss.gray-pg-marble') }}"
+                        <li class="submenu-item" onmouseenter="showImage('marble', 'grey-pg')">
+                          <a href="{{ route('oss.grey-pg-marble') }}"
                             class="text-gray-600 font-light text-lg hover:text-orange-500">Grey PG</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Grey DK</a>
+                        <li class="submenu-item" onmouseenter="showImage('marble', 'grey-dk')">
+                          <a href="{{ route('oss.grey-dk-marble') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Grey DK</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Grey DR</a>
+                        <li class="submenu-item" onmouseenter="showImage('marble', 'grey-dr')">
+                          <a href="{{ route('oss.grey-dr-marble') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Grey DR</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Light
+                        <li class="submenu-item" onmouseenter="showImage('marble', 'light-grey')">
+                          <a href="{{ route('oss.light-grey-marble') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Light
                             Grey</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Red</a>
+                        <li class="submenu-item" onmouseenter="showImage('marble', 'red')">
+                          <a href="{{ route('oss.red-marble') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Red</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Cocoa
+                        <li class="submenu-item" onmouseenter="showImage('marble', 'cocoa-brown')">
+                          <a href="{{ route('oss.cocoa-brown-marble') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Cocoa
                             Brown</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'marble')">
-                          <a href="#"
+                        <li class="submenu-item" onmouseenter="showImage('marble', 'traventine')">
+                          <a href="{{ route('oss.traventine-marble') }}"
                             class="text-gray-600 font-light text-lg hover:text-orange-500">Traventine</a>
                         </li>
                       </ul>
@@ -151,18 +156,22 @@
                     <div>
                       <h4 class="font-semibold text-gray-900 mb-3">Onyx</h4>
                       <ul class="space-y-1 text-xs">
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'onyx')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Sunset
+                        <li class="submenu-item" onmouseenter="showImage('onyx', 'sunset')">
+                          <a href="{{ route('oss.sunset-onyx') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Sunset
                             Onyx</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'onyx')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Ivory</a>
+                        <li class="submenu-item" onmouseenter="showImage('onyx', 'ivory')">
+                          <a href="{{ route('oss.ivory-onyx') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Ivory</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'onyx')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Onyx BW</a>
+                        <li class="submenu-item" onmouseenter="showImage('onyx', 'bw')">
+                          <a href="{{ route('oss.bw-onyx') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Onyx BW</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('stone', 'onyx')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Onyx
+                        <li class="submenu-item" onmouseenter="showImage('onyx', 'pct')">
+                          <a href="{{ route('oss.pct-onyx') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Onyx
                             PCT</a>
                         </li>
                       </ul>
@@ -170,31 +179,37 @@
                     <div>
                       <ul class="space-y-2 text-sm">
                         <li class="submenu-item" onmouseenter="showImage('stone', 'granite')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Granite
+                          <a href="{{ route('oss.granite-local') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Granite
                             Local</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'petrified-wood')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Petrified
+                          <a href="{{ route('oss.petrified-wood') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Petrified
                             Wood</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'river-stone')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">River
+                          <a href="{{ route('oss.river-stone') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">River
                             Stone</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'lava-stone')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Lava
+                          <a href="{{ route('oss.lava-stone') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Lava
                             Stone</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'lime-stone')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Lime
+                          <a href="{{ route('oss.lime-stone') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Lime
                             Stone</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'ziolit')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Ziolit
+                          <a href="{{ route('oss.ziolit-stone') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Ziolit
                             Stone</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'terrazzo')">
-                          <a href="#"
+                          <a href="{{ route('oss.terrazzo') }}"
                             class="text-gray-600 font-light text-lg hover:text-orange-500">Terrazzo</a>
                         </li>
                       </ul>
@@ -203,33 +218,33 @@
                 </div>
                 <div class="relative">
                   <div class="rounded-lg overflow-hidden h-72">
-                    <img id="stone-marble"
-                      src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=400&h=400&fit=crop"
-                      alt="Marble" class="submenu-image active w-full h-full object-cover">
-                    <img id="stone-onyx"
-                      src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&h=400&fit=crop"
-                      alt="Onyx" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="stone-granite"
-                      src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=400&h=400&fit=crop"
-                      alt="Granite" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="stone-petrified-wood"
-                      src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=400&fit=crop"
-                      alt="Petrified Wood" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="stone-river-stone"
-                      src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop"
-                      alt="River Stone" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="stone-lava-stone"
-                      src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&h=400&fit=crop"
-                      alt="Lava Stone" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="stone-lime-stone"
-                      src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=400&h=400&fit=crop"
-                      alt="Lime Stone" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="stone-ziolit"
-                      src="https://images.unsplash.com/photo-1599629954294-1c8a98e2c8c6?w=400&h=400&fit=crop"
-                      alt="Ziolit Stone" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
-                    <img id="stone-terrazzo"
-                      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=400&fit=crop"
-                      alt="Terrazzo" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
+                    <img id="marble-black"
+                      src="https://images.unsplash.com/photo-1550053808-52a75a05955d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974"
+                      alt="Black Marbel" class="submenu-image active w-full h-full object-cover">
+                    <img id="marble-cream"
+                      src="https://images.unsplash.com/photo-1603369425250-b276f2006ec0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735"
+                      alt="marble-cream" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
+                    <img id="marble-grey-pg"
+                      src="https://images.unsplash.com/photo-1668533677422-1e759410847f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=627"
+                      alt="marble-grey-pg" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
+                    <img id="marble-grey-dk"
+                      src="https://images.unsplash.com/photo-1668533677422-1e759410847f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=627"
+                      alt="marble-gray-dk" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
+                    <img id="marble-grey-dr"
+                      src="https://images.unsplash.com/photo-1651614226064-05901fd4ec52?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688"
+                      alt="marble-grey-dr" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
+                    <img id="marble-light-grey"
+                      src="https://images.unsplash.com/photo-1605445070333-17f65bc95256?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+                      alt="Light-grey" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
+                    <img id="marble-red"
+                      src="https://images.unsplash.com/photo-1613643972261-8ba146738586?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+                      alt="marble-red" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
+                    <img id="marble-cocoa-brown"
+                      src="https://images.unsplash.com/photo-1623593394520-121b0b51d776?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+                      alt="cocoa-brown" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
+                    <img id="marble-traventine"
+                      src="https://images.unsplash.com/photo-1572468730674-e05a74d8dc99?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHJhdmVydGluZSUyMG1hcmJsZXxlbnwwfDF8MHx8fDI%3D&auto=format&fit=crop&q=60&w=600"
+                      alt="Traventine" class="submenu-image absolute top-0 left-0 w-full h-full object-cover">
                   </div>
                 </div>
               </div>
@@ -247,32 +262,40 @@
                 <div class="col-span-2">
                   <ul class="space-y-2 text-sm">
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'polish')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Polish</a>
+                      <a href="{{ route('polish') }}"
+                        class="text-gray-600 font-light text-lg hover:text-orange-500">Polish</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'doff')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Doff Or
-                        Matte</a>
+                      <a href="{{ route('doff-or-matte') }}"
+                        class="text-gray-600 font-light text-lg hover:text-orange-500">Doff Or Matte</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'acid')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Acid</a>
+                      <a href="{{ route('acid') }}"
+                        class="text-gray-600 font-light text-lg hover:text-orange-500">Acid</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'hammered')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Hammered</a>
+                      <a href="{{ route('hammered') }}"
+                        class="text-gray-600 font-light text-lg hover:text-orange-500">Hammered</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'burning')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Burning</a>
+                      <a href="{{ route('burning') }}"
+                        class="text-gray-600 font-light text-lg hover:text-orange-500">Burning</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'texture')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Texture</a>
+                      <a href="{{ route('texture') }}"
+                        class="text-gray-600 font-light text-lg hover:text-orange-500">Texture</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'groove')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Groove</a>
+                      <a href="{{ route('groove') }}"
+                        class="text-gray-600 font-light text-lg hover:text-orange-500">Groove</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'stripe')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Stripe</a>
+                      <a href="{{ route('stripe') }}"
+                        class="text-gray-600 font-light text-lg hover:text-orange-500">Stripe</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'combination')">
-                      <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Combination</a>
+                      <a href="{{ route('combination') }}"
+                        class="text-gray-600 font-light text-lg hover:text-orange-500">Combination</a>
                     </li>
                   </ul>
                 </div>
@@ -342,15 +365,17 @@
                     <div>
                       <ul class="space-y-2 text-sm">
                         <li class="submenu-item" onmouseenter="showImage('about', 'storage')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Stone
+                          <a href="{{ route('stone-storage') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Stone
                             Storage</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'factory')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Our
+                          <a href="{{ route('our-factory') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Our
                             Factory</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'warehouse')">
-                          <a href="#"
+                          <a href="{{ route('warehouse') }}"
                             class="text-gray-600 font-light text-lg hover:text-orange-500">Warehouse</a>
                         </li>
                       </ul>
@@ -359,39 +384,31 @@
                       <h4 class="font-semibold text-gray-900 mb-3 text-sm">Our Production</h4>
                       <ul class="space-y-2 text-sm pl-4">
                         <li class="submenu-item" onmouseenter="showImage('about', 'sawing')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Sawing
+                          <a href="{{ route('sawing-machine') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Sawing
                             Machine</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'production')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Production
+                          <a href="{{ route('production-process') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Production
                             Process</a>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <h4 class="font-semibold text-gray-900 mb-3 text-sm">Packaging</h4>
                       <ul class="space-y-2 text-sm pl-4">
                         <li class="submenu-item" onmouseenter="showImage('about', 'standard-packaging')">
-                          <a href="#"
-                            class="text-gray-600 font-light text-lg hover:text-orange-500">Standard</a>
-                        </li>
-                        <li class="submenu-item" onmouseenter="showImage('about', 'foam-packaging')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Moulded
-                            Foam</a>
+                          <a href="{{ route('packaging') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Packaging</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'wood-packaging')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Wood</a>
+                          <a href="{{ route('suffing-area') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Stuffing
+                            Area</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('about', 'plywood-packaging')">
-                          <a href="#" class="text-gray-600 font-light text-lg hover:text-orange-500">Plywood</a>
-                        </li>
-                      </ul>
-                      <ul class="space-y-2 text-sm mt-4">
-                        <li class="submenu-item" onmouseenter="showImage('about', 'stuffing')">
-                          <a href="#" class="text-gray-600 hover:text-orange-500">Stuffing Area</a>
-                        </li>
-                        <li class="submenu-item" onmouseenter="showImage('about', 'contact')">
-                          <a href="#" class="text-gray-600 hover:text-orange-500">Contact Us</a>
+                        <li class="submenu-item" onmouseenter="showImage('about', 'foam-packaging')">
+                          <a href="{{ route('contact-us') }}"
+                            class="text-gray-600 font-light text-lg hover:text-orange-500">Contact Us</a>
                         </li>
                       </ul>
                     </div>

@@ -18,10 +18,19 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurLocationController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\CategorySubProductController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\OurCommitmentsController;
+use App\Http\Controllers\OurFactoryController;
+use App\Http\Controllers\OurFinishingController;
 use App\Http\Controllers\OurSolidStoneController;
 use App\Http\Controllers\OurTeamController;
+use App\Http\Controllers\PackagingController;
+use App\Http\Controllers\ProductionProcessController;
+use App\Http\Controllers\SawingMachineController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\StoneStorageController;
+use App\Http\Controllers\SuffingAreaController;
+use App\Http\Controllers\WarehouseController;
 use Illuminate\Support\Facades\Route;
 
 // Guest Routes
@@ -33,23 +42,68 @@ Route::get('/category/{id_category}/{id_sub_category}/products/{id_product}/show
 Route::get('/our-locations', [OurLocationController::class, 'index'])->name('our-locations');
 Route::post('/subscribe', [SubscribeController::class, 'store'])->name('app.subscribe.store');
 
+// Search
 Route::get('/search', [SearchController::class, 'index'])
     ->middleware('throttle:60,1')
     ->name('search');
 
+
+
+
+// Our Solid Stone
+Route::prefix('our-solid-stone')->group(function () {
+    Route::get('/marbel-black', [OurSolidStoneController::class, 'black_marble'])->name('oss.black-marble');
+    Route::get('/marbel-cream', [OurSolidStoneController::class, 'cream_marble'])->name('oss.cream-marble');
+    Route::get('/marbel-grey-pg', [OurSolidStoneController::class, 'grey_pg_marble'])->name('oss.grey-pg-marble');
+    Route::get('/marbel-grey-dk', [OurSolidStoneController::class, 'grey_dk_marble'])->name('oss.grey-dk-marble');
+    Route::get('/marbel-grey-dr', [OurSolidStoneController::class, 'grey_dr_marble'])->name('oss.grey-dr-marble');
+    Route::get('/marbel-light-grey', [OurSolidStoneController::class, 'light_grey_marble'])->name('oss.light-grey-marble');
+    Route::get('/marbel-red', [OurSolidStoneController::class, 'red_marble'])->name('oss.red-marble');
+    Route::get('/marbel-cocoa-brown', [OurSolidStoneController::class, 'cocoa_brown_marble'])->name('oss.cocoa-brown-marble');
+    Route::get('/marbel-traventine', [OurSolidStoneController::class, 'traventine_marble'])->name('oss.traventine-marble');
+
+    Route::get('/onyx-sunset', [OurSolidStoneController::class, 'sunset_onyx'])->name('oss.sunset-onyx');
+    Route::get('/onyx-ivory', [OurSolidStoneController::class, 'ivory_onyx'])->name('oss.ivory-onyx');
+    Route::get('/onyx-bw', [OurSolidStoneController::class, 'bw_onyx'])->name('oss.bw-onyx');
+    Route::get('/onyx-pct', [OurSolidStoneController::class, 'pct_onyx'])->name('oss.pct-onyx');
+
+    Route::get('/granite-local', [OurSolidStoneController::class, 'granite_local'])->name('oss.granite-local');
+    Route::get('/petrified-wood', [OurSolidStoneController::class, 'petrified_wood'])->name('oss.petrified-wood');
+    Route::get('/river-stone', [OurSolidStoneController::class, 'river_stone'])->name('oss.river-stone');
+    Route::get('/lava-stone', [OurSolidStoneController::class, 'lava_stone'])->name('oss.lava-stone');
+    Route::get('/lime-stone', [OurSolidStoneController::class, 'lime_stone'])->name('oss.lime-stone');
+    Route::get('/ziolit-stone', [OurSolidStoneController::class, 'ziolit_stone'])->name('oss.ziolit-stone');
+    Route::get('/terrazzo', [OurSolidStoneController::class, 'terrazzo'])->name('oss.terrazzo');
+});
+
+// Our Finishing
+Route::prefix('our-finishing')->group(function () {
+    Route::get('/polish', [OurFinishingController::class, 'polish'])->name('polish');
+    Route::get('/doff-or-matte', [OurFinishingController::class, 'doff_or_matte'])->name('doff-or-matte');
+    Route::get('/acid', [OurFinishingController::class, 'acid'])->name('acid');
+    Route::get('/hammered', [OurFinishingController::class, 'hammered'])->name('hammered');
+    Route::get('/burning', [OurFinishingController::class, 'burning'])->name('burning');
+    Route::get('/texture', [OurFinishingController::class, 'texture'])->name('texture');
+    Route::get('/groove', [OurFinishingController::class, 'groove'])->name('groove');
+    Route::get('/stripe', [OurFinishingController::class, 'stripe'])->name('stripe');
+    Route::get('/combination', [OurFinishingController::class, 'combination'])->name('combination');
+});
 
 // About us
 Route::prefix('about')->group(function () {
     Route::get('/our-story', [OurStoryController::class, 'index'])->name('about.our-story.index');
     Route::get('/our-commitments', [OurCommitmentsController::class, 'index'])->name('about.our-commitments.index');
     Route::get('/our-team', [OurTeamController::class, 'index'])->name('about.our-team.index');
+    Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
+    Route::get('/packaging', [PackagingController::class, 'index'])->name('packaging');
+    Route::get('/suffing-area', [SuffingAreaController::class, 'index'])->name('suffing-area');
+    Route::get('/stone-storage', [StoneStorageController::class, 'index'])->name('stone-storage');
+    Route::get('/our-factory', [OurFactoryController::class, 'index'])->name('our-factory');
+    Route::get('/warehouse', [WarehouseController::class, 'index'])->name('warehouse');
+    Route::get('/sawing-machine', [SawingMachineController::class, 'index'])->name('sawing-machine');
+    Route::get('/production-process', [ProductionProcessController::class, 'index'])->name('production-process');
 });
 
-Route::prefix('our-solid-stone')->group(function () {
-    Route::get('/marbel-black', [OurSolidStoneController::class, 'black_marble'])->name('oss.black-marble');
-    Route::get('/marbel-cream', [OurSolidStoneController::class, 'cream_marble'])->name('oss.cream-marble');
-    Route::get('/marbel-gray-pg', [OurSolidStoneController::class, 'gray_pg_marble'])->name('oss.gray-pg-marble');
-});
 
 // Admin Login Routes
 Route::middleware(['guest'])->group(function () {
