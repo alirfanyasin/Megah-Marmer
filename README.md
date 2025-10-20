@@ -1,7 +1,7 @@
 # Megah Marmer
 lorem
 
-<hr>
+
 ### Cara Menggunakan
 Install Depedency
 ```bash
