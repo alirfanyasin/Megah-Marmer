@@ -76,7 +76,7 @@
     </a>
 
     <!-- About Us Menu -->
-    <div class="mb-2">
+    {{-- <div class="mb-2">
       <button onclick="toggleMenu('about-us')"
         class="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-800 transition-colors rounded">
         <div class="flex items-center">
@@ -105,7 +105,7 @@
           <span class="text-sm">Selesai</span>
         </a>
       </div>
-    </div>
+    </div> --}}
 
     <!-- Settings Menu -->
     <div class="mb-2">
@@ -124,7 +124,6 @@
         $settingsHasActiveSocialMedia = request()->routeIs('app.settings.social-media.index');
         $settingsHasActivePhoneNumber = request()->routeIs('app.settings.phone-number.index');
         $settingsHasActiveHomeImage = request()->routeIs('app.settings.home-image.index');
-
 
         $isSettingsMenuActive =
             $settingsHasActiveCategory ||

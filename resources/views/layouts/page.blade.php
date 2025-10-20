@@ -66,7 +66,7 @@
       initCarousel('.news-carousel', '.news-prev', '.news-next');
     });
   </script>
-  {{-- <script>
+  <script>
     // Blok klik kanan
     document.addEventListener('contextmenu', e => e.preventDefault());
 
@@ -77,7 +77,7 @@
         e.preventDefault();
       }
     });
-  </script> --}}
+  </script>
 
   @stack('js')
 </body>
