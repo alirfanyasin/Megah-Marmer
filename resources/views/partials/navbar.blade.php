@@ -67,7 +67,7 @@
       <!-- Logo -->
       <div class="flex-shrink-0">
         <a href="{{ url('/') }}">
-          <img src="{{ asset('img/logo-main.jpg') }}" alt="Logo" class="h-10 w-auto">
+          <img src="{{ asset('img/logo-main.png') }}" alt="Logo" class="h-10 w-auto">
         </a>
       </div>
 

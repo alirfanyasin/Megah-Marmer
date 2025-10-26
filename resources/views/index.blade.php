@@ -2,20 +2,94 @@
 @section('title', 'Home')
 @section('content')
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen bg-cover bg-center"
-    style="background-image: url('{{ asset('storage/' . $homeImageData->hero_img) }}');">
-    <div class="absolute inset-0 bg-black/50"></div>
-    <div class="relative z-10 flex items-center justify-center min-h-screen">
-      <div class="text-center text-white">
-        <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-        <p class="text-xl md:text-2xl mb-8">{{ $homeImageData->description }}</p>
-        <a href="#our-world-selection"
-          class="bg-black text-white px-8 py-3 rounded hover:bg-gray-800 transition duration-300">
-          Shop now
-        </a>
+  <!-- Hero Section with Slider -->
+  <section class="relative min-h-screen overflow-hidden">
+    <!-- Slider Container -->
+    <div class="hero-slider relative w-full h-screen">
+      <!-- Slide 1 -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-100"
+        style="background-image: url('{{ asset('storage/' . $homeImageData->hero_img) }}');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center min-h-screen">
+          <div class="text-center text-white">
+            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
+            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0"
+        style="background-image: url('{{ asset('img/bg-hero.jpg') }}');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center min-h-screen">
+          <div class="text-center text-white">
+            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
+            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0"
+        style="background-image: url('{{ asset('img/bg-wood.jpg') }}');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center min-h-screen">
+          <div class="text-center text-white">
+            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
+            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0"
+        style="background-image: url('{{ asset('img/bg-wood2.jpg') }}');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center min-h-screen">
+          <div class="text-center text-white">
+            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
+            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0"
+        style="background-image: url('{{ asset('img/coffe-table.avif') }}');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center min-h-screen">
+          <div class="text-center text-white">
+            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
+            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Navigation Dots -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300 active"
+        data-slide="0"></button>
+      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
+        data-slide="1"></button>
+      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
+        data-slide="2"></button>
+      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
+        data-slide="3"></button>
+      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
+        data-slide="4"></button>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button
+      class="hero-prev absolute left-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/30 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-black/50 transition-colors duration-300">
+      <i class="fas fa-chevron-left text-lg"></i>
+    </button>
+    <button
+      class="hero-next absolute right-8 top-1/2 transform -translate-y-1/2 z-20 bg-black/30 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-black/50 transition-colors duration-300">
+      <i class="fas fa-chevron-right text-lg"></i>
+    </button>
   </section>
 
   <!-- Our Worlds Section -->
@@ -79,13 +153,6 @@
           <div class="flex flex-wrap">
             The best choice for product recommendations for you
           </div>
-          {{-- <div class="flex flex-wrap gap-4">
-            <button class="bg-black text-white px-4 py-2 rounded">New arrivals</button>
-            <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Premium</button>
-            <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Bestseller</button>
-            <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Bathroom</button>
-            <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">Home Decor</button>
-          </div> --}}
         </div>
         <div class="flex gap-2">
           <button
@@ -129,17 +196,14 @@
     </div>
   </section>
 
-  <!-- Right Now Section -->
-  <section class="py-16 bg-white relative">
-
-
+  <!-- Our Category Products Section -->
+  {{-- <section class="py-16 bg-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="mb-8">
         <h3 class="text-4xl font-bold text-gray-900 mb-2">Our Category Products</h3>
         <p class="text-gray-600">Best category for and have</p>
       </div>
 
-      <!-- News Grid -->
       <div class="relative">
         <div class="news-carousel flex gap-6 overflow-x-hidden">
           @foreach ($categorySubDatas as $subCategoryData)
@@ -156,16 +220,12 @@
                 @endif
                 <div class="absolute bottom-4 left-4 text-white">
                   <h4 class="text-xl font-bold mb-2">{{ $subCategoryData->name }}</h4>
-                  {{-- <p class="text-sm mb-2">Sofa is the heart of the home. Timeless design, European craftsmanship.
-                    Oeko-Tex®
-                    certified fabrics.</p> --}}
                 </div>
               </div>
             </div>
           @endforeach
         </div>
 
-        <!-- Navigation Buttons -->
         <button
           class="news-prev hover:cursor-pointer absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
           <i class="fas fa-chevron-left"></i>
@@ -176,7 +236,7 @@
         </button>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!-- Features Section -->
   <section class="py-16 bg-gray-50">

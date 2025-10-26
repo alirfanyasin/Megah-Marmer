@@ -1,6 +1,6 @@
 <!-- Newsletter Section -->
 
-<section class="py-16 bg-gray-50">
+{{-- <section class="py-16 bg-gray-50">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h3 class="text-3xl font-bold text-gray-900 mb-4">Subscribe to our newsletter</h3>
     <p class="text-gray-600 mb-2">Enjoy <span class="font-bold">£20 off*</span> your first order when you spend £200
@@ -28,7 +28,7 @@
       </div>
     </form>
   </div>
-</section>
+</section> --}}
 
 
 <!-- Footer -->
