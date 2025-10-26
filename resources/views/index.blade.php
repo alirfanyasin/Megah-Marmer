@@ -115,7 +115,7 @@
                       <div>
                         <h4 class="font-semibold">{{ $recomprod->name }}</h4>
                         <p class="font-light">{{ Str::substr($recomprod->description, 0, 38) }}</p>
-                        <p class="font-semibold text-sm">Rp. {{ number_format($recomprod->price, 0, ',', '.') }}</p>
+                        <p class="font-semibold text-sm">$ {{ number_format($recomprod->price, 0, ',', '.') }}</p>
                       </div>
                     </div>
                   </div>
@@ -332,7 +332,7 @@
                       <div>
                         <h4 class="font-semibold">{{ $newProduct->name }}</h4>
                         <p class="font-light">{{ Str::substr($newProduct->description, 0, 38) }}</p>
-                        <p class="font-semibold text-sm">Rp. {{ number_format($newProduct->price, 0, ',', '.') }}</p>
+                        <p class="font-semibold text-sm">$ {{ number_format($newProduct->price, 0, ',', '.') }}</p>
                       </div>
                     </div>
                   </div>

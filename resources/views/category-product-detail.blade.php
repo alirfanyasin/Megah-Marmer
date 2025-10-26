@@ -116,24 +116,24 @@
         {{-- Price --}}
         <div class="flex items-baseline gap-3">
           @if ($product->discount !== 0)
-            <span class="text-3xl font-bold text-red-900">Rp.
+            <span class="text-3xl font-bold text-red-900">$
               {{ number_format($product->price * (1 - $product->discount / 100), 0, ',', '.') }}</span>
-            <span class="text-xl text-gray-400 line-through">Rp.
+            <span class="text-xl text-gray-400 line-through">$
               {{ number_format($product->price, 0, ',', '.') }}</span>
           @else
-            <span class="text-3xl font-bold text-red-900">Rp. {{ number_format($product->price, 0, ',', '.') }}</span>
+            <span class="text-3xl font-bold text-red-900">$ {{ number_format($product->price, 0, ',', '.') }}</span>
           @endif
         </div>
 
         {{-- Action Buttons --}}
         <div class="gap-3">
-          <a href="https://wa.me/{{ $phoneNumber->phone_number }}?text=Halo%20saya%20tertarik%20dengan%20produk%20Anda"
-            target="_blank" class="inline-block">
+          <a href="mailto:{{ $emailOrder->email }}?subject=Order%20Produk%20{{ $product->name }}&body=Halo,%0A%0ASaya tertarik dengan produk {{ $product->name }}.%0A%0ADetail produk:%0A- Nama: {{ $product->name }}%0A- Harga: ${{ number_format($product->price, 0, ',', '.') }}%0A- Deskripsi: {{ $product->description }}%0A%0ATerima kasih."
+            class="inline-block" target="_blank">
             <div
               class="transition flex items-center justify-center gap-2 bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Order Now
             </div>

@@ -70,9 +70,9 @@
                 </p>
 
                 <div class="flex items-center gap-2">
-                  <p class="text-red-900 font-bold text-lg">Rp. {{ number_format($finalPrice, 0, ',', '.') }}</p>
+                  <p class="text-red-900 font-bold text-lg">$ {{ number_format($finalPrice, 0, ',', '.') }}</p>
                   @if ($hasDiscount)
-                    <p class="text-gray-400 line-through text-sm">Rp.
+                    <p class="text-gray-400 line-through text-sm">$
                       {{ number_format((int) $product->price, 0, ',', '.') }}</p>
                   @endif
                 </div>

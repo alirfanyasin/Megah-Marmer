@@ -184,12 +184,12 @@
         {{-- Price --}}
         <div class="flex items-baseline gap-3">
           @if ($product->discount !== 0)
-            <span class="text-3xl font-bold text-red-900">Rp.
+            <span class="text-3xl font-bold text-red-900">$
               {{ number_format($product->price * (1 - $product->discount / 100), 0, ',', '.') }}</span>
-            <span class="text-xl text-gray-400 line-through">Rp.
+            <span class="text-xl text-gray-400 line-through">$
               {{ number_format($product->price, 0, ',', '.') }}</span>
           @else
-            <span class="text-3xl font-bold text-red-900">Rp. {{ number_format($product->price, 0, ',', '.') }}</span>
+            <span class="text-3xl font-bold text-red-900">$ {{ number_format($product->price, 0, ',', '.') }}</span>
           @endif
         </div>
 

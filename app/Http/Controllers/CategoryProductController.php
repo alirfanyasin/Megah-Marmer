@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\CategoryProduct;
 use App\Models\CategorySub;
+use App\Models\EmailOrder;
 use App\Models\PhoneNumber;
 use Illuminate\Http\Request;
 
@@ -26,11 +27,12 @@ class CategoryProductController extends Controller
 
         $recommendationProducts = CategoryProduct::inRandomOrder()->take(15)->get();
 
-        $phoneNumber = PhoneNumber::first();
+        // $phoneNumber = PhoneNumber::first();
+        $emailOrder = EmailOrder::first();
 
 
 
-        return view('category-product-detail', compact('category', 'categorySub', 'product', 'recommendationProducts', 'phoneNumber'));
+        return view('category-product-detail', compact('category', 'categorySub', 'product', 'recommendationProducts', 'emailOrder'));
     }
 
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\Settings\ManageCategoryMenuController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\Settings\EmailOrderController;
 use App\Http\Controllers\Admin\Settings\HomeImageController;
 use App\Http\Controllers\Admin\Settings\LocationController;
 use App\Http\Controllers\Admin\Settings\PhoneNumberController;
@@ -186,6 +187,13 @@ Route::prefix('app')
             Route::get('/phone-number/{id}/edit', [PhoneNumberController::class, 'edit'])->name('app.settings.phone-number.edit');
             Route::put('/phone-number/{id}/update', [PhoneNumberController::class, 'update'])->name('app.settings.phone-number.update');
             Route::delete('/phone-number/{id}/destroy', [PhoneNumberController::class, 'destroy'])->name('app.settings.phone-number.destroy');
+
+            // Email Order
+            Route::get('/email-order', [EmailOrderController::class, 'index'])->name('app.settings.email-order.index');
+            Route::post('/email-order', [EmailOrderController::class, 'store'])->name('app.settings.email-order.store');
+            Route::get('/email-order/{id}/edit', [EmailOrderController::class, 'edit'])->name('app.settings.email-order.edit');
+            Route::put('/email-order/{id}/update', [EmailOrderController::class, 'update'])->name('app.settings.email-order.update');
+            Route::delete('/email-order/{id}/destroy', [EmailOrderController::class, 'destroy'])->name('app.settings.email-order.destroy');
 
             // Home Image
             Route::get('/home-image', [HomeImageController::class, 'index'])->name('app.settings.home-image.index');

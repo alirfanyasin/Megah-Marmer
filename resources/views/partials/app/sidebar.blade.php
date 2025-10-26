@@ -122,14 +122,14 @@
         $settingsHasActiveCategory = request()->routeIs('settings.manage-category-menu');
         $settingsHasActiveLocation = request()->routeIs('app.settings.location.index');
         $settingsHasActiveSocialMedia = request()->routeIs('app.settings.social-media.index');
-        $settingsHasActivePhoneNumber = request()->routeIs('app.settings.phone-number.index');
+        $settingsHasActiveEmailOrder = request()->routeIs('app.settings.email-order.index');
         $settingsHasActiveHomeImage = request()->routeIs('app.settings.home-image.index');
 
         $isSettingsMenuActive =
             $settingsHasActiveCategory ||
             $settingsHasActiveLocation ||
             $settingsHasActiveSocialMedia ||
-            $settingsHasActivePhoneNumber ||
+            $settingsHasActiveEmailOrder ||
             $settingsHasActiveHomeImage;
       @endphp
 
@@ -146,9 +146,13 @@
           class="{{ $settingsHasActiveSocialMedia ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Social Media</span>
         </a>
-        <a href="{{ route('app.settings.phone-number.index') }}"
+        {{-- <a href="{{ route('app.settings.phone-number.index') }}"
           class="{{ $settingsHasActivePhoneNumber ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Phone Number</span>
+        </a> --}}
+        <a href="{{ route('app.settings.email-order.index') }}"
+          class="{{ $settingsHasActiveEmailOrder ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+          <span class="text-sm">Email for Order</span>
         </a>
         <a href="{{ route('app.settings.home-image.index') }}"
           class="{{ $settingsHasActiveHomeImage ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">

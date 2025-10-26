@@ -127,7 +127,7 @@
                   <h2 class="text-lg font-semibold">
                     {{ $item->name }}
                   </h2>
-                  <p>Rp. {{ number_format($item->price, 0, ',', '.') }}</p>
+                  <p>$ {{ number_format($item->price, 0, ',', '.') }}</p>
                 </div>
               </div>
 

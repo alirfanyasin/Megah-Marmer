@@ -92,13 +92,13 @@
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 @if ($product->discount !== 0)
-                  <span class="text-sm font-medium text-gray-900 block">Rp
+                  <span class="text-sm font-medium text-gray-900 block">$
                     {{ number_format($product->price * (1 - $product->discount / 100), 0, ',', '.') }}</span>
 
-                  <span class="text-sm font-medium text-gray-400 line-through">Rp.
+                  <span class="text-sm font-medium text-gray-400 line-through">$
                     {{ number_format($product->price, 0, ',', '.') }}</span>
                 @else
-                  <span class="text-sm font-medium text-gray-900 block">Rp.
+                  <span class="text-sm font-medium text-gray-900 block">$
                     {{ number_format($product->price, 0, ',', '.') }}</span>
                 @endif
               </td>

@@ -53,11 +53,11 @@
                 <p class="text-gray-600 text-sm mb-3">{{ Str::substr($product->description, 0, 100) }}</p>
                 <div class="flex items-center gap-2">
                   @if ($product->discount !== 0)
-                    <p class="text-red-900 font-bold text-lg">Rp.
+                    <p class="text-red-900 font-bold text-lg">$
                       {{ number_format($product->price * (1 - $product->discount / 100), 0, ',', '.') }}</p>
                     <p class="text-gray-400 line-through text-sm">{{ number_format($product->price) }}</p>
                   @else
-                    <p class="text-red-900 font-bold text-lg">Rp.
+                    <p class="text-red-900 font-bold text-lg">$
                       {{ number_format($product->price, 0, ',', '.') }}</p>
                   @endif
                 </div>
