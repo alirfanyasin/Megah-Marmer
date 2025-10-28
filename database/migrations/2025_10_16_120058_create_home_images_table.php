@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('home_images', function (Blueprint $table) {
             $table->id();
             $table->string('headline');
+            $table->text('name')->nullable();
             $table->text('description')->nullable();
             $table->string('hero_img');
             $table->timestamps();

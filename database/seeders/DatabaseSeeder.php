@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             CategorySubSeeder::class,
             CategoryProductSeeder::class,
+            HomeImageSeeder::class,
         ]);
     }
 }

@@ -78,9 +78,8 @@
           <div>
             <label class="block text-sm font-medium text-gray-600 mb-3">Current Hero Image</label>
             <div class="relative w-full h-80 bg-gray-100 rounded overflow-hidden">
-              <img src="{{ asset('storage/' . $homeImageData->hero_img) }}" 
-                   alt="Hero Image" 
-                   class="w-full h-full object-cover">
+              <img src="{{ asset('storage/' . $homeImageData->hero_img) }}" alt="Hero Image"
+                class="w-full h-full object-cover">
             </div>
           </div>
 
@@ -101,23 +100,42 @@
             </div>
           </div>
 
-          {{-- Description --}}
-          @if($homeImageData->description)
-          <div class="border-t pt-4">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                  </path>
-                </svg>
-              </div>
-              <div class="flex-1">
-                <p class="text-sm text-gray-500 mb-1">Description</p>
-                <p class="text-gray-700">{{ $homeImageData->description }}</p>
+          {{-- Name --}}
+          @if ($homeImageData->name)
+            <div class="border-t pt-4">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-purple-600/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-sm text-gray-500 mb-1">Name</p>
+                  <p class="text-gray-700">{{ $homeImageData->name }}</p>
+                </div>
               </div>
             </div>
-          </div>
+          @endif
+
+          {{-- Description --}}
+          @if ($homeImageData->description)
+            <div class="border-t pt-4">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-sm text-gray-500 mb-1">Description</p>
+                  <p class="text-gray-700">{{ $homeImageData->description }}</p>
+                </div>
+              </div>
+            </div>
           @endif
 
           {{-- Action Buttons --}}
@@ -176,6 +194,17 @@
             @enderror
           </div>
 
+          {{-- Name Input --}}
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-600 mb-2">Name</label>
+            <input type="text" id="name" name="name"
+              class="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+              placeholder="e.g., Megah Marmer">
+            @error('name')
+              <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+            @enderror
+          </div>
+
           {{-- Description Input --}}
           <div>
             <label for="description" class="block text-sm font-medium text-gray-600 mb-2">Description</label>
@@ -204,7 +233,8 @@
             @error('hero_img')
               <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
             @enderror
-            <p class="text-xs text-gray-400 mt-1">Supported formats: JPEG, JPG, PNG, WEBP. Max size: 2MB. Leave empty to keep current image.</p>
+            <p class="text-xs text-gray-400 mt-1">Supported formats: JPEG, JPG, PNG, WEBP. Max size: 2MB. Leave empty to
+              keep current image.</p>
           </div>
 
           {{-- New Image Preview --}}
@@ -256,8 +286,9 @@
           .then(response => response.json())
           .then(data => {
             document.getElementById('headline').value = data.headline;
+            document.getElementById('name').value = data.name || '';
             document.getElementById('description').value = data.description || '';
-            
+
             // Show current image
             if (data.hero_img) {
               currentImagePreview.classList.remove('hidden');
@@ -293,12 +324,11 @@
         document.getElementById('newImagePreview').classList.add('hidden');
       }
     }
-   
+
 
     // Close modal when clicking outside
     document.getElementById('homeImageModal').addEventListener('click', function(e) {
       if (e.target === this) closeModal();
     });
-
   </script>
 @endsection

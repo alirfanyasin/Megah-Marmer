@@ -20,6 +20,7 @@ class HomeImageController extends Controller
         $homeImage = HomeImage::findOrFail($id);
         return response()->json([
             'headline' => $homeImage->headline,
+            'name' => $homeImage->name,
             'description' => $homeImage->description,
             'hero_img' => $homeImage->hero_img,
         ]);
@@ -29,6 +30,7 @@ class HomeImageController extends Controller
     {
         $request->validate([
             'headline' => 'required|string|max:255',
+            'name' => 'nullable|string',
             'description' => 'nullable|string',
             'hero_img' => 'nullable|image|mimes:jpeg,jpg,png,webp|max:5120',
         ]);
@@ -37,6 +39,7 @@ class HomeImageController extends Controller
 
         $data = [
             'headline' => $request->headline,
+            'name' => $request->name,
             'description' => $request->description,
         ];
 

@@ -15,6 +15,7 @@ class HomeImageSeeder extends Seeder
     {
         HomeImage::create([
             'headline' => '10% off the entire website',
+            'name' => 'Megah Marmer',
             'description' => 'with code SITE250',
             'hero_img' => '/img/bg-hero.jpg'
         ]);

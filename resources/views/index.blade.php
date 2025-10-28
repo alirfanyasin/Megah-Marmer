@@ -13,7 +13,8 @@
         <div class="relative z-10 flex items-center justify-center min-h-screen">
           <div class="text-center text-white">
             <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
+            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
           </div>
         </div>
       </div>
