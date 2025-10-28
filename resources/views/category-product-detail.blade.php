@@ -127,7 +127,7 @@
 
         {{-- Action Buttons --}}
         <div class="gap-3">
-          <a href="mailto:{{ $emailOrder->email }}?subject=Order%20Produk%20{{ $product->name }}&body=Halo,%0A%0ASaya tertarik dengan produk {{ $product->name }}.%0A%0ADetail produk:%0A- Nama: {{ $product->name }}%0A- Harga: ${{ number_format($product->price, 0, ',', '.') }}%0A- Deskripsi: {{ $product->description }}%0A%0ATerima kasih."
+          <a href="mailto:{{ $emailOrder->email ?? '' }}?subject=Order%20Produk%20{{ $product->name }}&body=Halo,%0A%0ASaya tertarik dengan produk {{ $product->name }}.%0A%0ADetail produk:%0A- Nama: {{ $product->name }}%0A- Harga: ${{ number_format($product->price, 0, ',', '.') }}%0A- Deskripsi: {{ $product->description }}%0A%0ATerima kasih."
             class="inline-block" target="_blank">
             <div
               class="transition flex items-center justify-center gap-2 bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800">

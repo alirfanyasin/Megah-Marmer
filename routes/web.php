@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\Settings\EmailOrderController;
 use App\Http\Controllers\Admin\Settings\HomeImageController;
 use App\Http\Controllers\Admin\Settings\LocationController;
+use App\Http\Controllers\Admin\Settings\OurSelectionOrderController;
 use App\Http\Controllers\Admin\Settings\PhoneNumberController;
 use App\Http\Controllers\Admin\Settings\SocialMediaController;
 use App\Http\Controllers\Admin\SubscribeController;
@@ -200,6 +201,13 @@ Route::prefix('app')
             Route::get('/home-image/{id}/edit', [HomeImageController::class, 'edit'])->name('app.settings.home-image.edit');
             Route::put('/home-image/{id}/update', [HomeImageController::class, 'update'])->name('app.settings.home-image.update');
             // Route::delete('/home-image/{id}/destroy', [HomeImageController::class, 'destroy'])->name('app.settings.home-image.destroy');
+
+            // Our Selection Order
+            Route::get('/our-selection-order', [OurSelectionOrderController::class, 'index'])->name('app.settings.our-selection-order.index');
+            Route::post('/our-selection-order', [OurSelectionOrderController::class, 'store'])->name('app.settings.our-selection-order.store');
+            Route::get('/our-selection-order/{id}/edit', [OurSelectionOrderController::class, 'edit'])->name('app.settings.our-selection-order.edit');
+            Route::put('/our-selection-order/{id}/update', [OurSelectionOrderController::class, 'update'])->name('app.settings.our-selection-order.update');
+            Route::delete('/our-selection-order/{id}/destroy', [OurSelectionOrderController::class, 'destroy'])->name('app.settings.our-selection-order.destroy');
         });
 
 

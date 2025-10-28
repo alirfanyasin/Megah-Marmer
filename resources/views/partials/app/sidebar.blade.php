@@ -124,6 +124,7 @@
         $settingsHasActiveSocialMedia = request()->routeIs('app.settings.social-media.index');
         $settingsHasActiveEmailOrder = request()->routeIs('app.settings.email-order.index');
         $settingsHasActiveHomeImage = request()->routeIs('app.settings.home-image.index');
+        $settingsHasActiveOurSelectionOrder = request()->routeIs('app.settings.our-selection-order.index');
 
         $isSettingsMenuActive =
             $settingsHasActiveCategory ||
@@ -157,6 +158,10 @@
         <a href="{{ route('app.settings.home-image.index') }}"
           class="{{ $settingsHasActiveHomeImage ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Home Image</span>
+        </a>
+        <a href="{{ route('app.settings.our-selection-order.index') }}"
+          class="{{ $settingsHasActiveOurSelectionOrder ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+          <span class="text-sm">Our Selection Order</span>
         </a>
       </div>
     </div>

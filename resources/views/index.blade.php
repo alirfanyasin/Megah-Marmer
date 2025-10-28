@@ -170,20 +170,22 @@
       <!-- Product Grid -->
       <div class="relative">
         <div class="product-carousel flex gap-6 overflow-x-hidden">
-          @foreach ($recommendationProducts as $recomprod)
+          @foreach ($ourSelectionProducts as $orderItem)
             <div class="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden shadow-lg group">
               <a
-                href="{{ route('category.products.detail', ['id_category' => $recomprod->categorySub->category->id, 'id_sub_category' => $recomprod->categorySub->id, 'id_product' => $recomprod->id]) }}">
+                href="{{ route('category.products.detail', ['id_category' => $orderItem->categoryProduct->categorySub->category->id, 'id_sub_category' => $orderItem->categoryProduct->categorySub->id, 'id_product' => $orderItem->category_product_id]) }}">
                 <div class="relative">
-                  <img src="{{ asset('storage/' . $recomprod->image[0]) }}" alt="{{ $recomprod->name }}"
+                  <img src="{{ $orderItem->categoryProduct->first_image_url }}"
+                    alt="{{ $orderItem->categoryProduct->name }}"
                     class="w-full h-64 object-cover group-hover:scale-105 transition-all duration-300">
                   <div
                     class="absolute bottom-4 left-4 text-white right-4 z-10 group-hover:-translate-y-2 transition-all duration-300">
                     <div class="flex items-center justify-between text-sm">
                       <div>
-                        <h4 class="font-semibold">{{ $recomprod->name }}</h4>
-                        <p class="font-light">{{ Str::substr($recomprod->description, 0, 38) }}</p>
-                        <p class="font-semibold text-sm">$ {{ number_format($recomprod->price, 0, ',', '.') }}</p>
+                        <h4 class="font-semibold">{{ $orderItem->categoryProduct->name }}</h4>
+                        <p class="font-light">{{ Str::substr($orderItem->categoryProduct->description, 0, 38) }}</p>
+                        <p class="font-semibold text-sm">$
+                          {{ number_format($orderItem->categoryProduct->price, 0, ',', '.') }}</p>
                       </div>
                     </div>
                   </div>
