@@ -176,9 +176,25 @@
           </div>
         @endforeach
 
-        {{-- ======= Our Solid Stone ======= --}}
-        @php $isOssActive = in_array($currentRoute, $ossRoutes, true); @endphp
+        {{-- Our Solid stone --}}
         <div class="nav-item relative">
+          <a href="{{ route('our-solid-stone') }}"
+            class="nav-link {{ Request::is('our-solid-stone') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
+            Our Solid Stone
+          </a>
+        </div>
+
+        {{-- Our finishing --}}
+        <div class="nav-item relative">
+          <a href="{{ route('our-finishing') }}"
+            class="nav-link {{ Request::is('our-finishing') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
+            Our Finishing
+          </a>
+        </div>
+
+        {{-- ======= Our Solid Stone ======= --}}
+        {{-- @php $isOssActive = in_array($currentRoute, $ossRoutes, true); @endphp --}}
+        {{-- <div class="nav-item relative">
           <a href="#"
             class="nav-link {{ $isOssActive ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             Our Solid Stone
@@ -338,11 +354,11 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
 
         {{-- ======= Our Finishing ======= --}}
-        @php $isFinishingActive = in_array($currentRoute, $finishingRoutes, true); @endphp
-        <div class="nav-item relative">
+        {{-- @php $isFinishingActive = in_array($currentRoute, $finishingRoutes, true); @endphp --}}
+        {{-- <div class="nav-item relative">
           <a href="#"
             class="nav-link {{ $isFinishingActive ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             Our Finishing
@@ -427,7 +443,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
 
         {{-- ======= About Us ======= --}}
 

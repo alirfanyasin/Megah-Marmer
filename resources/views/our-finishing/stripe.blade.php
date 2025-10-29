@@ -70,49 +70,48 @@
     </div>
   </section>
 
-  <div class="grid lg:grid-cols-2 gap-16 items-center">
-    <div class="order-2 lg:order-1">
-      <div class="aspect-[3/4] bg-cover bg-center shadow-2xl rounded-sm"
-        style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80');">
+  <section>
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="aspect-[3/4] bg-cover bg-center shadow-2xl rounded-sm"
+          style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80');">
+        </div>
       </div>
-    </div>
-    <div class="order-1 lg:order-2">
-      <span class="text-stone-500 uppercase tracking-[0.2em] text-xs mb-4 block">About The Technique</span>
-      <h2 class="text-4xl sm:text-5xl font-light text-stone-900 mb-8 leading-tight">
-        Creating Visual<br />Direction
-      </h2>
-      <div class="space-y-6 text-stone-700 leading-relaxed">
-        <p>
-          Stripe finishing combines multiple surface treatments in alternating parallel bands across marble surfaces.
-          This technique creates distinctive linear patterns that can be oriented to guide foot traffic, elongate
-          spaces, or serve as wayfinding elements.
-        </p>
-        <p>
-          Common combinations include polished/honed stripes, polished/flamed, or bush-hammered/smooth patterns.
-          Each stripe typically measures 50-200mm in width, precisely machined to maintain consistent dimensions
-          and crisp boundaries.
-        </p>
-      </div>
-      <div class="mt-8 pt-8 border-t border-stone-200">
-        <div class="grid grid-cols-3 gap-6 text-center">
-          <div>
-            <div class="text-3xl font-light text-stone-900 mb-1">50-200mm</div>
-            <div class="text-sm text-stone-600">Stripe Width</div>
-          </div>
-          <div>
-            <div class="text-3xl font-light text-stone-900 mb-1">2-3</div>
-            <div class="text-sm text-stone-600">Finish Types</div>
-          </div>
-          <div>
-            <div class="text-3xl font-light text-stone-900 mb-1">±1mm</div>
-            <div class="text-sm text-stone-600">Precision</div>
+      <div class="order-1 lg:order-2">
+        <span class="text-stone-500 uppercase tracking-[0.2em] text-xs mb-4 block">About The Technique</span>
+        <h2 class="text-4xl sm:text-5xl font-light text-stone-900 mb-8 leading-tight">
+          Creating Visual<br />Direction
+        </h2>
+        <div class="space-y-6 text-stone-700 leading-relaxed">
+          <p>
+            Stripe finishing combines multiple surface treatments in alternating parallel bands across marble surfaces.
+            This technique creates distinctive linear patterns that can be oriented to guide foot traffic, elongate
+            spaces, or serve as wayfinding elements.
+          </p>
+          <p>
+            Common combinations include polished/honed stripes, polished/flamed, or bush-hammered/smooth patterns.
+            Each stripe typically measures 50-200mm in width, precisely machined to maintain consistent dimensions
+            and crisp boundaries.
+          </p>
+        </div>
+        <div class="mt-8 pt-8 border-t border-stone-200">
+          <div class="grid grid-cols-3 gap-6 text-center">
+            <div>
+              <div class="text-3xl font-light text-stone-900 mb-1">50-200mm</div>
+              <div class="text-sm text-stone-600">Stripe Width</div>
+            </div>
+            <div>
+              <div class="text-3xl font-light text-stone-900 mb-1">2-3</div>
+              <div class="text-sm text-stone-600">Finish Types</div>
+            </div>
+            <div>
+              <div class="text-3xl font-light text-stone-900 mb-1">±1mm</div>
+              <div class="text-sm text-stone-600">Precision</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
   </section>
 
   <!-- Common Patterns -->

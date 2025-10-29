@@ -24,6 +24,8 @@ use App\Http\Controllers\OurLocationController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\CategorySubProductController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\GuestOurFinishingController;
+use App\Http\Controllers\GuestOurSolidStoneController;
 use App\Http\Controllers\OurCommitmentsController;
 use App\Http\Controllers\OurFactoryController;
 use App\Http\Controllers\OurFinishingController;
@@ -113,6 +115,9 @@ Route::prefix('about')->group(function () {
 Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us');
 Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 Route::post('contact-us', [ContactUsController::class, 'store'])->name('contact-us.store');
+
+Route::get('our-solid-stone', [GuestOurSolidStoneController::class, 'index'])->name('our-solid-stone');
+Route::get('our-finishing', [GuestOurFinishingController::class, 'index'])->name('our-finishing');
 
 
 
