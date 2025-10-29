@@ -289,65 +289,75 @@
         @if ($items->count() > 0)
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
             @if ($items->get(0))
-              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
-                <img src="{{ asset('storage/' . $items[0]->image) }}" alt="{{ $items[0]->title }}"
-                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+              <a href="{{ route('products.all') }}">
+                <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
+                  <img src="{{ asset('storage/' . $items[0]->image) }}" alt="{{ $items[0]->title }}"
+                    class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
 
-                <div
-                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
-                  <p class="font-semibold truncate">{{ $items[0]->title }}</p>
-                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[0]->description }}</p>
+                  <div
+                    class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                    <p class="font-semibold truncate">{{ $items[0]->title }}</p>
+                    <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[0]->description }}</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             @endif
 
             @if ($items->get(1))
-              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
-                <img src="{{ asset('storage/' . $items[1]->image) }}" alt="{{ $items[1]->title }}"
-                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-                <div
-                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
-                  <p class="font-semibold truncate">{{ $items[1]->title }}</p>
-                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[1]->description }}</p>
+              <a href="{{ route('products.all') }}">
+                <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
+                  <img src="{{ asset('storage/' . $items[1]->image) }}" alt="{{ $items[1]->title }}"
+                    class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+                  <div
+                    class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                    <p class="font-semibold truncate">{{ $items[1]->title }}</p>
+                    <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[1]->description }}</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             @endif
 
             @if ($items->get(2))
-              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group col-span-2 hover:cursor-pointer">
-                <img src="{{ asset('storage/' . $items[2]->image) }}" alt="{{ $items[2]->title }}"
-                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-                <div
-                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
-                  <p class="font-semibold truncate">{{ $items[2]->title }}</p>
-                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[2]->description }}</p>
+              <a href="{{ route('products.all') }}">
+                <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group col-span-2 hover:cursor-pointer">
+                  <img src="{{ asset('storage/' . $items[2]->image) }}" alt="{{ $items[2]->title }}"
+                    class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+                  <div
+                    class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                    <p class="font-semibold truncate">{{ $items[2]->title }}</p>
+                    <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[2]->description }}</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             @endif
           </div>
 
           <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-3">
             @if ($items->get(3))
-              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
-                <img src="{{ asset('storage/' . $items[3]->image) }}" alt="{{ $items[3]->title }}"
-                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-                <div
-                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
-                  <p class="font-semibold truncate">{{ $items[3]->title }}</p>
-                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[3]->description }}</p>
+              <a href="{{ route('products.all') }}">
+                <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
+                  <img src="{{ asset('storage/' . $items[3]->image) }}" alt="{{ $items[3]->title }}"
+                    class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+                  <div
+                    class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                    <p class="font-semibold truncate">{{ $items[3]->title }}</p>
+                    <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[3]->description }}</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             @endif
             @if ($items->get(4))
-              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
-                <img src="{{ asset('storage/' . $items[4]->image) }}" alt="{{ $items[4]->title }}"
-                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-                <div
-                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
-                  <p class="font-semibold truncate">{{ $items[4]->title }}</p>
-                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[4]->description }}</p>
+              <a href="{{ route('products.all') }}">
+                <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
+                  <img src="{{ asset('storage/' . $items[4]->image) }}" alt="{{ $items[4]->title }}"
+                    class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+                  <div
+                    class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                    <p class="font-semibold truncate">{{ $items[4]->title }}</p>
+                    <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[4]->description }}</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             @endif
           </div>
         @endif
