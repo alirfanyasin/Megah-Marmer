@@ -35,3 +35,7 @@ body {
   -moz-user-select: none;    /* untuk Firefox */
   -ms-user-select: none;     /* untuk Internet Explorer */
 }
+
+iframe {
+    pointer-events: none;
+}

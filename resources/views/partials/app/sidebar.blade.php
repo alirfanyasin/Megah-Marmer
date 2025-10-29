@@ -69,10 +69,16 @@
 
 
     <!-- Subscribers -->
-    <a href="{{ route('app.subscribe.index') }}"
+    {{-- <a href="{{ route('app.subscribe.index') }}"
       class="{{ request()->routeIs('app.subscribe.index') ? 'actived' : '' }} flex items-center px-4 py-3 hover:bg-gray-800 transition-colors mb-2 rounded">
       <iconify-icon icon="ph:users-three" width="24" height="24"></iconify-icon>
       <span class="ml-3 font-medium">Subscribers</span>
+    </a> --}}
+
+    <a href="{{ route('app.contact-us.index') }}"
+      class="{{ request()->routeIs('app.contact-us.index') ? 'actived' : '' }} flex items-center px-4 py-3 hover:bg-gray-800 transition-colors mb-2 rounded">
+      <iconify-icon icon="ph:users-three" width="24" height="24"></iconify-icon>
+      <span class="ml-3 font-medium">Contact Us Message</span>
     </a>
 
     <!-- About Us Menu -->

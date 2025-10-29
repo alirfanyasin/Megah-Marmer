@@ -20,7 +20,7 @@
     </div>
   </section>
 
-  <!-- Overview -->
+  <!-- Overview Stone Storage -->
   <section class="py-16 sm:py-20 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
       <div>

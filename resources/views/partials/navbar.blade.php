@@ -430,8 +430,14 @@
         </div>
 
         {{-- ======= About Us ======= --}}
-        @php $isAboutActive = in_array($currentRoute, $aboutRoutes, true); @endphp
+
         <div class="nav-item relative">
+          <a href="{{ route('about-us') }}"
+            class="nav-link {{ Request::is('about-us') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
+            About Us
+          </a>
+        </div>
+        {{-- <div class="nav-item relative">
           <a href="#"
             class="nav-link {{ $isAboutActive ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             About Us
@@ -568,6 +574,13 @@
               </div>
             </div>
           </div>
+        </div> --}}
+
+        <div class="nav-item relative">
+          <a href="{{ route('contact-us') }}"
+            class="nav-link {{ Request::is('contact-us') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
+            Contact Us
+          </a>
         </div>
 
       </div>

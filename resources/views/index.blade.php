@@ -26,7 +26,8 @@
         <div class="relative z-10 flex items-center justify-center min-h-screen">
           <div class="text-center text-white">
             <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
+            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
           </div>
         </div>
       </div>
@@ -38,7 +39,8 @@
         <div class="relative z-10 flex items-center justify-center min-h-screen">
           <div class="text-center text-white">
             <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
+            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
           </div>
         </div>
       </div>
@@ -50,7 +52,8 @@
         <div class="relative z-10 flex items-center justify-center min-h-screen">
           <div class="text-center text-white">
             <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
+            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
           </div>
         </div>
       </div>
@@ -62,7 +65,8 @@
         <div class="relative z-10 flex items-center justify-center min-h-screen">
           <div class="text-center text-white">
             <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-8">{{ $homeImageData->description }}</p>
+            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
+            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
           </div>
         </div>
       </div>
@@ -141,6 +145,33 @@
           class="worlds-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800">
           <i class="fas fa-chevron-right"></i>
         </button>
+      </div>
+    </div>
+  </section>
+
+
+  {{-- Preview Video --}}
+  <section class="py-16 bg-white" id="our-world-selection">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Megah Marmer, creator of furniture</h2>
+        <h3 class="text-3xl font-bold text-gray-900 mb-8">Our worlds</h3>
+      </div>
+
+      <div class="">
+        <iframe class="w-full" height="600"
+          src="https://www.youtube.com/embed/8YEQT7Q5TVk?autoplay=1&mute=1&loop=1&playlist=8YEQT7Q5TVk&controls=0&modestbranding=1&showinfo=0&rel=0"
+          title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media"
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+        <div class="grid md:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-4">
+          <div class="overflow-hidden rounded-xl h-[400px] w-full">
+
+          </div>
+        </div>
+
+
       </div>
     </div>
   </section>
@@ -270,7 +301,7 @@
   </section>
 
 
-  {{-- Discover --}}
+  {{-- Season --}}
   <section class="bg-cover relative bg-center bg-[url('../../public/img/bg-wood2.jpg')] min-h-screen">
     <div class="absolute bg-gradient-to-b from-black/70 to-white/0 bottom-0 right-0 top-0 h-full left-0"></div>
 
@@ -282,7 +313,7 @@
         </header>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
             <img
               src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
               alt="Living space sofa"
@@ -293,7 +324,7 @@
             </div>
           </div>
 
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
             <img
               src="https://images.unsplash.com/photo-1600494448850-6013c64ba722?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
               alt="DARIO modular sofa"
@@ -304,7 +335,7 @@
             </div>
           </div>
 
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group sm:col-span-2">
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group col-span-2 hover:cursor-pointer">
             <img
               src="https://images.unsplash.com/photo-1683731332610-23d833f5871f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
               alt="Favourite furniture pieces"
@@ -316,8 +347,8 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group sm:col-span-2">
+        <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-3">
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
             <img
               src="https://images.unsplash.com/photo-1525906336592-11c866dd1d4a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
               alt="FSC certified forest"
@@ -328,7 +359,7 @@
             </div>
           </div>
 
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
+          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
             <img
               src="https://images.unsplash.com/photo-1615506430606-b37113426217?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
               alt="New coffee tables"
@@ -336,16 +367,6 @@
             <div
               class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
               New arrivals - Coffee tables
-            </div>
-          </div>
-
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group">
-            <img
-              src="https://images.unsplash.com/photo-1605885795793-097ffaee6b7c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
-              alt="New chairs" class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-            <div
-              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
-              New arrivals - Chairs
             </div>
           </div>
         </div>
@@ -409,3 +430,5 @@
     </div>
   </section>
 @endsection
+
+<script async src="https://www.tiktok.com/embed.js"></script>

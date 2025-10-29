@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\OurStoryController;
 use App\Http\Controllers\Admin\About\OurStoryController as AdminOurStoryController;
 
@@ -8,11 +9,13 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\Settings\ManageCategoryMenuController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\ContactUsController as AdminContactUsController;
 use App\Http\Controllers\Admin\Settings\EmailOrderController;
 use App\Http\Controllers\Admin\Settings\HomeImageController;
 use App\Http\Controllers\Admin\Settings\LocationController;
 use App\Http\Controllers\Admin\Settings\OurSelectionOrderController;
 use App\Http\Controllers\Admin\Settings\PhoneNumberController;
+use App\Http\Controllers\Admin\Settings\SeasonController;
 use App\Http\Controllers\Admin\Settings\SocialMediaController;
 use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Auth\LoginController;
@@ -48,6 +51,7 @@ Route::post('/subscribe', [SubscribeController::class, 'store'])->name('app.subs
 Route::get('/search', [SearchController::class, 'index'])
     ->middleware('throttle:60,1')
     ->name('search');
+
 
 
 
@@ -96,7 +100,7 @@ Route::prefix('about')->group(function () {
     Route::get('/our-story', [OurStoryController::class, 'index'])->name('about.our-story.index');
     Route::get('/our-commitments', [OurCommitmentsController::class, 'index'])->name('about.our-commitments.index');
     Route::get('/our-team', [OurTeamController::class, 'index'])->name('about.our-team.index');
-    Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
+    // Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact-us');
     Route::get('/packaging', [PackagingController::class, 'index'])->name('packaging');
     Route::get('/suffing-area', [SuffingAreaController::class, 'index'])->name('suffing-area');
     Route::get('/stone-storage', [StoneStorageController::class, 'index'])->name('stone-storage');
@@ -105,6 +109,13 @@ Route::prefix('about')->group(function () {
     Route::get('/sawing-machine', [SawingMachineController::class, 'index'])->name('sawing-machine');
     Route::get('/production-process', [ProductionProcessController::class, 'index'])->name('production-process');
 });
+
+Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us');
+Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
+Route::post('contact-us', [ContactUsController::class, 'store'])->name('contact-us.store');
+
+
+
 
 
 // Admin Login Routes
@@ -115,6 +126,11 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::post('/admin/logout', [LoginController::class, 'logout'])->name('logout');
 });
+
+
+
+
+
 // Admin Routes
 Route::prefix('app')
     ->middleware(['auth'])
@@ -147,6 +163,13 @@ Route::prefix('app')
         // Subscribe
         Route::get('/subscribe', [SubscribeController::class, 'index'])->name('app.subscribe.index');
         Route::get('/subscribe/{id}/destroy', [SubscribeController::class, 'destroy'])->name('app.destroy');
+
+        // Contact us
+        Route::prefix('contect-us')->group(function () {
+            Route::get('/', [AdminContactUsController::class, 'index'])->name('app.contact-us.index');
+            Route::delete('/{id}/destroy', [AdminContactUsController::class, 'destroy'])->name('app.contact-us.destroy');
+        });
+
 
 
         // Settings Routes
@@ -218,5 +241,15 @@ Route::prefix('app')
             Route::get('/our-story/{id}/edit', [AdminOurStoryController::class, 'edit'])->name('app.about.our-story.edit');
             Route::put('/our-story/{id}/update', [AdminOurStoryController::class, 'update'])->name('app.about.our-story.update');
             Route::delete('/our-story/{id}/destroy', [AdminOurStoryController::class, 'destroy'])->name('app.about.our-story.destroy');
+        });
+
+
+        // Season for admin
+        Route::prefix('season')->group(function () {
+            Route::get('/', [SeasonController::class, 'index'])->name('season.index');
+            Route::post('/', [SeasonController::class, 'store'])->name('season.store');
+            Route::get('/{id}/edit', [SeasonController::class, 'edit'])->name('season.edit');
+            Route::put('/{id}/update', [SeasonController::class, 'update'])->name('season.update');
+            Route::delete('/{id}/destroy', [SeasonController::class, 'destroy'])->name('season.destroy');
         });
     });

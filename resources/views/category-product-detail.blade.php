@@ -100,7 +100,7 @@
 
 
         {{-- Features --}}
-        <ul class="space-y-3">
+        {{-- <ul class="space-y-3">
           @foreach ($product->description_point as $index => $point)
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -111,7 +111,7 @@
               <span class="text-sm text-gray-700">{{ $point }}</span>
             </li>
           @endforeach
-        </ul>
+        </ul> --}}
 
         {{-- Price --}}
         <div class="flex items-baseline gap-3">
