@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\CategoryProduct;
 use App\Models\CategorySub;
 use App\Models\HomeImage;
+use App\Models\Season;
 use App\Models\OurSelectionOrder;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,7 @@ class HomeController extends Controller
         $ourSelectionProducts = OurSelectionOrder::with(['categoryProduct.categorySub.category'])
             ->orderBy('order_number', 'asc')
             ->get();
-        return view('index', compact('categories', 'recommendationProducts', 'categorySubDatas', 'newProducts', 'homeImageData', 'ourSelectionProducts'));
+        $seasons = Season::latest()->take(5)->get();
+        return view('index', compact('categories', 'recommendationProducts', 'categorySubDatas', 'newProducts', 'homeImageData', 'ourSelectionProducts', 'seasons'));
     }
 }

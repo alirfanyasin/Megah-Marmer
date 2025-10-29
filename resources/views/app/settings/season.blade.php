@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Phone Number Settings')
+@section('title', 'Season Settings')
 @section('content')
   <div class="">
     {{-- Breadcrumb --}}
@@ -33,7 +33,7 @@
                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                 clip-rule="evenodd"></path>
             </svg>
-            <span class="ml-1 text-sm font-medium text-gray-400">Phone Number</span>
+            <span class="ml-1 text-sm font-medium text-gray-400">Season</span>
           </div>
         </li>
       </ol>
@@ -42,18 +42,16 @@
     {{-- Header Section --}}
     <div class="flex justify-between items-center mb-6">
       <div>
-        <h1 class="text-2xl font-bold text-gray-700 mb-1">Phone Number Settings</h1>
-        <p class="text-gray-500 text-sm">Manage contact phone number for your system</p>
+        <h1 class="text-2xl font-bold text-gray-700 mb-1">Season Settings</h1>
+        <p class="text-gray-500 text-sm">Manage up to 5 season items</p>
       </div>
-      @if (!$phoneNumber)
-        <button onclick="openModal('add')"
-          class="bg-amber-600 hover:bg-amber-700 hover:cursor-pointer text-white px-2 md:px-4 py-2 rounded flex items-center gap-2 transition-colors">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-          </svg>
-          <span class="md:block hidden">Add Phone Number</span>
-        </button>
-      @endif
+      <button onclick="openModal('add')"
+        class="bg-amber-600 hover:bg-amber-700 hover:cursor-pointer text-white px-2 md:px-4 py-2 rounded flex items-center gap-2 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+        </svg>
+        <span class="md:block hidden">Add Season</span>
+      </button>
     </div>
 
     {{-- Alert Messages --}}
@@ -80,88 +78,93 @@
     @endif
 
     {{-- Content Section --}}
-    @if ($phoneNumber)
-      <div class="bg-white border border-gray-200 rounded p-6">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-amber-600/20 rounded-full flex items-center justify-center">
-              <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                </path>
-              </svg>
-            </div>
-            <div>
-              <p class="text-sm text-gray-500 mb-1">Contact Phone Number</p>
-              <p class="text-xl font-semibold text-gray-700">{{ $phoneNumber->phone_number }}</p>
-            </div>
-          </div>
-          <div class="flex gap-2">
-            <button onclick="openModal('edit', {{ $phoneNumber->id }})"
-              class="text-blue-600 hover:cursor-pointer hover:text-blue-900 p-2 hover:bg-blue-50 rounded transition-colors"
-              title="Edit">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-                </path>
-              </svg>
-            </button>
-            <button onclick="confirmDelete({{ $phoneNumber->id }})"
-              class="text-red-600 hover:cursor-pointer hover:text-red-900 p-2 hover:bg-red-50 rounded transition-colors"
-              title="Delete">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
-                </path>
-              </svg>
-            </button>
-          </div>
-        </div>
+    <div class="bg-white border border-gray-200 rounded p-6">
+      @php $count = $seasons->count(); @endphp
+      <div class="flex items-center justify-between mb-4">
+        <p class="text-sm text-gray-500">Total seasons: {{ $count }} / 5</p>
       </div>
-    @else
-      <div class="bg-white border border-gray-200 rounded p-12 text-center">
-        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-            </path>
-          </svg>
+      @if ($seasons->isEmpty())
+        <div class="p-12 text-center text-gray-500">No seasons yet. Click Add Season.</div>
+      @else
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          @foreach ($seasons as $season)
+            <div class="border border-gray-200 rounded overflow-hidden">
+              <div class="relative w-full h-40 bg-gray-100">
+                <img src="{{ asset('storage/' . $season->image) }}" class="w-full h-full object-cover" alt="Season">
+              </div>
+              <div class="p-4">
+                <h4 class="font-semibold text-gray-700">{{ $season->title }}</h4>
+                <p class="text-sm text-gray-500 line-clamp-2">{{ $season->description }}</p>
+                <div class="mt-3 flex gap-2">
+                  <button onclick="openModal('edit', {{ $season->id }})"
+                    class="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 hover:cursor-pointer">Edit</button>
+                  <button onclick="confirmDelete({{ $season->id }})"
+                    class="px-3 py-1 text-sm bg-red-600 text-white rounded hover:bg-red-700 hover:cursor-pointer">Delete</button>
+                </div>
+              </div>
+            </div>
+          @endforeach
         </div>
-        <h3 class="text-lg font-semibold text-gray-700 mb-2">No Phone Number Set</h3>
-        <p class="text-gray-500 mb-4">Add a contact phone number for your system</p>
-        <button onclick="openModal('add')"
-          class="bg-amber-600 hover:bg-amber-700 hover:cursor-pointer text-white px-6 py-2 rounded transition-colors">
-          Add Phone Number
-        </button>
-      </div>
-    @endif
+      @endif
+    </div>
   </div>
 
   {{-- Modal Add/Edit --}}
-  <div id="phoneModal"
+  <div id="seasonModal"
     class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-    <div class="bg-white rounded shadow-xl max-w-md w-full">
+    <div class="bg-white rounded shadow-xl max-w-xl w-full max-h-[90vh] overflow-y-auto">
       <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
-        <h3 id="modalTitle" class="text-xl font-semibold text-gray-600">Add Phone Number</h3>
+        <h3 id="modalTitle" class="text-xl font-semibold text-gray-600">Add Season</h3>
         <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
-      <form id="phoneForm" method="POST" action="{{ route('app.settings.phone-number.store') }}">
+      <form id="seasonForm" method="POST" action="{{ route('season.store') }}" enctype="multipart/form-data">
         @csrf
         <div id="methodFieldContainer"></div>
         <div class="px-6 py-4 space-y-4">
           <div>
-            <label for="phone_number" class="block text-sm font-medium text-gray-600 mb-2">Phone Number</label>
-            <input type="text" id="phone_number" name="phone_number" required
+            <label for="title" class="block text-sm font-medium text-gray-600 mb-2">Title *</label>
+            <input type="text" id="title" name="title" required
               class="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
-              placeholder="e.g., +62 812 3456 7890">
-            @error('phone_number')
+              placeholder="e.g., Autumn Collection">
+            @error('title')
               <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
             @enderror
-            <p class="text-xs text-gray-400 mt-1">Enter the contact phone number with country code</p>
+          </div>
+          <div>
+            <label for="description" class="block text-sm font-medium text-gray-600 mb-2">Description *</label>
+            <textarea id="description" name="description" rows="3" required
+              class="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+              placeholder="Short description..."></textarea>
+            @error('description')
+              <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+            @enderror
+          </div>
+          <div id="currentImageWrapper" class="hidden">
+            <label class="block text-sm font-medium text-gray-600 mb-2">Current Image</label>
+            <div class="relative w-full h-40 bg-gray-100 rounded overflow-hidden">
+              <img id="currentImage" src="" alt="Season Image" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div>
+            <label for="image" class="block text-sm font-medium text-gray-600 mb-2">Image
+            </label>
+            <input type="file" id="image" name="image"
+              accept="image/jpeg,image/jpg,image/png,image/webp,image/avif"
+              class="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent">
+            @error('image')
+              <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+            @enderror
+            <p class="text-xs text-gray-400 mt-1">Supported: JPEG, JPG, PNG, WEBP, AVIF. Max 5MB.</p>
+          </div>
+          <div id="newImageWrapper" class="hidden">
+            <label class="block text-sm font-medium text-gray-600 mb-2">New Image Preview</label>
+            <div class="relative w-full h-40 bg-gray-100 rounded overflow-hidden">
+              <img id="newImage" src="" alt="New Image" class="w-full h-full object-cover">
+            </div>
           </div>
         </div>
         <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200 bg-gray-50">
@@ -217,34 +220,63 @@
 
   <script>
     function openModal(mode, id = null) {
-      const modal = document.getElementById('phoneModal');
-      const form = document.getElementById('phoneForm');
+      const modal = document.getElementById('seasonModal');
+      const form = document.getElementById('seasonForm');
       const title = document.getElementById('modalTitle');
       const methodFieldContainer = document.getElementById('methodFieldContainer');
+      const currentImageWrapper = document.getElementById('currentImageWrapper');
+      const currentImage = document.getElementById('currentImage');
+      const newImageWrapper = document.getElementById('newImageWrapper');
+      const newImage = document.getElementById('newImage');
+      const imageInput = document.getElementById('image');
 
       // Reset form
       form.reset();
       methodFieldContainer.innerHTML = '';
+      currentImageWrapper.classList.add('hidden');
+      newImageWrapper.classList.add('hidden');
+      newImage.src = '';
+
+      // Bind preview handler
+      imageInput.onchange = function(e) {
+        const file = e.target.files && e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(ev) {
+            newImage.src = ev.target.result;
+            newImageWrapper.classList.remove('hidden');
+          }
+          reader.readAsDataURL(file);
+        } else {
+          newImageWrapper.classList.add('hidden');
+          newImage.src = '';
+        }
+      }
 
       if (mode === 'add') {
-        title.textContent = 'Add Phone Number';
-        form.action = '{{ route('app.settings.phone-number.store') }}';
+        title.textContent = 'Add Season';
+        form.action = '{{ route('season.store') }}';
       } else if (mode === 'edit') {
-        title.textContent = 'Edit Phone Number';
-        form.action = `/app/settings/phone-number/${id}/update`;
+        title.textContent = 'Edit Season';
+        form.action = `/app/season/${id}/update`;
 
         // Add PUT method for edit
         methodFieldContainer.innerHTML = '<input type="hidden" name="_method" value="PUT">';
 
         // Fetch data menggunakan AJAX
-        fetch(`/app/settings/phone-number/${id}/edit`)
+        fetch(`/app/season/${id}/edit`)
           .then(response => response.json())
           .then(data => {
-            document.getElementById('phone_number').value = data.phone_number;
+            document.getElementById('title').value = data.title;
+            document.getElementById('description').value = data.description;
+            if (data.image) {
+              currentImageWrapper.classList.remove('hidden');
+              currentImage.src = `/storage/${data.image}`;
+            }
           })
           .catch(error => {
             console.error('Error:', error);
-            alert('Failed to load phone number data');
+            alert('Failed to load season data');
           });
       }
 
@@ -252,14 +284,14 @@
     }
 
     function closeModal() {
-      document.getElementById('phoneModal').classList.add('hidden');
-      document.getElementById('phoneForm').reset();
+      document.getElementById('seasonModal').classList.add('hidden');
+      document.getElementById('seasonForm').reset();
     }
 
     function confirmDelete(id) {
       const modal = document.getElementById('deleteModal');
       const form = document.getElementById('deleteForm');
-      form.action = `/app/settings/phone-number/${id}/destroy`;
+      form.action = `/app/season/${id}/destroy`;
       modal.classList.remove('hidden');
     }
 
@@ -268,7 +300,7 @@
     }
 
     // Close modal when clicking outside
-    document.getElementById('phoneModal').addEventListener('click', function(e) {
+    document.getElementById('seasonModal').addEventListener('click', function(e) {
       if (e.target === this) closeModal();
     });
 

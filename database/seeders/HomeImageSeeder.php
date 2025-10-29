@@ -17,7 +17,7 @@ class HomeImageSeeder extends Seeder
             'headline' => '10% off the entire website',
             'name' => 'Megah Marmer',
             'description' => 'with code SITE250',
-            'hero_img' => '/img/bg-hero.jpg'
+            'hero_img' => ['/img/bg-hero.jpg']
         ]);
     }
 }

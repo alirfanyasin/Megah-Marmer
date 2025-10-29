@@ -74,13 +74,34 @@
     @if ($homeImageData)
       <div class="bg-white border border-gray-200 rounded p-6">
         <div class="space-y-6">
-          {{-- Hero Image Preview --}}
+          {{-- Hero Images Preview --}}
           <div>
-            <label class="block text-sm font-medium text-gray-600 mb-3">Current Hero Image</label>
-            <div class="relative w-full h-80 bg-gray-100 rounded overflow-hidden">
-              <img src="{{ asset('storage/' . $homeImageData->hero_img) }}" alt="Hero Image"
-                class="w-full h-full object-cover">
-            </div>
+            <label class="block text-sm font-medium text-gray-600 mb-3">Current Hero Images</label>
+            @php
+              $images = is_array($homeImageData->hero_img)
+                  ? $homeImageData->hero_img
+                  : (empty($homeImageData->hero_img)
+                      ? []
+                      : [$homeImageData->hero_img]);
+            @endphp
+            @if (count($images) > 0)
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                @foreach ($images as $img)
+                  @php
+                    $isAbsolute = \Illuminate\Support\Str::startsWith($img, ['http://', 'https://', '/']);
+                    $src = $isAbsolute ? asset(ltrim($img, '/')) : asset('storage/' . $img);
+                  @endphp
+                  <div class="relative w-full h-48 bg-gray-100 rounded overflow-hidden">
+                    <img src="{{ $src }}" alt="Hero Image" class="w-full h-full object-cover">
+                  </div>
+                @endforeach
+              </div>
+            @else
+              <div
+                class="relative w-full h-48 bg-gray-100 rounded overflow-hidden flex items-center justify-center text-gray-400">
+                No images uploaded yet
+              </div>
+            @endif
           </div>
 
           {{-- Headline --}}
@@ -182,6 +203,7 @@
       <form id="homeImageForm" method="POST" action="#" enctype="multipart/form-data">
         @csrf
         <div id="methodFieldContainer"></div>
+        <div id="removeInputs"></div>
         <div class="px-6 py-4 space-y-4">
           {{-- Headline Input --}}
           <div>
@@ -216,33 +238,31 @@
             @enderror
           </div>
 
-          {{-- Current Image Preview --}}
+          {{-- Current Images Preview --}}
           <div id="currentImagePreview" class="hidden">
-            <label class="block text-sm font-medium text-gray-600 mb-2">Current Image</label>
-            <div class="relative w-full h-48 bg-gray-100 rounded-lg overflow-hidden">
-              <img id="currentImage" src="" alt="Current Hero Image" class="w-full h-full object-cover">
-            </div>
+            <label class="block text-sm font-medium text-gray-600 mb-2">Current Images</label>
+            <div id="currentImagesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+            <p class="text-xs text-gray-500 mt-2">Klik tombol Remove pada gambar untuk menghapus saat menyimpan.</p>
           </div>
 
-          {{-- Image Upload --}}
+          {{-- Image Upload (Multiple, max 5) --}}
           <div>
             <label for="hero_img" class="block text-sm font-medium text-gray-600 mb-2">Hero Image</label>
-            <input type="file" id="hero_img" name="hero_img" accept="image/jpeg,image/jpg,image/png,image/webp"
+            <input type="file" id="hero_img" name="hero_img[]"
+              accept="image/jpeg,image/jpg,image/png,image/webp,image/avif" multiple
               class="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
               onchange="previewImage(event)">
             @error('hero_img')
               <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
             @enderror
-            <p class="text-xs text-gray-400 mt-1">Supported formats: JPEG, JPG, PNG, WEBP. Max size: 2MB. Leave empty to
-              keep current image.</p>
+            <p class="text-xs text-gray-400 mt-1">Supported formats: JPEG, JPG, PNG, WEBP. Max 5 images. Max size: 5MB
+              each. Leave empty to keep current images.</p>
           </div>
 
-          {{-- New Image Preview --}}
+          {{-- New Images Preview --}}
           <div id="newImagePreview" class="hidden">
-            <label class="block text-sm font-medium text-gray-600 mb-2">New Image Preview</label>
-            <div class="relative w-full h-48 bg-gray-100 rounded-lg overflow-hidden">
-              <img id="previewImg" src="" alt="Preview" class="w-full h-full object-cover">
-            </div>
+            <label class="block text-sm font-medium text-gray-600 mb-2">New Images Preview</label>
+            <div id="newImagesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
           </div>
         </div>
         <div class="flex justify-end gap-3 px-6 py-4 border-t border-gray-200 bg-gray-50 sticky bottom-0">
@@ -289,10 +309,71 @@
             document.getElementById('name').value = data.name || '';
             document.getElementById('description').value = data.description || '';
 
-            // Show current image
-            if (data.hero_img) {
+            // Show current images
+            const container = document.getElementById('currentImagesContainer');
+            container.innerHTML = '';
+            const removeInputs = document.getElementById('removeInputs');
+            removeInputs.innerHTML = '';
+            let images = [];
+            if (Array.isArray(data.hero_img)) {
+              images = data.hero_img;
+            } else if (data.hero_img) {
+              images = [data.hero_img];
+            }
+            if (images.length > 0) {
               currentImagePreview.classList.remove('hidden');
-              document.getElementById('currentImage').src = `/storage/${data.hero_img}`;
+              images.forEach((img) => {
+                const isAbsolute = typeof img === 'string' && (img.startsWith('http://') || img.startsWith(
+                  'https://') || img.startsWith('/'));
+                const src = isAbsolute ? (img.startsWith('/') ? `${window.location.origin}${img}` : img) :
+                  `/storage/${img}`;
+                const wrapper = document.createElement('div');
+                wrapper.className = 'relative w-full h-48 bg-gray-100 rounded-lg overflow-hidden group';
+                const imageEl = document.createElement('img');
+                imageEl.src = src;
+                imageEl.alt = 'Current Hero Image';
+                imageEl.className = 'w-full h-full object-cover';
+
+                const overlay = document.createElement('div');
+                overlay.className = 'absolute inset-0 pointer-events-none';
+
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className =
+                  'absolute top-2 right-2 px-2 py-1 rounded text-xs bg-red-600 text-white hover:bg-red-700';
+                btn.textContent = 'Remove';
+
+                let marked = false;
+                let hiddenInput = null;
+                btn.addEventListener('click', function() {
+                  marked = !marked;
+                  if (marked) {
+                    wrapper.classList.add('ring-2', 'ring-red-500');
+                    hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'hidden';
+                    hiddenInput.name = 'remove_images[]';
+                    hiddenInput.value = img;
+                    removeInputs.appendChild(hiddenInput);
+                    btn.textContent = 'Undo';
+                    btn.className =
+                      'absolute top-2 right-2 px-2 py-1 rounded text-xs bg-gray-500 text-white hover:bg-gray-600';
+                  } else {
+                    wrapper.classList.remove('ring-2', 'ring-red-500');
+                    if (hiddenInput) {
+                      hiddenInput.remove();
+                      hiddenInput = null;
+                    }
+                    btn.textContent = 'Remove';
+                    btn.className =
+                      'absolute top-2 right-2 px-2 py-1 rounded text-xs bg-red-600 text-white hover:bg-red-700';
+                  }
+                });
+
+                wrapper.appendChild(imageEl);
+                wrapper.appendChild(overlay);
+                wrapper.appendChild(btn);
+                container.appendChild(wrapper);
+              });
             }
           })
           .catch(error => {
@@ -312,14 +393,25 @@
     }
 
     function previewImage(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          document.getElementById('previewImg').src = e.target.result;
-          document.getElementById('newImagePreview').classList.remove('hidden');
-        }
-        reader.readAsDataURL(file);
+      const files = Array.from(event.target.files || []);
+      const container = document.getElementById('newImagesContainer');
+      container.innerHTML = '';
+      if (files.length > 0) {
+        document.getElementById('newImagePreview').classList.remove('hidden');
+        files.slice(0, 5).forEach((file) => {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'relative w-full h-48 bg-gray-100 rounded-lg overflow-hidden';
+            const imageEl = document.createElement('img');
+            imageEl.src = e.target.result;
+            imageEl.alt = 'Preview';
+            imageEl.className = 'w-full h-full object-cover';
+            wrapper.appendChild(imageEl);
+            container.appendChild(wrapper);
+          }
+          reader.readAsDataURL(file);
+        });
       } else {
         document.getElementById('newImagePreview').classList.add('hidden');
       }

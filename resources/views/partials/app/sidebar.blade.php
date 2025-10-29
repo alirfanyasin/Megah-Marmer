@@ -131,13 +131,16 @@
         $settingsHasActiveEmailOrder = request()->routeIs('app.settings.email-order.index');
         $settingsHasActiveHomeImage = request()->routeIs('app.settings.home-image.index');
         $settingsHasActiveOurSelectionOrder = request()->routeIs('app.settings.our-selection-order.index');
+        $settingsHasActiveSeason = request()->routeIs('season.index');
 
         $isSettingsMenuActive =
             $settingsHasActiveCategory ||
             $settingsHasActiveLocation ||
             $settingsHasActiveSocialMedia ||
             $settingsHasActiveEmailOrder ||
-            $settingsHasActiveHomeImage;
+            $settingsHasActiveHomeImage ||
+            $settingsHasActiveOurSelectionOrder ||
+            $settingsHasActiveSeason;
       @endphp
 
       <div id="settings-menu" class="{{ $isSettingsMenuActive ? '' : 'hidden' }} bg-gray-800 mt-1 rounded">
@@ -168,6 +171,11 @@
         <a href="{{ route('app.settings.our-selection-order.index') }}"
           class="{{ $settingsHasActiveOurSelectionOrder ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
           <span class="text-sm">Our Selection Order</span>
+        </a>
+
+        <a href="{{ route('season.index') }}"
+          class="{{ $settingsHasActiveSeason ? 'actived' : '' }} flex items-center px-4 py-2 pl-12 hover:bg-gray-700 transition-colors">
+          <span class="text-sm">Season</span>
         </a>
       </div>
     </div>

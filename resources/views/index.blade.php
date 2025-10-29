@@ -6,84 +6,57 @@
   <section class="relative min-h-screen overflow-hidden">
     <!-- Slider Container -->
     <div class="hero-slider relative w-full h-screen">
-      <!-- Slide 1 -->
-      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-100"
-        style="background-image: url('{{ asset('storage/' . $homeImageData->hero_img) }}');">
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex items-center justify-center min-h-screen">
-          <div class="text-center text-white">
-            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
-            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
-          </div>
-        </div>
-      </div>
+      @php
+        $rawImages = is_array($homeImageData->hero_img ?? null)
+            ? $homeImageData->hero_img
+            : (!empty($homeImageData?->hero_img)
+                ? [$homeImageData->hero_img]
+                : []);
+        $resolved = [];
+        foreach ($rawImages as $img) {
+            if (is_string($img)) {
+                if (str_starts_with($img, 'http://') || str_starts_with($img, 'https://')) {
+                    $resolved[] = $img;
+                } elseif (str_starts_with($img, '/')) {
+                    $resolved[] = asset(ltrim($img, '/'));
+                } else {
+                    $resolved[] = asset('storage/' . $img);
+                }
+            }
+        }
+        if (count($resolved) === 0) {
+            $resolved = [
+                asset('img/bg-hero.jpg'),
+                asset('img/bg-wood.jpg'),
+                asset('img/bg-wood2.jpg'),
+                asset('img/coffe-table.avif'),
+            ];
+        }
+      @endphp
 
-      <!-- Slide 2 -->
-      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0"
-        style="background-image: url('{{ asset('img/bg-hero.jpg') }}');">
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex items-center justify-center min-h-screen">
-          <div class="text-center text-white">
-            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
-            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
+      @foreach ($resolved as $idx => $url)
+        <div
+          class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out {{ $idx === 0 ? 'opacity-100' : 'opacity-0' }}"
+          style="background-image: url('{{ $url }}');">
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 flex items-center justify-center min-h-screen">
+            <div class="text-center text-white">
+              <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
+              <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
+              <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0"
-        style="background-image: url('{{ asset('img/bg-wood.jpg') }}');">
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex items-center justify-center min-h-screen">
-          <div class="text-center text-white">
-            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
-            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0"
-        style="background-image: url('{{ asset('img/bg-wood2.jpg') }}');">
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex items-center justify-center min-h-screen">
-          <div class="text-center text-white">
-            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
-            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 5 -->
-      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0"
-        style="background-image: url('{{ asset('img/coffe-table.avif') }}');">
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex items-center justify-center min-h-screen">
-          <div class="text-center text-white">
-            <h2 class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->headline }}</h2>
-            <p class="text-5xl md:text-6xl font-bold mb-4">{{ $homeImageData->name }}</p>
-            <p class="text-3xl md:text-4xl mb-8">{{ $homeImageData->description }}</p>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
 
     <!-- Navigation Dots -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
-      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300 active"
-        data-slide="0"></button>
-      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
-        data-slide="1"></button>
-      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
-        data-slide="2"></button>
-      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
-        data-slide="3"></button>
-      <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300"
-        data-slide="4"></button>
+      @foreach ($resolved as $i => $_)
+        <button
+          class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors duration-300 {{ $i === 0 ? 'active' : '' }}"
+          data-slide="{{ $i }}"></button>
+      @endforeach
     </div>
 
     <!-- Navigation Arrows -->
@@ -151,7 +124,7 @@
 
 
   {{-- Preview Video --}}
-  <section class="py-16 bg-white" id="our-world-selection">
+  {{-- <section class="py-16 bg-white" id="our-world-selection">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-gray-900 mb-4">Megah Marmer, creator of furniture</h2>
@@ -170,11 +143,9 @@
 
           </div>
         </div>
-
-
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!-- Our Selection Section -->
   <section class="py-16 bg-gray-50">
@@ -312,64 +283,74 @@
           <p class="text-sm sm:text-base text-gray-300">Discover our latest news</p>
         </header>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
-              alt="Living space sofa"
-              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-            <div
-              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
-              The sofa defines your living space.
-            </div>
+        @php
+          $items = ($seasons ?? collect())->values();
+        @endphp
+        @if ($items->count() > 0)
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
+            @if ($items->get(0))
+              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
+                <img src="{{ asset('storage/' . $items[0]->image) }}" alt="{{ $items[0]->title }}"
+                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+
+                <div
+                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                  <p class="font-semibold truncate">{{ $items[0]->title }}</p>
+                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[0]->description }}</p>
+                </div>
+              </div>
+            @endif
+
+            @if ($items->get(1))
+              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
+                <img src="{{ asset('storage/' . $items[1]->image) }}" alt="{{ $items[1]->title }}"
+                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+                <div
+                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                  <p class="font-semibold truncate">{{ $items[1]->title }}</p>
+                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[1]->description }}</p>
+                </div>
+              </div>
+            @endif
+
+            @if ($items->get(2))
+              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group col-span-2 hover:cursor-pointer">
+                <img src="{{ asset('storage/' . $items[2]->image) }}" alt="{{ $items[2]->title }}"
+                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+                <div
+                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                  <p class="font-semibold truncate">{{ $items[2]->title }}</p>
+                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[2]->description }}</p>
+                </div>
+              </div>
+            @endif
           </div>
 
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1600494448850-6013c64ba722?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
-              alt="DARIO modular sofa"
-              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-            <div
-              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
-              The DARIO modular sofa is thoughtfully designed.
-            </div>
+          <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-3">
+            @if ($items->get(3))
+              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
+                <img src="{{ asset('storage/' . $items[3]->image) }}" alt="{{ $items[3]->title }}"
+                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+                <div
+                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                  <p class="font-semibold truncate">{{ $items[3]->title }}</p>
+                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[3]->description }}</p>
+                </div>
+              </div>
+            @endif
+            @if ($items->get(4))
+              <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
+                <img src="{{ asset('storage/' . $items[4]->image) }}" alt="{{ $items[4]->title }}"
+                  class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
+                <div
+                  class="absolute bg-gradient-to-t from-black/70 to-transparent backdrop-blur-xs p-3 flex flex-col justify-end text-white text-sm sm:text-base lg:text-lg bottom-0 right-0 left-0 h-3/12">
+                  <p class="font-semibold truncate">{{ $items[4]->title }}</p>
+                  <p class="text-gray-200 line-clamp-2 text-sm">{{ $items[4]->description }}</p>
+                </div>
+              </div>
+            @endif
           </div>
-
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group col-span-2 hover:cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1683731332610-23d833f5871f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
-              alt="Favourite furniture pieces"
-              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-            <div
-              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
-              Rediscover your favourite pieces
-            </div>
-          </div>
-        </div>
-
-        <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-3">
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1525906336592-11c866dd1d4a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
-              alt="FSC certified forest"
-              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-            <div
-              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
-              What does it mean when a forest is FSC® certified?
-            </div>
-          </div>
-
-          <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group hover:cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1615506430606-b37113426217?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
-              alt="New coffee tables"
-              class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
-            <div
-              class="absolute bg-gradient-to-t p-3 flex items-center text-white text-sm sm:text-base lg:text-lg from-black/70 to-white/0 backdrop-blur-xs bottom-0 right-0 h-3/12 left-0">
-              New arrivals - Coffee tables
-            </div>
-          </div>
-        </div>
+        @endif
       </div>
     </div>
     <div class="absolute bg-gradient-to-t from-black/70 to-white/0 bottom-0 right-0 top-0 h-full left-0"></div>

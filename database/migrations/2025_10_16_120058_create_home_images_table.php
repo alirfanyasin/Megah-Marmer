@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('headline');
             $table->text('name')->nullable();
             $table->text('description')->nullable();
-            $table->string('hero_img');
+            $table->json('hero_img')->nullable();
             $table->timestamps();
         });
     }
