@@ -10,4 +10,19 @@ class GuestOurSolidStoneController extends Controller
     {
         return view("our-solid-stone");
     }
+
+    public function marble()
+    {
+        return view("oss-marble");
+    }
+
+    public function onyx()
+    {
+        return view("oss-onyx");
+    }
+
+    public function terazzo()
+    {
+        return view("oss-terazzo");
+    }
 }

@@ -35,76 +35,88 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
           <!-- Black Marble - Winter -->
-          <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
-            <img src="https://cdn.pixabay.com/photo/2024/08/26/14/33/bathroom-8999616_1280.jpg" alt="Black Marble"
-              class="h-full w-full object-cover transition-all duration-500">
-            <div
-              class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-              <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Winter Collection</span>
-              <h4 class="text-xl font-bold mb-1">Black Marble</h4>
-              <p class="text-sm text-white/90">Deep, luxurious black with subtle white veining. Perfect for sophisticated
-                interiors.</p>
+          <a href="{{ route('oss.marble') }}">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://cdn.pixabay.com/photo/2024/08/26/14/33/bathroom-8999616_1280.jpg" alt="Black Marble"
+                class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Winter Collection</span>
+                <h4 class="text-xl font-bold mb-1">Black Marble</h4>
+                <p class="text-sm text-white/90">Deep, luxurious black with subtle white veining. Perfect for
+                  sophisticated
+                  interiors.</p>
+              </div>
             </div>
-          </div>
+          </a>
 
           <!-- Cream Marble - Spring -->
-          <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
-            <img src="https://cdn.pixabay.com/photo/2015/01/23/17/29/horse-609251_960_720.jpg" alt="Cream Marble"
-              class="h-full w-full object-cover transition-all duration-500">
-            <div
-              class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-              <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Spring Collection</span>
-              <h4 class="text-xl font-bold mb-1">Cream Marble</h4>
-              <p class="text-sm text-white/90">Warm, elegant cream tones that bring light and sophistication to any space.
-              </p>
+          <a href="{{ route('oss.marble') }}">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://cdn.pixabay.com/photo/2015/01/23/17/29/horse-609251_960_720.jpg" alt="Cream Marble"
+                class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Spring Collection</span>
+                <h4 class="text-xl font-bold mb-1">Cream Marble</h4>
+                <p class="text-sm text-white/90">Warm, elegant cream tones that bring light and sophistication to any
+                  space.
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
 
           <!-- Grey PG Marble - Summer -->
-          <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
-            <img src="https://cdn.pixabay.com/photo/2014/06/30/16/08/interior-380432_960_720.jpg" alt="Grey PG Marble"
-              class="h-full w-full object-cover transition-all duration-500">
-            <div
-              class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-              <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Summer Collection</span>
-              <h4 class="text-xl font-bold mb-1">Grey PG</h4>
-              <p class="text-sm text-white/90">Contemporary light grey marble with delicate patterns, ideal for modern
-                designs.</p>
+          <a href="{{ route('oss.marble') }}">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://cdn.pixabay.com/photo/2014/06/30/16/08/interior-380432_960_720.jpg" alt="Grey PG Marble"
+                class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Summer Collection</span>
+                <h4 class="text-xl font-bold mb-1">Grey PG</h4>
+                <p class="text-sm text-white/90">Contemporary light grey marble with delicate patterns, ideal for modern
+                  designs.</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
           <!-- Red Marble - Autumn -->
-          <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
-            <img src="https://cdn.pixabay.com/photo/2020/10/21/08/20/bathroom-5672398_960_720.jpg" alt="Red Marble"
-              class="h-full w-full object-cover transition-all duration-500">
-            <div
-              class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-              <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Autumn Collection</span>
-              <h4 class="text-xl font-bold mb-1">Red Marble</h4>
-              <p class="text-sm text-white/90">Bold reddish tones that add warmth and distinctive character to your
-                project.</p>
+          <a href="{{ route('oss.marble') }}">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://cdn.pixabay.com/photo/2020/10/21/08/20/bathroom-5672398_960_720.jpg" alt="Red Marble"
+                class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Autumn Collection</span>
+                <h4 class="text-xl font-bold mb-1">Red Marble</h4>
+                <p class="text-sm text-white/90">Bold reddish tones that add warmth and distinctive character to your
+                  project.</p>
+              </div>
             </div>
-          </div>
+          </a>
 
           <!-- Cocoa Brown Marble - Year Round -->
-          <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
-            <img src="https://cdn.pixabay.com/photo/2014/05/18/19/14/walkway-347313_960_720.jpg" alt="Cocoa Brown Marble"
-              class="h-full w-full object-cover transition-all duration-500">
-            <div
-              class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-              <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Year-Round Collection</span>
-              <h4 class="text-xl font-bold mb-1">Cocoa Brown</h4>
-              <p class="text-sm text-white/90">Warm brown marble with rich chocolate hues, bringing natural elegance and
-                earthiness to interiors.</p>
+          <a href="{{ route('oss.marble') }}">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://cdn.pixabay.com/photo/2014/05/18/19/14/walkway-347313_960_720.jpg"
+                alt="Cocoa Brown Marble" class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Year-Round Collection</span>
+                <h4 class="text-xl font-bold mb-1">Cocoa Brown</h4>
+                <p class="text-sm text-white/90">Warm brown marble with rich chocolate hues, bringing natural elegance and
+                  earthiness to interiors.</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -121,64 +133,74 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Sunset Onyx -->
-          <div
-            class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <img src="https://images.unsplash.com/photo-1618944847828-82e943c3bdb7?w=800&q=80" alt="Sunset Onyx"
-              class="h-full w-full object-cover transition-all duration-500">
+          <a href="{{ route('oss.onyx') }}">
             <div
-              class="absolute p-6 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(255,87,34,0.9), rgba(255,152,0,0.4), transparent);">
-              <span class="text-xs uppercase tracking-widest text-white/90 mb-2">Exclusive Series</span>
-              <h4 class="text-2xl font-bold mb-2">Sunset Onyx</h4>
-              <p class="text-sm text-white/95">Captivating amber and gold hues create a stunning backlit effect. Perfect
-                for feature walls and luxury interiors that demand attention.</p>
+              class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <img src="https://images.unsplash.com/photo-1618944847828-82e943c3bdb7?w=800&q=80" alt="Sunset Onyx"
+                class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-6 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(255,87,34,0.9), rgba(255,152,0,0.4), transparent);">
+                <span class="text-xs uppercase tracking-widest text-white/90 mb-2">Exclusive Series</span>
+                <h4 class="text-2xl font-bold mb-2">Sunset Onyx</h4>
+                <p class="text-sm text-white/95">Captivating amber and gold hues create a stunning backlit effect. Perfect
+                  for feature walls and luxury interiors that demand attention.</p>
+              </div>
             </div>
-          </div>
+          </a>
 
           <!-- Ivory Onyx -->
-          <div
-            class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <img src="https://cdn.pixabay.com/photo/2014/07/21/19/20/lobby-398845_960_720.jpg" alt="Ivory Onyx"
-              class="h-full w-full object-cover transition-all duration-500">
+          <a href="{{ route('oss.onyx') }}">
             <div
-              class="absolute p-6 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(139,69,19,0.9), rgba(210,180,140,0.4), transparent);">
-              <span class="text-xs uppercase tracking-widest text-white/90 mb-2">Premium Series</span>
-              <h4 class="text-2xl font-bold mb-2">Ivory Onyx</h4>
-              <p class="text-sm text-white/95">Soft, creamy tones with delicate veining. Brings warmth and elegance with
-                exceptional translucency for illuminated applications.</p>
+              class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <img src="https://cdn.pixabay.com/photo/2014/07/21/19/20/lobby-398845_960_720.jpg" alt="Ivory Onyx"
+                class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-6 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(139,69,19,0.9), rgba(210,180,140,0.4), transparent);">
+                <span class="text-xs uppercase tracking-widest text-white/90 mb-2">Premium Series</span>
+                <h4 class="text-2xl font-bold mb-2">Ivory Onyx</h4>
+                <p class="text-sm text-white/95">Soft, creamy tones with delicate veining. Brings warmth and elegance with
+                  exceptional translucency for illuminated applications.</p>
+              </div>
             </div>
-          </div>
+          </a>
 
           <!-- Onyx BW (Black & White) -->
-          <div
-            class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Onyx BW"
-              class="h-full w-full object-cover transition-all duration-500">
+          <a href="{{ route('oss.onyx') }}">
             <div
-              class="absolute p-6 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(64,64,64,0.4), transparent);">
-              <span class="text-xs uppercase tracking-widest text-white/90 mb-2">Signature Series</span>
-              <h4 class="text-2xl font-bold mb-2">Onyx BW</h4>
-              <p class="text-sm text-white/95">Dramatic contrast of black and white creates bold, contemporary statements.
-                Ideal for modern spaces seeking timeless sophistication.</p>
+              class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Onyx BW"
+                class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-6 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(64,64,64,0.4), transparent);">
+                <span class="text-xs uppercase tracking-widest text-white/90 mb-2">Signature Series</span>
+                <h4 class="text-2xl font-bold mb-2">Onyx BW</h4>
+                <p class="text-sm text-white/95">Dramatic contrast of black and white creates bold, contemporary
+                  statements.
+                  Ideal for modern spaces seeking timeless sophistication.</p>
+              </div>
             </div>
-          </div>
+          </a>
 
           <!-- Onyx PCT -->
-          <div
-            class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80" alt="Onyx PCT"
-              class="h-full w-full object-cover transition-all duration-500">
+          <a href="{{ route('oss.onyx') }}">
             <div
-              class="absolute p-6 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(101,67,33,0.9), rgba(160,120,90,0.4), transparent);">
-              <span class="text-xs uppercase tracking-widest text-white/90 mb-2">Designer Series</span>
-              <h4 class="text-2xl font-bold mb-2">Onyx PCT</h4>
-              <p class="text-sm text-white/95">Rich patterns with captivating color transitions. A masterpiece for those
-                seeking unique, artistic natural stone expressions.</p>
+              class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80" alt="Onyx PCT"
+                class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-6 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(101,67,33,0.9), rgba(160,120,90,0.4), transparent);">
+                <span class="text-xs uppercase tracking-widest text-white/90 mb-2">Designer Series</span>
+                <h4 class="text-2xl font-bold mb-2">Onyx PCT</h4>
+                <p class="text-sm text-white/95">Rich patterns with captivating color transitions. A masterpiece for
+                  those
+                  seeking unique, artistic natural stone expressions.</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -195,75 +217,83 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <!-- Concrete Terrazzo -->
-          <div
-            class="overflow-hidden rounded-2xl w-full h-[500px] relative group hover:cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500">
-            <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1000&q=80" alt="Concrete Terrazzo"
-              class="h-full w-full object-cover transition-all duration-700">
+          <a href="{{ route('oss.terazzo') }}">
             <div
-              class="absolute p-8 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-              style="background: linear-gradient(to top, rgba(44,62,80,0.95), rgba(52,73,94,0.5), transparent);">
-              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
-                <span
-                  class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-3">Industrial
-                  Collection</span>
-                <h4 class="text-3xl font-bold mb-3">Concrete Terrazzo</h4>
-                <p class="text-base text-white/95 leading-relaxed mb-4">
-                  Minimalist beauty with industrial strength. Features subtle aggregates embedded in smooth concrete
-                  matrix,
-                  perfect for contemporary spaces that embrace raw, authentic aesthetics.
-                </p>
-                <div class="flex gap-4 text-sm">
-                  <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    High Durability
-                  </span>
-                  <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Easy Maintenance
-                  </span>
+              class="overflow-hidden rounded-2xl w-full h-[500px] relative group hover:cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500">
+              <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1000&q=80"
+                alt="Concrete Terrazzo" class="h-full w-full object-cover transition-all duration-700">
+              <div
+                class="absolute p-8 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                style="background: linear-gradient(to top, rgba(44,62,80,0.95), rgba(52,73,94,0.5), transparent);">
+                <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
+                  <span
+                    class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-3">Industrial
+                    Collection</span>
+                  <h4 class="text-3xl font-bold mb-3">Concrete Terrazzo</h4>
+                  <p class="text-base text-white/95 leading-relaxed mb-4">
+                    Minimalist beauty with industrial strength. Features subtle aggregates embedded in smooth concrete
+                    matrix,
+                    perfect for contemporary spaces that embrace raw, authentic aesthetics.
+                  </p>
+                  <div class="flex gap-4 text-sm">
+                    <span class="flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        </path>
+                      </svg>
+                      High Durability
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        </path>
+                      </svg>
+                      Easy Maintenance
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- Pattern Terrazzo -->
-          <div
-            class="overflow-hidden rounded-2xl w-full h-[500px] relative group hover:cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500">
-            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1000&q=80" alt="Pattern Terrazzo"
-              class="h-full w-full object-cover transition-all duration-700">
+          </a>
+          <a href="{{ route('oss.terazzo') }}">
+            <!-- Pattern Terrazzo -->
             <div
-              class="absolute p-8 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-              style="background: linear-gradient(to top, rgba(142,68,173,0.95), rgba(155,89,182,0.5), transparent);">
-              <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
-                <span
-                  class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-3">Artistic
-                  Collection</span>
-                <h4 class="text-3xl font-bold mb-3">Pattern Terrazzo</h4>
-                <p class="text-base text-white/95 leading-relaxed mb-4">
-                  Vibrant mosaic of colors and textures. Bold aggregates create stunning visual patterns that transform
-                  floors and walls into artistic statements, bringing life and character to any interior.
-                </p>
-                <div class="flex gap-4 text-sm">
-                  <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Custom Patterns
-                  </span>
-                  <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Versatile Design
-                  </span>
+              class="overflow-hidden rounded-2xl w-full h-[500px] relative group hover:cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500">
+              <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1000&q=80" alt="Pattern Terrazzo"
+                class="h-full w-full object-cover transition-all duration-700">
+              <div
+                class="absolute p-8 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                style="background: linear-gradient(to top, rgba(142,68,173,0.95), rgba(155,89,182,0.5), transparent);">
+                <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
+                  <span
+                    class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-3">Artistic
+                    Collection</span>
+                  <h4 class="text-3xl font-bold mb-3">Pattern Terrazzo</h4>
+                  <p class="text-base text-white/95 leading-relaxed mb-4">
+                    Vibrant mosaic of colors and textures. Bold aggregates create stunning visual patterns that
+                    transform
+                    floors and walls into artistic statements, bringing life and character to any interior.
+                  </p>
+                  <div class="flex gap-4 text-sm">
+                    <span class="flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        </path>
+                      </svg>
+                      Custom Patterns
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        </path>
+                      </svg>
+                      Versatile Design
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>

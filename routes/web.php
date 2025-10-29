@@ -117,6 +117,11 @@ Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-u
 Route::post('contact-us', [ContactUsController::class, 'store'])->name('contact-us.store');
 
 Route::get('our-solid-stone', [GuestOurSolidStoneController::class, 'index'])->name('our-solid-stone');
+Route::get('our-solid-stone/marble-colors', [GuestOurSolidStoneController::class, 'marble'])->name('oss.marble');
+Route::get('our-solid-stone/onyx-colors', [GuestOurSolidStoneController::class, 'onyx'])->name('oss.onyx');
+Route::get('our-solid-stone/terazzo-colors', [GuestOurSolidStoneController::class, 'terazzo'])->name('oss.terazzo');
+
+
 Route::get('our-finishing', [GuestOurFinishingController::class, 'index'])->name('our-finishing');
 
 
