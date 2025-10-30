@@ -124,28 +124,17 @@
 
 
   {{-- Preview Video --}}
-  {{-- <section class="py-16 bg-white" id="our-world-selection">
+  <section class="py-16 bg-white" id="our-world-selection">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Megah Marmer, creator of furniture</h2>
-        <h3 class="text-3xl font-bold text-gray-900 mb-8">Our worlds</h3>
-      </div>
-
       <div class="">
         <iframe class="w-full" height="600"
           src="https://www.youtube.com/embed/8YEQT7Q5TVk?autoplay=1&mute=1&loop=1&playlist=8YEQT7Q5TVk&controls=0&modestbranding=1&showinfo=0&rel=0"
           title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media"
           referrerpolicy="strict-origin-when-cross-origin">
         </iframe>
-
-        <div class="grid md:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-4">
-          <div class="overflow-hidden rounded-xl h-[400px] w-full">
-
-          </div>
-        </div>
       </div>
     </div>
-  </section> --}}
+  </section>
 
   <!-- Our Selection Section -->
   <section class="py-16 bg-gray-50">
@@ -318,7 +307,7 @@
             @endif
 
             @if ($items->get(2))
-              <a href="{{ route('products.all') }}">
+              <a href="{{ route('products.all') }}" class="col-span-2">
                 <div class="overflow-hidden rounded w-full h-64 sm:h-72 relative group col-span-2 hover:cursor-pointer">
                   <img src="{{ asset('storage/' . $items[2]->image) }}" alt="{{ $items[2]->title }}"
                     class="h-full w-full object-cover group-hover:scale-110 transition-all duration-500">
