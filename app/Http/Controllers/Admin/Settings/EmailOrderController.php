@@ -21,7 +21,7 @@ class EmailOrderController extends Controller
         }
 
         $validated = $request->validate([
-            'email' => 'required|string|max:20',
+            'email' => 'required',
         ]);
 
         EmailOrder::create($validated);
@@ -39,7 +39,7 @@ class EmailOrderController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'email' => 'required|string|max:20',
+            'email' => 'required',
         ]);
         $emailOrder = EmailOrder::findOrFail($id);
         $emailOrder->update($validated);

@@ -227,10 +227,10 @@
       methodFieldContainer.innerHTML = '';
 
       if (mode === 'add') {
-        title.textContent = 'Add Phone Number';
+        title.textContent = 'Add Email';
         form.action = '{{ route('app.settings.email-order.store') }}';
       } else if (mode === 'edit') {
-        title.textContent = 'Edit Phone Number';
+        title.textContent = 'Edit Email';
         form.action = `/app/settings/email-order/${id}/update`;
 
         // Add PUT method for edit
