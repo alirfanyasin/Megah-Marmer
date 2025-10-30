@@ -56,7 +56,6 @@
         {{-- Product Title --}}
         <div>
           <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{{ $product->name }}</h1>
-          <p class="text-md text-gray-600">{{ $product->description }}</p>
         </div>
 
         {{-- Dimensions --}}
@@ -98,6 +97,9 @@
           </div>
         </div>
 
+        <p class="text-md text-gray-600">{{ $product->description }}</p>
+
+
 
         {{-- Features --}}
         {{-- <ul class="space-y-3">
@@ -126,19 +128,36 @@
         </div>
 
         {{-- Action Buttons --}}
-        <div class="gap-3">
-          <a href="mailto:{{ $emailOrder->email ?? '' }}?subject=Order%20Produk%20{{ $product->name }}&body=Halo,%0A%0ASaya tertarik dengan produk {{ $product->name }}.%0A%0ADetail produk:%0A- Nama: {{ $product->name }}%0A- Harga: ${{ number_format($product->price, 0, ',', '.') }}%0A- Deskripsi: {{ $product->description }}%0A%0ATerima kasih."
-            class="inline-block" target="_blank">
-            <div
-              class="transition flex items-center justify-center gap-2 bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Order Now
-            </div>
-          </a>
-        </div>
+        @php
+          $to = $emailOrder->email ?? '';
+          $subject = 'Order Produk ' . $product->name;
+          $body =
+              "Halo,\n\nSaya tertarik dengan produk {$product->name}.\n\n" .
+              "Detail produk:\n- Nama: {$product->name}\n- Harga: Rp" .
+              number_format($product->price, 0, ',', '.') .
+              "\n- Deskripsi: {$product->description}\n\nTerima kasih.";
+
+          $gmailUrl =
+              'https://mail.google.com/mail/?view=cm&fs=1&tf=1' .
+              '&to=' .
+              rawurlencode($to) .
+              '&su=' .
+              rawurlencode($subject) .
+              '&body=' .
+              rawurlencode($body);
+
+          // (opsional) fallback mailto
+          $mailtoUrl = 'mailto:' . $to . '?subject=' . rawurlencode($subject) . '&body=' . rawurlencode($body);
+        @endphp
+
+        <a href="{{ $gmailUrl }}" target="_blank" rel="noopener" class="inline-block">
+          <div
+            class="transition flex items-center justify-center gap-2 bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800">
+            <!-- ikon -->
+            Order Now
+          </div>
+        </a>
+
       </div>
     </div>
   </section>

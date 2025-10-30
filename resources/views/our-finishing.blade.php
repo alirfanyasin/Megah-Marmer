@@ -2310,7 +2310,7 @@
   {{-- ============================== Texture ============================== --}}
   <!-- Hero -->
   <section class="relative h-[90vh] bg-cover bg-center flex items-center"
-    style="background-image: linear-gradient(to bottom right, rgba(40,40,40,.75), rgba(0,0,0,.65)), url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=80');">
+    style="background-image: linear-gradient(to bottom right, rgba(40,40,40,.75), rgba(0,0,0,.65)), url('/assets/our-finishing/download.jpeg');">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/50"></div>
     <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-5xl mx-auto text-center text-white">

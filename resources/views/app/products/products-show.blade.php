@@ -123,7 +123,6 @@
         {{-- Product Title --}}
         <div>
           <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{{ $product->name }}</h1>
-          <p class="text-md text-gray-600">{{ $product->description }}</p>
         </div>
 
         {{-- Dimensions --}}
@@ -166,20 +165,7 @@
         </div>
 
 
-        {{-- Features --}}
-        <ul class="space-y-3">
-
-          @foreach ($product->description_point as $index => $point)
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span class="text-sm text-gray-700">{{ $point }}</span>
-            </li>
-          @endforeach
-        </ul>
+        <p class="text-md text-gray-600">{{ $product->description }}</p>
 
         {{-- Price --}}
         <div class="flex items-baseline gap-3">

@@ -223,7 +223,7 @@
             </div>
 
             {{-- Description Point --}}
-            <div class="mb-6">
+            {{-- <div class="mb-6">
               <div class="flex justify-between items-center mb-2">
                 <label class="block text-sm font-medium text-gray-700">
                   Key Points <span class="text-red-500">*</span>
@@ -289,7 +289,7 @@
               @error('description_point')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
               @enderror
-            </div>
+            </div> --}}
 
             {{-- Dimensions --}}
             <div class="mb-6">
