@@ -149,9 +149,9 @@
     </section>
 
     <section>
-      <div class="grid grid-cols-4 gap-3 mt-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
         <!-- Instagram -->
-        <div class="relative overflow-hidden rounded-xl w-full h-72 group">
+        <div class="relative overflow-hidden rounded-xl w-full h-48 md:h-72 group">
           <a href="https://www.instagram.com/megah.marmer?igsh=MTh0cmE5bGpuNm1qbw%3D%3D" target="_blank"
             class="block w-full h-full">
             <img
@@ -172,7 +172,7 @@
         </div>
 
         <!-- Facebook -->
-        <div class="relative overflow-hidden rounded-xl w-full h-72 group">
+        <div class="relative overflow-hidden rounded-xl w-full h-48 md:h-72 group">
           <a href="https://web.facebook.com/profile.php?id=100083996764908&sk=photos" target="_blank"
             class="block w-full h-full">
             <img
@@ -191,7 +191,7 @@
         </div>
 
         <!-- Pinterest -->
-        <div class="relative overflow-hidden rounded-xl w-full h-72 group">
+        <div class="relative overflow-hidden rounded-xl w-full h-48 md:h-72 group">
           <a href="https://id.pinterest.com/megahmarmer/" target="_blank" class="block w-full h-full">
             <img src="https://i.pinimg.com/736x/c1/c1/85/c1c185fb81eb15a1487f90b43c1cb5f8.jpg" alt="Pinterest"
               class="w-full h-full object-cover">
@@ -208,7 +208,7 @@
         </div>
 
         <!-- LinkedIn -->
-        <div class="relative overflow-hidden rounded-xl w-full h-72 group">
+        <div class="relative overflow-hidden rounded-xl w-full h-48 md:h-72 group">
           <a href="https://www.linkedin.com/in/megah-marmer-1996a5372/" target="_blank" class="block w-full h-full">
             <img
               src="https://media.licdn.com/dms/image/v2/D4E22AQFhlefAIE8B0A/feedshare-shrink_2048_1536/B4EZo.sT2QIQAw-/0/1761988402145?e=1763596800&v=beta&t=aKyxHoyRkRpBwyuiRQt5xTMKAnwYC8-uoqHgJRu9swQ"
