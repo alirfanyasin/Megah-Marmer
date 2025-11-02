@@ -145,12 +145,30 @@
         @php
           $to = $emailOrder->email ?? '';
           $subject = 'Order Produk ' . $product->name;
-          $body =
-              "Halo,\n\nSaya tertarik dengan produk {$product->name}.\n\n" .
-              "Detail produk:\n- Nama: {$product->name}\n- Harga: Rp" .
-              number_format($product->price, 0, ',', '.') .
-              "\n- Deskripsi: {$product->description}\n\nTerima kasih.";
 
+          // Pastikan tipe data aman
+          $price = (float) $product->price;
+          $discount = max(0, min(100, (int) ($product->discount ?? 0)));
+          $finalPrice = round(($price * (100 - $discount)) / 100, 2);
+
+          // Format harga dalam USD
+          $usd = fn($v) => '$' . number_format($v, 2, '.', ',');
+
+          // Buat teks harga
+          $priceText =
+              $discount > 0 ? $usd($finalPrice) . " (Diskon {$discount}% dari " . $usd($price) . ')' : $usd($price);
+
+          // Isi body email
+          $body =
+              "Halo,\n\n" .
+              "Saya tertarik dengan produk {$product->name}.\n\n" .
+              "Detail produk:\n" .
+              "- Nama: {$product->name}\n" .
+              "- Harga: {$priceText}\n" .
+              "- Deskripsi: {$product->description}\n\n" .
+              'Terima kasih.';
+
+          // URL Gmail Compose
           $gmailUrl =
               'https://mail.google.com/mail/?view=cm&fs=1&tf=1' .
               '&to=' .
@@ -163,6 +181,7 @@
           // (opsional) fallback mailto
           $mailtoUrl = 'mailto:' . $to . '?subject=' . rawurlencode($subject) . '&body=' . rawurlencode($body);
         @endphp
+
 
         <a href="{{ $gmailUrl }}" target="_blank" rel="noopener" class="inline-block">
           <div
