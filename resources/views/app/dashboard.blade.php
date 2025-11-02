@@ -42,8 +42,8 @@
     <div class="bg-white p-6 border border-gray-200">
       <div class="flex items-center justify-between">
         <div>
-          <p class="text-gray-500 text-sm uppercase tracking-wide">Total Subscribers</p>
-          <h3 class="text-3xl font-bold text-gray-900 mt-2">{{ $totalSubscriber }}</h3>
+          <p class="text-gray-500 text-sm uppercase tracking-wide">Total Message</p>
+          <h3 class="text-3xl font-bold text-gray-900 mt-2">{{ $totalMessage }}</h3>
         </div>
         <div class="w-12 h-12 bg-amber-100 flex items-center justify-center">
           <iconify-icon icon="ri:user-add-line" width="30" height="30" class="text-amber-600"></iconify-icon>
@@ -118,25 +118,29 @@
   <div class="bg-white border border-gray-200">
     <div class="px-6 py-4 border-b border-gray-200">
       <div class="flex items-center justify-between">
-        <h2 class="text-xl font-bold text-gray-900">Newest Subscribers</h2>
+        <h2 class="text-xl font-bold text-gray-900">Newest Message</h2>
         <a href="#" class="text-amber-600 hover:text-amber-700 font-medium"></a>
       </div>
     </div>
     <div class="p-6">
       <div class="space-y-4">
-        @foreach ($subscribers as $subscriber)
+        @foreach ($totalMessages as $totalMessage)
           <div class="flex items-center justify-between p-4 border border-gray-200 hover:bg-gray-50 transition-colors">
             <div class="flex items-center space-x-4">
               <div class="w-10 h-10 bg-amber-600 flex items-center justify-center">
-                <span class="text-white font-bold text-sm uppercase">{{ Str::substr($subscriber->email, 0, 2) }}</span>
+                <span class="text-white font-bold text-sm uppercase">{{ Str::substr($totalMessage->name, 0, 2) }}</span>
               </div>
               <div>
-                <p class="font-medium text-gray-900">{{ $subscriber->email }}</p>
-                <p class="text-sm text-gray-500">{{ $subscriber->created_at->format('d M Y, H:i') }}</p>
+                <p class="font-medium text-gray-900">{{ $totalMessage->name }}</p>
+                <p class="text-sm text-gray-500">{{ $totalMessage->email }}</p>
               </div>
             </div>
             <div>
-              <span class="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-800">Subscribed</span>
+              {{ Str::substr($totalMessage->message, 0, 60) }}
+            </div>
+            <div>
+              <span
+                class="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-800">{{ $totalMessage->created_at->format('d M Y, H:i') }}</span>
             </div>
           </div>
         @endforeach

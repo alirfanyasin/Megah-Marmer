@@ -115,6 +115,17 @@
       @if ($dataProducts->count() > 0)
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           @foreach ($dataProducts as $item)
+            @php
+              // Formatter USD: 1,234.56
+              $usd = fn($v) => number_format((float) $v, 2, '.', ',');
+
+              $price = (float) $item->price; // kolom decimal Laravel sering berupa string
+              $discount = (int) ($item->discount ?? 0); // default 0
+              $discount = max(0, min(100, $discount)); // clamp 0..100
+              $final = round(($price * (100 - $discount)) / 100, 2);
+              $hasDisc = $discount > 0 && $final < $price;
+            @endphp
+
             <div
               class="bg-white border relative border-gray-200 rounded shadow-sm hover:shadow-md transition-all duration-200 flex flex-col text-center group">
               <div class="relative w-full h-[400px] overflow-hidden rounded">
@@ -124,10 +135,16 @@
                   style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);"></div>
 
                 <div class="absolute inset-x-0 bottom-0 z-20 p-4 text-left text-white">
-                  <h2 class="text-lg font-semibold">
-                    {{ $item->name }}
-                  </h2>
-                  <p>$ {{ number_format($item->price, 0, ',', '.') }}</p>
+                  <h2 class="text-lg font-semibold">{{ $item->name }}</h2>
+
+                  @if ($hasDisc)
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-xl font-bold">${{ $usd($final) }}</span>
+                      <span class="text-sm line-through text-gray-300">${{ $usd($price) }}</span>
+                    </div>
+                  @else
+                    <span class="text-xl font-bold">${{ $usd($price) }}</span>
+                  @endif
                 </div>
               </div>
 
@@ -152,6 +169,7 @@
               </div>
             </div>
           @endforeach
+
 
         </div>
       @else

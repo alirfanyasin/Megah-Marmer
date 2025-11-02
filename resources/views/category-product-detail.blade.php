@@ -117,13 +117,27 @@
 
         {{-- Price --}}
         <div class="flex items-baseline gap-3">
-          @if ($product->discount !== 0)
-            <span class="text-3xl font-bold text-red-900">$
-              {{ number_format($product->price * (1 - $product->discount / 100), 0, ',', '.') }}</span>
-            <span class="text-xl text-gray-400 line-through">$
-              {{ number_format($product->price, 0, ',', '.') }}</span>
+          @php
+            // Format harga USD: 1,234.56
+            $usd = fn($v) => number_format((float) $v, 2, '.', ',');
+
+            $price = (float) $product->price;
+            $disc = max(0, min(100, (int) ($product->discount ?? 0)));
+            $final = round(($price * (100 - $disc)) / 100, 2);
+            $hasDisc = $disc > 0 && $final < $price;
+          @endphp
+
+          @if ($hasDisc)
+            <span class="text-3xl font-bold text-red-900">
+              ${{ $usd($final) }}
+            </span>
+            <span class="text-xl text-gray-400 line-through">
+              ${{ $usd($price) }}
+            </span>
           @else
-            <span class="text-3xl font-bold text-red-900">$ {{ number_format($product->price, 0, ',', '.') }}</span>
+            <span class="text-3xl font-bold text-red-900">
+              ${{ $usd($price) }}
+            </span>
           @endif
         </div>
 
@@ -252,12 +266,32 @@
                   <div
                     class="absolute bottom-4 left-4 text-white right-4 z-10 group-hover:-translate-y-2 transition-all duration-300">
                     <div class="flex items-center justify-between text-sm">
+                      @php
+                        $usd = fn($v) => number_format((float) $v, 2, '.', ','); // format 1,234.56
+
+                        $price = (float) $recomprod->price;
+                        $disc = max(0, min(100, (int) ($recomprod->discount ?? 0)));
+                        $final = round(($price * (100 - $disc)) / 100, 2);
+                        $hasDisc = $disc > 0 && $final < $price;
+                      @endphp
+
                       <div>
                         <h4 class="font-semibold">{{ $recomprod->name }}</h4>
-                        <p class="font-light">{{ Str::substr($recomprod->description, 0, 28) }}</p>
-                        <p class="font-semibold text-sm">Rp. {{ number_format($recomprod->price, 0, ',', '.') }}</p>
+                        <p class="font-light">
+                          {{ \Illuminate\Support\Str::limit($recomprod->description, 28) }}
+                        </p>
+
+                        @if ($hasDisc)
+                          <div class="flex items-baseline gap-1.5">
+                            <span class="font-semibold text-sm">${{ $usd($final) }}</span>
+                            <span class="text-xs text-gray-400 line-through">${{ $usd($price) }}</span>
+                          </div>
+                        @else
+                          <span class="font-semibold text-sm">${{ $usd($price) }}</span>
+                        @endif
                       </div>
                     </div>
+
                   </div>
                   <div class="absolute bg-gradient-to-t from-black/90 to-white/0 bottom-0 right-0 h-2/3 left-0"></div>
                 </div>

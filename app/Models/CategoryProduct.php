@@ -29,6 +29,7 @@ class CategoryProduct extends Model
         'width' => 'decimal:2',
         'height' => 'decimal:2',
         'depth' => 'decimal:2',
+        'price' => 'decimal:2',
     ];
 
     protected $appends = [

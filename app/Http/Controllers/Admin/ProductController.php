@@ -253,7 +253,7 @@ class ProductController extends Controller
                 'price' => $validated['price'],
                 'discount' => $validated['discount'] ?? 0,
                 'description' => $validated['description'],
-                'description_point' => $validated['description_point'],
+                // 'description_point' => $validated['description_point'],
                 'width' => $validated['width'],
                 'height' => $validated['height'],
                 'depth' => $validated['depth'],

@@ -3,7 +3,7 @@
 @section('content')
 
   <!-- Hero -->
-  <section class="relative h-[85vh] bg-cover bg-center flex items-center"
+  <section class="relative h-[85vh] bg-cover bg-center flex items-center" id="polish-marble"
     style="background-image: linear-gradient(135deg, rgba(0,0,0,.5), rgba(40,40,40,.6)), url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1600&q=80');">
     <div class="absolute inset-0 bg-gradient-to-tr from-black/50 via-transparent to-black/40"></div>
     <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -490,7 +490,7 @@
 
   {{-- ============================== Doff or mate ============================== --}}
   <!-- Hero -->
-  <section class="relative h-[85vh] bg-cover bg-center flex items-center"
+  <section class="relative h-[85vh] bg-cover bg-center flex items-center" id="matte"
     style="background-image: linear-gradient(120deg, rgba(30,30,30,.6), rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1600&q=80');">
     <div class="absolute inset-0 bg-gradient-to-bl from-black/40 via-transparent to-black/50"></div>
     <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -1121,7 +1121,7 @@
 
   {{-- ============================== Acid ============================== --}}
   <!-- Hero -->
-  <section class="relative h-[80vh] bg-cover bg-center flex items-center"
+  <section class="relative h-[80vh] bg-cover bg-center flex items-center" id="acid"
     style="background-image: linear-gradient(110deg, rgba(50,40,30,.7), rgba(20,20,20,.6)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80');">
     <div class="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-black/60"></div>
     <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
@@ -1556,7 +1556,7 @@
 
   {{-- ============================== Hammered ============================== --}}
   <!-- Hero -->
-  <section class="relative h-[90vh] bg-cover bg-center flex items-center"
+  <section class="relative h-[90vh] bg-cover bg-center flex items-center" id="hammered"
     style="background-image: linear-gradient(to bottom, rgba(0,0,0,.65), rgba(20,20,20,.7)), url('https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1600&q=80');">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl text-white">
@@ -1963,7 +1963,7 @@
 
   {{-- ============================== Burning ============================== --}}
   <!-- Hero -->
-  <section class="relative h-[85vh] bg-cover bg-center flex items-center"
+  <section class="relative h-[85vh] bg-cover bg-center flex items-center" id="burning"
     style="background-image: linear-gradient(to right, rgba(0,0,0,.7), rgba(60,60,60,.6)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1600&q=80');">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl text-white">
@@ -2309,7 +2309,7 @@
 
   {{-- ============================== Texture ============================== --}}
   <!-- Hero -->
-  <section class="relative h-[90vh] bg-cover bg-center flex items-center"
+  <section class="relative h-[90vh] bg-cover bg-center flex items-center" id="textured"
     style="background-image: linear-gradient(to bottom right, rgba(40,40,40,.75), rgba(0,0,0,.65)), url('/assets/our-finishing/download.jpeg');">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/50"></div>
     <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
@@ -2826,7 +2826,7 @@
 
   {{-- ============================== Groove ============================== --}}
   <!-- Hero -->
-  <section class="relative h-[80vh] bg-cover bg-center flex items-end"
+  <section class="relative h-[80vh] bg-cover bg-center flex items-end" id="groove"
     style="background-image: linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,.65)), url('https://images.unsplash.com/photo-1615874694520-474822394e73?w=1600&q=80');">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
       <div class="max-w-4xl text-white">
@@ -3174,7 +3174,7 @@
 
   {{-- ============================== Stripe ============================== --}}
   <!-- Hero -->
-  <section class="relative h-screen">
+  <section class="relative h-screen" id="stripe">
     <div class="absolute inset-0 bg-cover bg-center"
       style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1600&q=80');">
     </div>
@@ -3689,7 +3689,7 @@
 
   {{-- ============================== Combination ============================== --}}
   <!-- Hero -->
-  <section class="relative min-h-screen flex items-center">
+  <section class="relative min-h-screen flex items-center" id="combination">
     <div class="absolute inset-0">
       <div class="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900"></div>
       <div class="absolute inset-0 opacity-20"

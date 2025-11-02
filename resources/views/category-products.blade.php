@@ -52,15 +52,30 @@
                 <h3 class="text-xl font-bold text-gray-900 mb-1">{{ $product->name }}</h3>
                 <p class="text-gray-600 text-sm mb-3">{{ Str::substr($product->description, 0, 100) }}</p>
                 <div class="flex items-center gap-2">
-                  @if ($product->discount !== 0)
-                    <p class="text-red-900 font-bold text-lg">$
-                      {{ number_format($product->price * (1 - $product->discount / 100), 0, ',', '.') }}</p>
-                    <p class="text-gray-400 line-through text-sm">{{ number_format($product->price) }}</p>
+                  @php
+                    // Formatter USD: 1,234.56
+                    $usd = fn($v) => number_format((float) $v, 2, '.', ',');
+
+                    $price = (float) $product->price;
+                    $disc = max(0, min(100, (int) ($product->discount ?? 0)));
+                    $final = round(($price * (100 - $disc)) / 100, 2);
+                    $hasDisc = $disc > 0 && $final < $price;
+                  @endphp
+
+                  @if ($hasDisc)
+                    <p class="text-red-900 font-bold text-lg">
+                      ${{ $usd($final) }}
+                    </p>
+                    <p class="text-gray-400 line-through text-sm">
+                      ${{ $usd($price) }}
+                    </p>
                   @else
-                    <p class="text-red-900 font-bold text-lg">$
-                      {{ number_format($product->price, 0, ',', '.') }}</p>
+                    <p class="text-red-900 font-bold text-lg">
+                      ${{ $usd($price) }}
+                    </p>
                   @endif
                 </div>
+
               </div>
             </a>
           </div>

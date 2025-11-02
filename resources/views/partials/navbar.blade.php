@@ -177,25 +177,19 @@
         @endforeach
 
         {{-- Our Solid stone --}}
-        <div class="nav-item relative">
+        {{-- <div class="nav-item relative">
           <a href="{{ route('our-solid-stone') }}"
             class="nav-link {{ Request::is('our-solid-stone') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             Our Solid Stone
           </a>
-        </div>
+        </div> --}}
 
-        {{-- Our finishing --}}
-        <div class="nav-item relative">
-          <a href="{{ route('our-finishing') }}"
-            class="nav-link {{ Request::is('our-finishing') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
-            Our Finishing
-          </a>
-        </div>
+
 
         {{-- ======= Our Solid Stone ======= --}}
-        {{-- @php $isOssActive = in_array($currentRoute, $ossRoutes, true); @endphp --}}
-        {{-- <div class="nav-item relative">
-          <a href="#"
+        @php $isOssActive = in_array($currentRoute, $ossRoutes, true); @endphp
+        <div class="nav-item relative">
+          <a href="{{ route('our-solid-stone') }}"
             class="nav-link {{ $isOssActive ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             Our Solid Stone
           </a>
@@ -209,44 +203,44 @@
                       <h4 class="font-semibold text-gray-900 mb-3">Marble</h4>
                       <ul class="space-y-1 text-xs">
                         <li class="submenu-item" onmouseenter="showImage('marble', 'black')">
-                          <a href="{{ route('oss.black-marble') }}"
+                          <a href="{{ route('our-solid-stone') }}#marble-collection"
                             class="submenu-link {{ request()->routeIs('oss.black-marble') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Black</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('marble', 'cream')">
-                          <a href="{{ route('oss.cream-marble') }}"
+                          <a href="{{ route('our-solid-stone') }}#marble-collection"
                             class="submenu-link {{ request()->routeIs('oss.cream-marble') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Cream</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('marble', 'grey-pg')">
-                          <a href="{{ route('oss.grey-pg-marble') }}"
+                          <a href="{{ route('our-solid-stone') }}#marble-collection"
                             class="submenu-link {{ request()->routeIs('oss.grey-pg-marble') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Grey
                             PG</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('marble', 'grey-dk')">
-                          <a href="{{ route('oss.grey-dk-marble') }}"
+                          <a href="{{ route('our-solid-stone') }}#marble-collection"
                             class="submenu-link {{ request()->routeIs('oss.grey-dk-marble') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Grey
                             DK</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('marble', 'grey-dr')">
-                          <a href="{{ route('oss.grey-dr-marble') }}"
+                          <a href="{{ route('our-solid-stone') }}#marble-collection"
                             class="submenu-link {{ request()->routeIs('oss.grey-dr-marble') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Grey
                             DR</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('marble', 'light-grey')">
-                          <a href="{{ route('oss.light-grey-marble') }}"
+                          <a href="{{ route('our-solid-stone') }}#marble-collection"
                             class="submenu-link {{ request()->routeIs('oss.light-grey-marble') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Light
                             Grey</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('marble', 'red')">
-                          <a href="{{ route('oss.red-marble') }}"
+                          <a href="{{ route('our-solid-stone') }}#marble-collection"
                             class="submenu-link {{ request()->routeIs('oss.red-marble') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Red</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('marble', 'cocoa-brown')">
-                          <a href="{{ route('oss.cocoa-brown-marble') }}"
+                          <a href="{{ route('our-solid-stone') }}#marble-collection"
                             class="submenu-link {{ request()->routeIs('oss.cocoa-brown-marble') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Cocoa
                             Brown</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('marble', 'traventine')">
-                          <a href="{{ route('oss.traventine-marble') }}"
+                          <a href="{{ route('our-solid-stone') }}#marble-collection"
                             class="submenu-link {{ request()->routeIs('oss.traventine-marble') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Traventine</a>
                         </li>
                       </ul>
@@ -256,21 +250,21 @@
                       <h4 class="font-semibold text-gray-900 mb-3">Onyx</h4>
                       <ul class="space-y-1 text-xs">
                         <li class="submenu-item" onmouseenter="showImage('onyx', 'sunset')">
-                          <a href="{{ route('oss.sunset-onyx') }}"
+                          <a href="{{ route('our-solid-stone') }}#onyx-collection"
                             class="submenu-link {{ request()->routeIs('oss.sunset-onyx') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Sunset
                             Onyx</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('onyx', 'ivory')">
-                          <a href="{{ route('oss.ivory-onyx') }}"
+                          <a href="{{ route('our-solid-stone') }}#onyx-collection"
                             class="submenu-link {{ request()->routeIs('oss.ivory-onyx') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Ivory</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('onyx', 'bw')">
-                          <a href="{{ route('oss.bw-onyx') }}"
+                          <a href="{{ route('our-solid-stone') }}#onyx-collection"
                             class="submenu-link {{ request()->routeIs('oss.bw-onyx') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Onyx
                             BW</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('onyx', 'pct')">
-                          <a href="{{ route('oss.pct-onyx') }}"
+                          <a href="{{ route('our-solid-stone') }}#onyx-collection"
                             class="submenu-link {{ request()->routeIs('oss.pct-onyx') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Onyx
                             PCT</a>
                         </li>
@@ -280,37 +274,37 @@
                     <div>
                       <ul class="space-y-2 text-sm">
                         <li class="submenu-item" onmouseenter="showImage('stone', 'granite')">
-                          <a href="{{ route('oss.granite-local') }}"
+                          <a href="{{ route('our-solid-stone') }}#granite-local"
                             class="submenu-link {{ request()->routeIs('oss.granite-local') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Granite
                             Local</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'petrified-wood')">
-                          <a href="{{ route('oss.petrified-wood') }}"
+                          <a href="{{ route('our-solid-stone') }}#petrified-wood"
                             class="submenu-link {{ request()->routeIs('oss.petrified-wood') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Petrified
                             Wood</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'river-stone')">
-                          <a href="{{ route('oss.river-stone') }}"
+                          <a href="{{ route('our-solid-stone') }}#river-stone"
                             class="submenu-link {{ request()->routeIs('oss.river-stone') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">River
                             Stone</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'lava-stone')">
-                          <a href="{{ route('oss.lava-stone') }}"
+                          <a href="{{ route('our-solid-stone') }}#lava-stone"
                             class="submenu-link {{ request()->routeIs('oss.lava-stone') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Lava
                             Stone</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'lime-stone')">
-                          <a href="{{ route('oss.lime-stone') }}"
+                          <a href="{{ route('our-solid-stone') }}#lime-stone"
                             class="submenu-link {{ request()->routeIs('oss.lime-stone') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Lime
                             Stone</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'ziolit')">
-                          <a href="{{ route('oss.ziolit-stone') }}"
-                            class="submenu-link {{ request()->routeIs('oss.ziolit-stone') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Ziolit
+                          <a href="{{ route('our-solid-stone') }}#zeolite-stone"
+                            class="submenu-link {{ request()->routeIs('oss.ziolit-stone') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Zeolit
                             Stone</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('stone', 'terrazzo')">
-                          <a href="{{ route('oss.terrazzo') }}"
+                          <a href="{{ route('our-solid-stone') }}#terrazzo-collection"
                             class="submenu-link {{ request()->routeIs('oss.terrazzo') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Terrazzo</a>
                         </li>
                       </ul>
@@ -354,12 +348,20 @@
               </div>
             </div>
           </div>
+        </div>
+
+        {{-- Our finishing --}}
+        {{-- <div class="nav-item relative">
+          <a href="{{ route('our-finishing') }}"
+            class="nav-link {{ Request::is('our-finishing') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
+            Our Finishing
+          </a>
         </div> --}}
 
         {{-- ======= Our Finishing ======= --}}
-        {{-- @php $isFinishingActive = in_array($currentRoute, $finishingRoutes, true); @endphp --}}
-        {{-- <div class="nav-item relative">
-          <a href="#"
+        @php $isFinishingActive = in_array($currentRoute, $finishingRoutes, true); @endphp
+        <div class="nav-item relative">
+          <a href="{{ route('our-finishing') }}"
             class="nav-link {{ $isFinishingActive ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             Our Finishing
           </a>
@@ -369,40 +371,40 @@
                 <div class="col-span-2">
                   <ul class="space-y-2 text-sm">
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'polish')">
-                      <a href="{{ route('polish') }}"
+                      <a href="{{ route('our-finishing') }}#polish-marble"
                         class="submenu-link {{ request()->routeIs('polish') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Polish</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'doff')">
-                      <a href="{{ route('doff-or-matte') }}"
+                      <a href="{{ route('our-finishing') }}#matte"
                         class="submenu-link {{ request()->routeIs('doff-or-matte') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Doff
                         Or Matte</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'acid')">
-                      <a href="{{ route('acid') }}"
+                      <a href="{{ route('our-finishing') }}#acid"
                         class="submenu-link {{ request()->routeIs('acid') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Acid</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'hammered')">
-                      <a href="{{ route('hammered') }}"
+                      <a href="{{ route('our-finishing') }}#hammered"
                         class="submenu-link {{ request()->routeIs('hammered') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Hammered</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'burning')">
-                      <a href="{{ route('burning') }}"
+                      <a href="{{ route('our-finishing') }}#burning"
                         class="submenu-link {{ request()->routeIs('burning') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Burning</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'texture')">
-                      <a href="{{ route('texture') }}"
+                      <a href="{{ route('our-finishing') }}#textured"
                         class="submenu-link {{ request()->routeIs('texture') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Texture</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'groove')">
-                      <a href="{{ route('groove') }}"
+                      <a href="{{ route('our-finishing') }}#groove"
                         class="submenu-link {{ request()->routeIs('groove') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Groove</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'stripe')">
-                      <a href="{{ route('stripe') }}"
+                      <a href="{{ route('our-finishing') }}#stripe"
                         class="submenu-link {{ request()->routeIs('stripe') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Stripe</a>
                     </li>
                     <li class="submenu-item" onmouseenter="showImage('finishing', 'combination')">
-                      <a href="{{ route('combination') }}"
+                      <a href="{{ route('our-finishing') }}#combination"
                         class="submenu-link {{ request()->routeIs('combination') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Combination</a>
                     </li>
                   </ul>
@@ -443,7 +445,7 @@
               </div>
             </div>
           </div>
-        </div> --}}
+        </div>
 
         {{-- ======= About Us ======= --}}
 

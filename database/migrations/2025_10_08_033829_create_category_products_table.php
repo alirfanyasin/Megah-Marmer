@@ -17,7 +17,7 @@ return new class extends Migration
             $table->json('image');
             $table->text('description');
             $table->json('description_point')->nullable();
-            $table->unsignedBigInteger('price');
+            $table->decimal('price', 10, 2)->unsigned();
             $table->integer('discount')->default(0);
             $table->decimal('height', 8, 2)->nullable();
             $table->decimal('width', 8, 2)->nullable();

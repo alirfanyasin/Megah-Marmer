@@ -168,16 +168,24 @@
         <p class="text-md text-gray-600">{{ $product->description }}</p>
 
         {{-- Price --}}
+        @php
+          // Hati-hati: cast decimal Laravel -> string, jadi paksa ke float dulu
+          $price = (float) $product->price; // mis. 5.00
+          $discount = (int) $product->discount; // mis. 2
+          $final = round(($price * (100 - $discount)) / 100, 2);
+
+          $usd = fn($v) => number_format($v, 2, '.', ','); // 1,234.56
+        @endphp
+
         <div class="flex items-baseline gap-3">
-          @if ($product->discount !== 0)
-            <span class="text-3xl font-bold text-red-900">$
-              {{ number_format($product->price * (1 - $product->discount / 100), 0, ',', '.') }}</span>
-            <span class="text-xl text-gray-400 line-through">$
-              {{ number_format($product->price, 0, ',', '.') }}</span>
+          @if ($discount > 0)
+            <span class="text-3xl font-bold text-red-900">${{ $usd($final) }}</span>
+            <span class="text-xl text-gray-400 line-through">${{ $usd($price) }}</span>
           @else
-            <span class="text-3xl font-bold text-red-900">$ {{ number_format($product->price, 0, ',', '.') }}</span>
+            <span class="text-3xl font-bold text-red-900">${{ $usd($price) }}</span>
           @endif
         </div>
+
 
         {{-- Action Buttons --}}
         <div class="flex items-center justify-start gap-3">

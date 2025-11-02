@@ -23,7 +23,7 @@
   </section>
 
   {{-- Marble Stone Collection --}}
-  <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen">
+  <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen" id="marble-collection">
     <div class="py-12 md:py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header class="mb-8 md:mb-12">
@@ -123,7 +123,7 @@
   </section>
 
   {{-- Onyx Collection --}}
-  <section class="bg-gradient-to-t from-white to-gray-900 min-h-screen">
+  <section class="bg-gradient-to-t from-white to-gray-900 min-h-screen" id="onyx-collection">
     <div class="py-12 md:py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header class="mb-8 md:mb-12 text-center">
@@ -207,7 +207,7 @@
   </section>
 
   {{-- Terrazzo Collection --}}
-  <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen">
+  <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen" id="terrazzo-collection">
     <div class="py-12 md:py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header class="mb-8 md:mb-12 text-center">
@@ -309,7 +309,7 @@
 
       <div class="space-y-8">
         <!-- Granite Local -->
-        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group">
+        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="granite-local">
           <img
             src="https://images.unsplash.com/photo-1688030178694-dcb26d6204ed?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1632"
             alt="Granite Local"
@@ -332,7 +332,7 @@
         </div>
 
         <!-- Petrified Wood -->
-        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group">
+        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="petrified-wood">
           <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1600&q=80" alt="Petrified Wood"
             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-l from-amber-900 via-amber-900/70 to-transparent"></div>
@@ -353,7 +353,7 @@
         </div>
 
         <!-- River Stone -->
-        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group">
+        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="river-stone">
           <img
             src="https://images.unsplash.com/photo-1455577380025-4321f1e1dca7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470"
             alt="River Stone"
@@ -376,7 +376,7 @@
         </div>
 
         <!-- Lava Stone -->
-        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group">
+        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="lava-stone">
           <img
             src="https://images.unsplash.com/photo-1643302415140-659cb70b0d23?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1476"
             alt="Lava Stone"
@@ -399,7 +399,7 @@
         </div>
 
         <!-- Lime Stone -->
-        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group">
+        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="lime-stone">
           <img
             src="https://images.unsplash.com/photo-1632226705528-14afa4dcdc0f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1603"
             alt="Lime Stone"
@@ -422,7 +422,7 @@
         </div>
 
         <!-- Zeolite Stone -->
-        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group">
+        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="zeolite-stone">
           <img
             src="https://images.unsplash.com/photo-1752424505273-6d02bee9d967?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1373"
             alt="Zeolite Stone"

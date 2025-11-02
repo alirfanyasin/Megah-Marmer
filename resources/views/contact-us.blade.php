@@ -205,7 +205,7 @@
   </section>
 
   <!-- Feature Grid Section -->
-  <section class="py-24 sm:py-32 bg-white">
+  {{-- <section class="py-24 sm:py-32 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-20">
@@ -307,10 +307,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!-- CTA Section -->
-  <section class="relative py-32 sm:py-40 bg-cover bg-center"
+  {{-- <section class="relative py-32 sm:py-40 bg-cover bg-center"
     style="background-image: linear-gradient(rgba(28, 25, 23, 0.88), rgba(28, 25, 23, 0.88)), url('https://images.unsplash.com/photo-1615529182904-14819c35db37?w=1600&q=80');">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
@@ -336,6 +336,6 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
 @endsection
