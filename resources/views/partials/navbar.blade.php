@@ -449,14 +449,16 @@
 
         {{-- ======= About Us ======= --}}
 
-        <div class="nav-item relative">
+        {{-- <div class="nav-item relative">
           <a href="{{ route('about-us') }}"
             class="nav-link {{ Request::is('about-us') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             About Us
           </a>
-        </div>
-        {{-- <div class="nav-item relative">
-          <a href="#"
+        </div> --}}
+        @php $isAboutActive = in_array($currentRoute, $aboutRoutes, true); @endphp
+
+        <div class="nav-item relative">
+          <a href="{{ route('about-us') }}"
             class="nav-link {{ $isAboutActive ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             About Us
           </a>
@@ -468,17 +470,17 @@
                     <div>
                       <ul class="space-y-2 text-sm">
                         <li class="submenu-item" onmouseenter="showImage('about', 'story')">
-                          <a href="{{ route('about.our-story.index') }}"
+                          <a href="{{ route('about-us') }}#our-story"
                             class="submenu-link {{ request()->routeIs('about.our-story.index') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Our
                             Story</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'commitments')">
-                          <a href="{{ route('about.our-commitments.index') }}"
+                          <a href="{{ route('about-us') }}#our-commitments"
                             class="submenu-link {{ request()->routeIs('about.our-commitments.index') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Our
                             Commitments</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'team')">
-                          <a href="{{ route('about.our-team.index') }}"
+                          <a href="{{ route('about-us') }}#our-team"
                             class="submenu-link {{ request()->routeIs('about.our-team.index') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Our
                             Team</a>
                         </li>
@@ -488,18 +490,23 @@
                     <div>
                       <ul class="space-y-2 text-sm">
                         <li class="submenu-item" onmouseenter="showImage('about', 'storage')">
-                          <a href="{{ route('stone-storage') }}"
+                          <a href="{{ route('about-us') }}#stone-storage"
                             class="submenu-link {{ request()->routeIs('stone-storage') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Stone
                             Storage</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'factory')">
-                          <a href="{{ route('our-factory') }}"
+                          <a href="{{ route('about-us') }}#factory"
                             class="submenu-link {{ request()->routeIs('our-factory') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Our
                             Factory</a>
                         </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'warehouse')">
-                          <a href="{{ route('warehouse') }}"
+                          <a href="{{ route('about-us') }}#warehouse"
                             class="submenu-link {{ request()->routeIs('warehouse') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Warehouse</a>
+                        </li>
+                        <li class="submenu-item" onmouseenter="showImage('about', 'wood-packaging')">
+                          <a href="{{ route('about-us') }}#stuffing-area"
+                            class="submenu-link {{ request()->routeIs('suffing-area') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Stuffing
+                            Area</a>
                         </li>
                       </ul>
                     </div>
@@ -507,16 +514,17 @@
                     <div>
                       <h4 class="font-semibold text-gray-900 mb-3 text-sm">Our Production</h4>
                       <ul class="space-y-2 text-sm pl-4">
-                        <li class="submenu-item" onmouseenter="showImage('about', 'sawing')">
-                          <a href="{{ route('sawing-machine') }}"
-                            class="submenu-link {{ request()->routeIs('sawing-machine') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Sawing
-                            Machine</a>
-                        </li>
                         <li class="submenu-item" onmouseenter="showImage('about', 'production')">
-                          <a href="{{ route('production-process') }}"
+                          <a href="{{ route('about-us') }}#production-process"
                             class="submenu-link {{ request()->routeIs('production-process') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Production
                             Process</a>
                         </li>
+                        <li class="submenu-item" onmouseenter="showImage('about', 'sawing')">
+                          <a href="{{ route('about-us') }}#sawing-machine"
+                            class="submenu-link {{ request()->routeIs('sawing-machine') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Sawing
+                            Machine</a>
+                        </li>
+
                       </ul>
                     </div>
 
@@ -524,19 +532,27 @@
                       <h4 class="font-semibold text-gray-900 mb-3 text-sm">Packaging</h4>
                       <ul class="space-y-2 text-sm pl-4">
                         <li class="submenu-item" onmouseenter="showImage('about', 'standard-packaging')">
-                          <a href="{{ route('packaging') }}"
-                            class="submenu-link {{ request()->routeIs('packaging') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Packaging</a>
+                          <a href="{{ route('about-us') }}#packaging"
+                            class="submenu-link {{ request()->routeIs('packaging') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Standart
+                            Packaging</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('about', 'wood-packaging')">
-                          <a href="{{ route('suffing-area') }}"
-                            class="submenu-link {{ request()->routeIs('suffing-area') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Stuffing
-                            Area</a>
+                        <li class="submenu-item" onmouseenter="showImage('about', 'standard-packaging')">
+                          <a href="{{ route('about-us') }}#packaging"
+                            class="submenu-link {{ request()->routeIs('packaging') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Special
+                            Packaging (Moulded Foam)</a>
                         </li>
-                        <li class="submenu-item" onmouseenter="showImage('about', 'foam-packaging')">
-                          <a href="{{ route('contact-us') }}"
-                            class="submenu-link {{ request()->routeIs('contact-us') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Contact
-                            Us</a>
+                        <li class="submenu-item" onmouseenter="showImage('about', 'standard-packaging')">
+                          <a href="{{ route('about-us') }}#packaging"
+                            class="submenu-link {{ request()->routeIs('packaging') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Wood
+                            Packaging</a>
                         </li>
+                        <li class="submenu-item" onmouseenter="showImage('about', 'standard-packaging')">
+                          <a href="{{ route('about-us') }}#packaging"
+                            class="submenu-link {{ request()->routeIs('packaging') ? 'is-active' : 'text-gray-600 hover:text-orange-500' }} font-light text-lg">Polywood
+                            Packaging</a>
+                        </li>
+
+
                       </ul>
                     </div>
 
@@ -592,7 +608,7 @@
               </div>
             </div>
           </div>
-        </div> --}}
+        </div>
 
         <div class="nav-item relative">
           <a href="{{ route('contact-us') }}"
