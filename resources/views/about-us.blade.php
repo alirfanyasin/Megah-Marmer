@@ -822,7 +822,7 @@
           </a>
 
           <!-- Special Packaging (Moulded Foam) -->
-          <a href="{{ route('our-packaging') }}">
+          <a href="{{ route('our-packaging') }}#special-packaging">
             <div
               class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&q=80"
@@ -840,7 +840,7 @@
           </a>
 
           <!-- Wood Packaging -->
-          <a href="{{ route('our-packaging') }}">
+          <a href="{{ route('our-packaging') }}#wood-packaging">
             <div
               class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img
@@ -859,7 +859,7 @@
           </a>
 
           <!-- Polywood Packaging -->
-          <a href="{{ route('our-packaging') }}">
+          <a href="{{ route('our-packaging') }}#polywood-packaging">
             <div
               class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80"
@@ -917,26 +917,60 @@
   </section>
 
 
-  <!-- CTA -->
+  <!-- CTA Section with Motto -->
   <section class="relative py-24 overflow-hidden"
-    style="background-image: linear-gradient(135deg, rgba(18,18,18,.75) 0%, rgba(18,18,18,.65) 100%), url('https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1173'); background-size: cover; background-position: center;">
-    <div class="container mx-auto px-4 text-center">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-light text-white mb-6">Ready to Experience Excellence?</h2>
-        <p class="text-xl text-white/90 mb-10">
-          Discover how Megah Marmer can elevate your project with premium marble solutions.
+    style="background-image: linear-gradient(135deg, rgba(15,23,42,.85) 0%, rgba(30,41,59,.75) 100%), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+
+    <!-- Decorative Elements -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
+      <div class="absolute bottom-10 right-10 w-24 h-24 border-2 border-white rounded-full"></div>
+    </div>
+
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <!-- Motto Badge -->
+        <div
+          class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full mb-6 border border-white/20">
+          <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <span class="text-white text-sm font-medium tracking-wide">Our Commitment</span>
+        </div>
+
+        <!-- Main Motto -->
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+          Customer Satisfaction
+        </h2>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-amber-400 mb-8 leading-tight">
+          is Our Future
+        </h2>
+
+        <!-- Supporting Text -->
+        <p class="text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+          We believe that every satisfied customer is a step towards our continued excellence. Your trust drives our
+          innovation, and your satisfaction shapes our tomorrow.
         </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           <a href="{{ route('contact-us') }}"
-            class="inline-flex items-center gap-3 bg-white text-stone-900 px-8 py-4 text-lg font-medium hover:bg-stone-100 transition">
-            <span>Contact Us Today</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            class="group inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 text-base md:text-lg font-semibold hover:bg-amber-400 hover:text-slate-900 transition-all duration-300 rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto justify-center">
+            <span>Start Your Project</span>
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
+
           <a href="/products/all"
-            class="inline-flex items-center gap-3 border-2 border-white text-white px-8 py-4 text-lg font-medium hover:bg-white/10 transition">
-            <span>View Products</span>
+            class="group inline-flex items-center gap-3 border-2 border-white text-white px-8 py-4 text-base md:text-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300 rounded-lg hover:scale-105 w-full sm:w-auto justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            <span>Explore Products</span>
           </a>
         </div>
       </div>

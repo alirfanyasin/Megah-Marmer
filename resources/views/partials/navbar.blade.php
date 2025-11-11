@@ -190,7 +190,7 @@
         @php $isOssActive = in_array($currentRoute, $ossRoutes, true); @endphp
         <div class="nav-item relative">
           <a href="{{ route('our-solid-stone') }}"
-            class="nav-link {{ $isOssActive ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
+            class="nav-link {{ Request::is('our-solid-stone') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             Our Solid Stone
           </a>
           <div class="dropdown-menu fixed left-0 right-0">
@@ -362,7 +362,7 @@
         @php $isFinishingActive = in_array($currentRoute, $finishingRoutes, true); @endphp
         <div class="nav-item relative">
           <a href="{{ route('our-finishing') }}"
-            class="nav-link {{ $isFinishingActive ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
+            class="nav-link {{ Request::is('our-finishing') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             Our Finishing
           </a>
           <div class="dropdown-menu fixed left-0 right-0">
@@ -459,7 +459,7 @@
 
         <div class="nav-item relative">
           <a href="{{ route('about-us') }}"
-            class="nav-link {{ $isAboutActive ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
+            class="nav-link {{ Request::is('about-us') ? 'is-active' : 'text-gray-900 hover:text-orange-500' }} transition-colors py-2">
             About Us
           </a>
           <div class="dropdown-menu fixed left-0 right-0">
