@@ -10,4 +10,9 @@ class AboutUsController extends Controller
     {
         return view("about-us");
     }
+
+    public function ourPackaging()
+    {
+        return view("our-packaging-page");
+    }
 }

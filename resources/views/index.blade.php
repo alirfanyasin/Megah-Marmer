@@ -388,7 +388,7 @@
     <div class="py-8 md:py-12 lg:py-16 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <header class="mb-6 md:mb-8">
-          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">Right now</h3>
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">Trending Now</h3>
           <p class="text-sm sm:text-base text-gray-300">Discover our latest news</p>
         </header>
 

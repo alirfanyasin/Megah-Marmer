@@ -2,6 +2,14 @@
 @section('title', 'Marble Collection Colors')
 @section('content')
 
+  <section class="max-w-7xl mx-auto py-5">
+    <header class="text-center">
+      <h1 class="font-bold lg:text-4xl md:text-3xl text-2xl">Marble Color</h1>
+      <p class="mt-2 text-base">A naturally refined stone delivering luxurious aesthetics, smooth finishes, and artistic
+        veining, <br> perfect for high-end residential and commercial designs.</p>
+    </header>
+  </section>
+
   <section class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 p-4">
       <a href="" class="relative block rounded overflow-hidden h-80 group">

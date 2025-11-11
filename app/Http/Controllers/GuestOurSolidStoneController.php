@@ -25,4 +25,14 @@ class GuestOurSolidStoneController extends Controller
     {
         return view("oss-terazzo");
     }
+
+    public function granite()
+    {
+        return view("oss-granite");
+    }
+
+    public function petrifiedWood()
+    {
+        return view("oss-pertified-wood");
+    }
 }

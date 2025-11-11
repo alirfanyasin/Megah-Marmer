@@ -216,45 +216,6 @@
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <!-- Concrete Terrazzo -->
-          <a href="{{ route('oss.terazzo') }}">
-            <div
-              class="overflow-hidden rounded-2xl w-full h-[500px] relative group hover:cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500">
-              <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1000&q=80"
-                alt="Concrete Terrazzo" class="h-full w-full object-cover transition-all duration-700">
-              <div
-                class="absolute p-8 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                style="background: linear-gradient(to top, rgba(44,62,80,0.95), rgba(52,73,94,0.5), transparent);">
-                <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
-                  <span
-                    class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-3">Industrial
-                    Collection</span>
-                  <h4 class="text-3xl font-bold mb-3">Concrete Terrazzo</h4>
-                  <p class="text-base text-white/95 leading-relaxed mb-4">
-                    Minimalist beauty with industrial strength. Features subtle aggregates embedded in smooth concrete
-                    matrix,
-                    perfect for contemporary spaces that embrace raw, authentic aesthetics.
-                  </p>
-                  <div class="flex gap-4 text-sm">
-                    <span class="flex items-center gap-2">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                        </path>
-                      </svg>
-                      High Durability
-                    </span>
-                    <span class="flex items-center gap-2">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                        </path>
-                      </svg>
-                      Easy Maintenance
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
           <a href="{{ route('oss.terazzo') }}">
             <!-- Pattern Terrazzo -->
             <div
@@ -268,7 +229,7 @@
                   <span
                     class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-3">Artistic
                     Collection</span>
-                  <h4 class="text-3xl font-bold mb-3">Pattern Terrazzo</h4>
+                  <h4 class="text-3xl font-bold mb-3">Pattern Terrazzo Color</h4>
                   <p class="text-base text-white/95 leading-relaxed mb-4">
                     Vibrant mosaic of colors and textures. Bold aggregates create stunning visual patterns that
                     transform
@@ -294,6 +255,46 @@
               </div>
             </div>
           </a>
+          <!-- Concrete Terrazzo -->
+          <a href="{{ route('oss.terazzo') }}#concrete">
+            <div
+              class="overflow-hidden rounded-2xl w-full h-[500px] relative group hover:cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500">
+              <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1000&q=80"
+                alt="Concrete Terrazzo" class="h-full w-full object-cover transition-all duration-700">
+              <div
+                class="absolute p-8 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                style="background: linear-gradient(to top, rgba(44,62,80,0.95), rgba(52,73,94,0.5), transparent);">
+                <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
+                  <span
+                    class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-3">Industrial
+                    Collection</span>
+                  <h4 class="text-3xl font-bold mb-3">Concrete Terrazzo Color</h4>
+                  <p class="text-base text-white/95 leading-relaxed mb-4">
+                    Minimalist beauty with industrial strength. Features subtle aggregates embedded in smooth concrete
+                    matrix,
+                    perfect for contemporary spaces that embrace raw, authentic aesthetics.
+                  </p>
+                  <div class="flex gap-4 text-sm">
+                    <span class="flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        </path>
+                      </svg>
+                      High Durability
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        </path>
+                      </svg>
+                      Easy Maintenance
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+
         </div>
       </div>
     </div>
@@ -309,48 +310,53 @@
 
       <div class="space-y-8">
         <!-- Granite Local -->
-        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="granite-local">
-          <img
-            src="https://images.unsplash.com/photo-1688030178694-dcb26d6204ed?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1632"
-            alt="Granite Local"
-            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/70 to-transparent"></div>
-          <div class="relative h-full flex items-center">
-            <div class="w-full md:w-1/2 lg:w-7/12 px-8 md:px-12 lg:px-16">
-              <span
-                class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-2">Local
-                Craftsmanship</span>
-              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                Granite Local
-              </h2>
-              <p class="text-base md:text-lg text-white/90">
-                Celebrate Indonesian craftsmanship with our locally sourced granite. Combining natural strength with
-                stunning aesthetics, each slab showcases unique patterns perfect for countertops, flooring, and facades.
-              </p>
+        <a href="{{ route('oss.granite') }}" class="block">
+          <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="granite-local">
+            <img
+              src="https://images.unsplash.com/photo-1688030178694-dcb26d6204ed?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1632"
+              alt="Granite Local"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/70 to-transparent"></div>
+            <div class="relative h-full flex items-center">
+              <div class="w-full md:w-1/2 lg:w-7/12 px-8 md:px-12 lg:px-16">
+                <span
+                  class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-2">Local
+                  Craftsmanship</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+                  Granite Local
+                </h2>
+                <p class="text-base md:text-lg text-white/90">
+                  Celebrate Indonesian craftsmanship with our locally sourced granite. Combining natural strength with
+                  stunning aesthetics, each slab showcases unique patterns perfect for countertops, flooring, and facades.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Petrified Wood -->
-        <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="petrified-wood">
-          <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1600&q=80" alt="Petrified Wood"
-            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-l from-amber-900 via-amber-900/70 to-transparent"></div>
-          <div class="relative h-full flex items-center justify-end">
-            <div class="w-full md:w-1/2 lg:w-7/12 px-8 md:px-12 lg:px-16 text-right">
-              <span
-                class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-2">Ancient
-                Beauty</span>
-              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                Petrified Wood
-              </h2>
-              <p class="text-base md:text-lg text-white/90">
-                Nature's masterpiece millions of years in the making. Each piece tells a unique story with intricate wood
-                grain patterns preserved in stone, adding organic warmth and timeless character to modern interiors.
-              </p>
+        <a href="{{ route('oss.petrifiedWood') }}" class="block">
+          <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="petrified-wood">
+            <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1600&q=80" alt="Petrified Wood"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-l from-amber-900 via-amber-900/70 to-transparent"></div>
+            <div class="relative h-full flex items-center justify-end">
+              <div class="w-full md:w-1/2 lg:w-7/12 px-8 md:px-12 lg:px-16 text-right">
+                <span
+                  class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-2">Ancient
+                  Beauty</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+                  Petrified Wood
+                </h2>
+                <p class="text-base md:text-lg text-white/90">
+                  Nature's masterpiece millions of years in the making. Each piece tells a unique story with intricate
+                  wood
+                  grain patterns preserved in stone, adding organic warmth and timeless character to modern interiors.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- River Stone -->
         <div class="relative h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-lg group" id="river-stone">

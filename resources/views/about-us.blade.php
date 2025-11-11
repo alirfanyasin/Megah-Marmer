@@ -100,208 +100,233 @@
     </div>
   </section>
 
-  <!-- Production Facility -->
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <span class="text-sm uppercase tracking-[0.2em] text-stone-500">Our Facility</span>
-        <h2 class="text-4xl font-light mt-4 mb-6 text-stone-900">State-of-the-Art Manufacturing</h2>
-      </div>
-
-      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center mb-16">
-        <div>
-          <h3 class="text-3xl font-light text-stone-900 mb-6">End-to-End Production Excellence</h3>
-          <p class="text-gray-700 text-lg leading-relaxed mb-8">
-            Our comprehensive production workflow encompasses every aspect of marble processing,
-            from incoming slab inspection to final dispatch. Each stage is meticulously controlled
-            to maintain the highest standards of quality and precision.
-          </p>
-          <div class="grid grid-cols-2 gap-6">
-            <div class="bg-stone-50 p-6 rounded-xl">
-              <div class="text-3xl font-light text-stone-900 mb-2">10,000+</div>
-              <p class="text-sm text-gray-600 uppercase tracking-wider">m² Monthly</p>
-            </div>
-            <div class="bg-stone-50 p-6 rounded-xl">
-              <div class="text-3xl font-light text-stone-900 mb-2">&gt;95%</div>
-              <p class="text-sm text-gray-600 uppercase tracking-wider">Uptime</p>
-            </div>
-            <div class="bg-stone-50 p-6 rounded-xl">
-              <div class="text-3xl font-light text-stone-900 mb-2">≥97%</div>
-              <p class="text-sm text-gray-600 uppercase tracking-wider">First-Pass</p>
-            </div>
-            <div class="bg-stone-50 p-6 rounded-xl">
-              <div class="text-3xl font-light text-stone-900 mb-2">&lt;0.7%</div>
-              <p class="text-sm text-gray-600 uppercase tracking-wider">Defect Rate</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden shadow-2xl">
-          <img
-            src="https://images.unsplash.com/photo-1727504172743-08f14448fab8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
-            alt="Factory" class="w-full h-full object-cover">
-        </div>
-      </div>
-
-      <!-- Production Process -->
-      <div class="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        <div class="bg-gradient-to-br from-stone-50 to-white p-6 rounded-xl border border-stone-100">
-          <div class="text-stone-900 font-light text-4xl mb-4">01</div>
-          <h4 class="font-medium text-stone-900 mb-2">Inspection</h4>
-          <p class="text-gray-600 text-sm">Quality check & documentation</p>
-        </div>
-        <div class="bg-gradient-to-br from-stone-50 to-white p-6 rounded-xl border border-stone-100">
-          <div class="text-stone-900 font-light text-4xl mb-4">02</div>
-          <h4 class="font-medium text-stone-900 mb-2">Precision Cutting</h4>
-          <p class="text-gray-600 text-sm">CNC-controlled sawing</p>
-        </div>
-        <div class="bg-gradient-to-br from-stone-50 to-white p-6 rounded-xl border border-stone-100">
-          <div class="text-stone-900 font-light text-4xl mb-4">03</div>
-          <h4 class="font-medium text-stone-900 mb-2">Surface Finishing</h4>
-          <p class="text-gray-600 text-sm">Polish & custom textures</p>
-        </div>
-        <div class="bg-gradient-to-br from-stone-50 to-white p-6 rounded-xl border border-stone-100">
-          <div class="text-stone-900 font-light text-4xl mb-4">04</div>
-          <h4 class="font-medium text-stone-900 mb-2">Quality & Dispatch</h4>
-          <p class="text-gray-600 text-sm">Final verification & packaging</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Packaging Solutions -->
-  {{-- <section class="py-20 bg-stone-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <span class="text-sm uppercase tracking-[0.2em] text-stone-500">Packaging</span>
-        <h2 class="text-4xl font-light mt-4 mb-6 text-stone-900">Protection Solutions</h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="bg-white p-8 rounded-xl shadow-lg">
-          <div class="w-12 h-12 bg-stone-100 rounded-lg flex items-center justify-center mb-6">
-            <span class="text-2xl">📦</span>
-          </div>
-          <h3 class="text-xl font-medium mb-3 text-stone-900">Standard</h3>
-          <p class="text-gray-600 mb-4">Secure strapping for domestic & regional shipments</p>
-          <span class="text-sm px-3 py-1 bg-stone-100 rounded-full">Domestic</span>
-        </div>
-
-        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-amber-200">
-          <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center mb-6">
-            <span class="text-2xl">🛡️</span>
-          </div>
-          <h3 class="text-xl font-medium mb-3 text-stone-900">Moulded Foam</h3>
-          <p class="text-gray-600 mb-4">Custom-contoured premium protection for delicate pieces</p>
-          <span class="text-sm px-3 py-1 bg-amber-100 text-amber-700 rounded-full">Premium</span>
-        </div>
-
-        <div class="bg-white p-8 rounded-xl shadow-lg">
-          <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-6">
-            <span class="text-2xl">📐</span>
-          </div>
-          <h3 class="text-xl font-medium mb-3 text-stone-900">Wood Crates</h3>
-          <p class="text-gray-600 mb-4">ISPM-15 certified for international shipping</p>
-          <span class="text-sm px-3 py-1 bg-green-100 text-green-700 rounded-full">Export</span>
-        </div>
-      </div>
-    </div>
-  </section> --}}
-
-  <!-- Quality Metrics -->
-  {{-- <section class="py-20 bg-white" id="our-storage">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <span class="text-sm uppercase tracking-[0.2em] text-stone-500">Performance Storage</span>
-        <h2 class="text-4xl font-light mt-4 mb-6 text-stone-900">Our Quality Metrics</h2>
-      </div>
-
-      <div class="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-        <div class="text-center">
-          <div class="text-5xl font-light text-stone-900 mb-3">≥97%</div>
-          <div class="w-16 h-1 bg-stone-900 mx-auto mb-3"></div>
-          <p class="text-stone-600 text-sm uppercase tracking-wider">First-Pass Yield</p>
-        </div>
-        <div class="text-center">
-          <div class="text-5xl font-light text-stone-900 mb-3">&lt;0.7%</div>
-          <div class="w-16 h-1 bg-stone-900 mx-auto mb-3"></div>
-          <p class="text-stone-600 text-sm uppercase tracking-wider">Chip Rate</p>
-        </div>
-        <div class="text-center">
-          <div class="text-5xl font-light text-stone-900 mb-3">&gt;98%</div>
-          <div class="w-16 h-1 bg-stone-900 mx-auto mb-3"></div>
-          <p class="text-stone-600 text-sm uppercase tracking-wider">On-Time</p>
-        </div>
-        <div class="text-center">
-          <div class="text-5xl font-light text-stone-900 mb-3">&lt;0.5%</div>
-          <div class="w-16 h-1 bg-stone-900 mx-auto mb-3"></div>
-          <p class="text-stone-600 text-sm uppercase tracking-wider">Damage Rate</p>
-        </div>
-      </div>
-    </div>
-  </section> --}}
-
-
 
   <!-- Storage Methods -->
   <section class="py-16 sm:py-20 bg-stone-50" id="stone-storage">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <span class="text-sm uppercase tracking-[0.2em] text-stone-500 font-medium">Stone Storage</span>
-        <h2 class="text-4xl md:text-5xl font-light mt-4 mb-6 text-stone-900">Storage Methods</h2>
+        <h2 class="text-4xl md:text-5xl font-light mt-4 mb-6 text-stone-900">Professional Storage Solutions</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Choose the setup that best fits slab size, finish, and turnover rate
+          Advanced storage methods designed to preserve marble quality and ensure safe handling throughout the supply
+          chain
         </p>
       </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 border border-stone-200">
-          <h3 class="font-medium text-stone-900 mb-2">A-Frame Vertical</h3>
-          <p class="text-stone-700">Space-efficient, easy picking, minimal contact surfaces. Use foam separators and
-            corner guards.</p>
-        </div>
-        <div class="bg-white p-6 border border-stone-200">
-          <h3 class="font-medium text-stone-900 mb-2">Vertical Racks</h3>
-          <p class="text-stone-700">Numbered slots for clear traceability; ideal for mixed sizes and frequent access.</p>
-        </div>
-        <div class="bg-white p-6 border border-stone-200">
-          <h3 class="font-medium text-stone-900 mb-2">Crated/Palletized</h3>
-          <p class="text-stone-700">For export or long storage. ISPM-15 pallets/dunnage, banded and labeled for quick
-            dispatch.</p>
+    </div>
+
+    <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen" id="marble-collection">
+      <div class="py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <!-- Top 2 Storage Methods -->
+          <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+
+            <!-- A-Frame Vertical Storage -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img
+                  src="https://images.unsplash.com/photo-1574903841563-4722dd62b9cb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1411"
+                  alt="A-Frame Vertical Storage" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Method 1</span>
+                  <h4 class="text-xl font-bold mb-1">A-Frame Vertical Storage</h4>
+                  <p class="text-sm text-white/90">Space-efficient vertical storage with foam separators and corner
+                    guards, minimizing surface contact and maximizing warehouse capacity.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Vertical Rack System -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img
+                  src="https://images.unsplash.com/photo-1678664527011-c70b1b7f757e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1631"
+                  alt="Vertical Rack System" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Method 2</span>
+                  <h4 class="text-xl font-bold mb-1">Vertical Rack System</h4>
+                  <p class="text-sm text-white/90">Numbered slot organization for clear traceability, perfect for mixed
+                    slab sizes and enabling quick, frequent access to inventory.</p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Bottom 3 Storage Methods -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <!-- Crated & Palletized Storage -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&q=80" alt="Crated Storage"
+                  class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Method 3</span>
+                  <h4 class="text-xl font-bold mb-1">Crated & Palletized</h4>
+                  <p class="text-sm text-white/90">Export-ready packaging with ISPM-15 certified pallets, securely banded
+                    and labeled for international shipping and long-term storage.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Climate Controlled Storage -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img
+                  src="https://images.unsplash.com/photo-1720036236632-fdb6211cf317?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470"
+                  alt="Climate Controlled Storage" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Method 4</span>
+                  <h4 class="text-xl font-bold mb-1">Climate Controlled Storage</h4>
+                  <p class="text-sm text-white/90">Temperature and humidity-regulated facilities to prevent moisture
+                    damage and maintain optimal stone condition year-round.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Outdoor Covered Storage -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img
+                  src="https://images.unsplash.com/photo-1670874457182-862dfede5362?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1394"
+                  alt="Outdoor Covered Storage" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Method 5</span>
+                  <h4 class="text-xl font-bold mb-1">Outdoor Covered Storage</h4>
+                  <p class="text-sm text-white/90">Weather-protected open-air storage for bulk inventory, providing
+                    cost-effective space while shielding slabs from direct elements.</p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
         </div>
       </div>
-    </div>
+    </section>
   </section>
 
 
-  <!-- Factory -->
-  <section class="py-16 sm:py-20 bg-white" id="factory">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <div class="text-center mb-16">
-          <span class="text-sm uppercase tracking-[0.2em] text-stone-500 font-medium">Factory</span>
-          <h2 class="text-4xl md:text-5xl font-light mt-4 mb-6 text-stone-900">Efficient Storage Systems</h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Designed for maximum efficiency and safety — tailored to various slab sizes, finishes, and turnover rates.
-          </p>
-        </div>
-
-        <p class="text-stone-700 leading-relaxed mb-4">
-          Our integrated facility manages the entire stone lifecycle — from initial slab inspection and calibration
-          to precision cutting, finishing, packaging, and export handling. Every workflow is optimized to reduce
-          manual handling, enhance safety, and maintain full material traceability.
+  <!-- Our Factory -->
+  <section class="py-16 sm:py-20 bg-stone-50" id="our-factory">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-sm uppercase tracking-[0.2em] text-stone-500 font-medium">Our Factory</span>
+        <h2 class="text-4xl md:text-5xl font-light mt-4 mb-6 text-stone-900">State-of-the-Art Facilities</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Equipped with cutting-edge technology and managed by experienced craftsmen to deliver the finest marble products
         </p>
-
-        <ul class="space-y-2 text-stone-700">
-          <li>• Clearly defined forklift and pedestrian lanes for seamless logistics.</li>
-          <li>• Smart barcode labeling and digital tracking for every production batch.</li>
-          <li>• Dedicated sections for fabrication, storage, packaging, and container loading.</li>
-        </ul>
-      </div>
-
-      <div class="rounded overflow-hidden shadow">
-        <div class="aspect-[4/3] bg-cover bg-center"
-          style="background-image: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80');"></div>
       </div>
     </div>
+
+    <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen" id="marble-collection">
+      <div class="py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <!-- Top 2 Factory Facilities -->
+          <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+
+            <!-- Production Floor -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img src="https://cdn.pixabay.com/photo/2015/10/03/18/46/industry-970146_1280.jpg"
+                  alt="Production Floor" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Facility 1</span>
+                  <h4 class="text-xl font-bold mb-1">Advanced Production Floor</h4>
+                  <p class="text-sm text-white/90">Our main production area features automated cutting systems and
+                    precision machinery, ensuring consistent quality across all marble slabs.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Quality Control Lab -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img src="https://cdn.pixabay.com/photo/2025/07/03/10/52/worker-9694117_1280.jpg"
+                  alt="Quality Control Lab" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Facility 2</span>
+                  <h4 class="text-xl font-bold mb-1">Quality Control Laboratory</h4>
+                  <p class="text-sm text-white/90">Dedicated inspection zone where every slab undergoes rigorous testing
+                    for thickness, color matching, and structural integrity.</p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Bottom 3 Factory Areas -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <!-- Polishing Department -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img src="https://cdn.pixabay.com/photo/2016/01/14/20/55/factory-1140760_1280.jpg"
+                  alt="Polishing Department" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Facility 3</span>
+                  <h4 class="text-xl font-bold mb-1">Polishing Department</h4>
+                  <p class="text-sm text-white/90">High-precision polishing machines operated by skilled technicians
+                    create mirror-like finishes that enhance marble's natural beauty.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Storage Warehouse -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img src="https://cdn.pixabay.com/photo/2020/11/23/16/47/stock-5770315_1280.jpg" alt="Storage Warehouse"
+                  class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Facility 4</span>
+                  <h4 class="text-xl font-bold mb-1">Climate-Controlled Warehouse</h4>
+                  <p class="text-sm text-white/90">Spacious storage facility with organized vertical racks maintaining
+                    optimal conditions to preserve marble quality before delivery.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Packaging Station -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img src="https://cdn.pixabay.com/photo/2016/01/13/14/17/factory-1137995_960_720.jpg"
+                  alt="Packaging Station" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Facility 5</span>
+                  <h4 class="text-xl font-bold mb-1">Export Packaging Station</h4>
+                  <p class="text-sm text-white/90">Professional packaging area where slabs are carefully wrapped, crated,
+                    and prepared for safe international shipping.</p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
   </section>
 
 
@@ -314,130 +339,120 @@
           Our Facility
         </span>
         <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 mb-4">
-          Marble Warehouse
+          Marble Warehouse & Storage
         </h2>
         <p class="text-stone-600 text-lg">
-          State-of-the-art storage facility ensuring quality preservation and efficient logistics
+          Modern storage infrastructure designed specifically for marble preservation with climate control and organized
+          inventory management
         </p>
       </div>
 
       <!-- Main Content Grid -->
-      <div class="grid lg:grid-cols-2 gap-8 mb-12">
-        <!-- Warehouse Image -->
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
-          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80" alt="Marble Warehouse"
-            class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700">
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <p class="text-white font-semibold text-lg">5,000m² Climate-Controlled Facility</p>
-            </div>
-          </div>
-        </div>
+      <div class="mb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-        <!-- Warehouse Zones -->
-        <div class="grid grid-cols-2 gap-4">
-          @php
-            $zones = [
-                [
-                    'title' => 'Receiving Area',
-                    'desc' => 'Quality inspection & documentation',
-                    'icon' =>
-                        'M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4',
-                ],
-                [
-                    'title' => 'Storage Racks',
-                    'desc' => 'Organized inventory system',
-                    'icon' =>
-                        'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-                ],
-                [
-                    'title' => 'Packing Station',
-                    'desc' => 'Professional packaging prep',
-                    'icon' => 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
-                ],
-                [
-                    'title' => 'Loading Dock',
-                    'desc' => 'Efficient dispatch operations',
-                    'icon' => 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
-                ],
-            ];
-          @endphp
-
-          @foreach ($zones as $z)
-            <div
-              class="bg-white rounded-xl p-5 border border-stone-200 hover:shadow-lg hover:border-stone-300 transition-all duration-300 group">
+          <!-- Vertical Slab Storage -->
+          <a href="#" onclick="return false;">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://cdn.pixabay.com/photo/2016/11/05/21/48/lost-places-1801660_1280.jpg"
+                alt="Vertical Slab Storage" class="h-full w-full object-cover transition-all duration-500">
               <div
-                class="w-12 h-12 bg-stone-900 rounded-lg flex items-center justify-center mb-3 group-hover:bg-stone-700 transition-colors">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $z['icon'] }}"></path>
-                </svg>
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Storage Area 1</span>
+                <h4 class="text-xl font-bold mb-1">Vertical Slab Racks</h4>
+                <p class="text-sm text-white/90">A-frame vertical storage system with padded separators ensuring minimal
+                  surface contact and maximum space efficiency for large marble slabs.</p>
               </div>
-              <h4 class="font-bold text-stone-900 mb-1 text-sm">{{ $z['title'] }}</h4>
-              <p class="text-stone-600 text-xs leading-relaxed">{{ $z['desc'] }}</p>
             </div>
-          @endforeach
-        </div>
-      </div>
+          </a>
 
-      <!-- Features Bottom -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-        <div class="text-center">
-          <div class="text-3xl font-bold text-stone-900 mb-1">5,000m²</div>
-          <div class="text-stone-600 text-sm">Total Capacity</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-stone-900 mb-1">24/7</div>
-          <div class="text-stone-600 text-sm">Security System</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-stone-900 mb-1">Climate</div>
-          <div class="text-stone-600 text-sm">Controlled Storage</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-stone-900 mb-1">Real-Time</div>
-          <div class="text-stone-600 text-sm">Inventory Tracking</div>
+          <!-- Organized Inventory System -->
+          <a href="#" onclick="return false;">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://cdn.pixabay.com/photo/2020/10/01/17/11/store-5619201_1280.jpg"
+                alt="Organized Inventory System" class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Storage Area 2</span>
+                <h4 class="text-xl font-bold mb-1">Organized Inventory System</h4>
+                <p class="text-sm text-white/90">Numbered slot system with digital tracking allows quick location and
+                  retrieval of specific marble types and sizes for immediate dispatch.</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Climate-Controlled Zone -->
+          <a href="#" onclick="return false;">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80"
+                alt="Climate-Controlled Zone" class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Storage Area 3</span>
+                <h4 class="text-xl font-bold mb-1">Climate-Controlled Zone</h4>
+                <p class="text-sm text-white/90">Temperature and humidity-regulated warehouse maintaining optimal
+                  conditions to prevent moisture damage and preserve natural marble characteristics.</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Export Preparation Area -->
+          <a href="#" onclick="return false;">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&q=80"
+                alt="Export Preparation Area" class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Storage Area 4</span>
+                <h4 class="text-xl font-bold mb-1">Export Preparation Area</h4>
+                <p class="text-sm text-white/90">Dedicated section for crating and palletizing marble slabs with ISPM-15
+                  compliant materials ready for international container loading.</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Bulk Storage Yard -->
+          <a href="#" onclick="return false;">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=800&q=80" alt="Bulk Storage Yard"
+                class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Storage Area 5</span>
+                <h4 class="text-xl font-bold mb-1">Bulk Storage Yard</h4>
+                <p class="text-sm text-white/90">Outdoor covered storage for large marble blocks and high-volume
+                  inventory with weather protection and easy forklift access.</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Quality Inspection Zone -->
+          <a href="#" onclick="return false;">
+            <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+              <img src="https://cdn.pixabay.com/photo/2016/09/02/18/38/factory-1639990_1280.jpg"
+                alt="Quality Inspection Zone" class="h-full w-full object-cover transition-all duration-500">
+              <div
+                class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Storage Area 6</span>
+                <h4 class="text-xl font-bold mb-1">Quality Inspection Zone</h4>
+                <p class="text-sm text-white/90">Pre-shipping inspection area where every marble slab undergoes final
+                  quality checks for color matching, surface finish, and dimensions.</p>
+              </div>
+            </div>
+          </a>
+
         </div>
       </div>
     </div>
   </section>
 
 
-
-  <!-- Stuffing SOP -->
-  <section class="py-16 sm:py-20 bg-white" id="stuffing-area">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-start">
-      <div class="rounded overflow-hidden shadow">
-        <div class="aspect-[4/3] bg-cover bg-center"
-          style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80');">
-        </div>
-      </div>
-      <div>
-        <div class="text-center mb-16">
-          <span class="text-sm uppercase tracking-[0.2em] text-stone-500 font-medium">Stuffing Area</span>
-          <h2 class="text-4xl md:text-5xl font-light mt-4 mb-6 text-stone-900">Stuffing SOP (Brief)</h2>
-        </div>
-        <ol class="space-y-4 text-stone-700">
-          <li><span class="font-medium text-stone-900">1. Receiving & QC:</span> physical check, photos, measure; record
-            any nonconformities.</li>
-          <li><span class="font-medium text-stone-900">2. Final Packing:</span> protective film → foam → inter-slab
-            separators → banding.</li>
-          <li><span class="font-medium text-stone-900">3. Labeling & Documents:</span> HS codes, handling marks,
-            shock/tilt indicators, packing list.</li>
-          <li><span class="font-medium text-stone-900">4. Container Arrangement:</span> A-frame/vertical racks; lock with
-            dunnage and stoppers.</li>
-          <li><span class="font-medium text-stone-900">5. Photos & Seal:</span> layout documentation; apply container
-            seal
-            and record seal number.</li>
-          <li><span class="font-medium text-stone-900">6. Handover:</span> deliver documents to forwarder; update system
-            status.</li>
-        </ol>
-        <div class="mt-6 p-4 bg-stone-50 border border-stone-200 text-sm text-stone-700">
-          Note: use one-way forklift lanes and sound the horn when entering blind spots.
-        </div>
-      </div>
-    </div>
-  </section>
 
 
 
@@ -466,12 +481,6 @@
               <p class="text-sm text-white/80 uppercase tracking-wider">Manufacturing Team</p>
             </div>
           </div>
-          <div class="p-6">
-            <p class="text-gray-600 leading-relaxed">
-              Our skilled production team combines decades of craftsmanship with cutting-edge technology
-              to deliver exceptional marble products that exceed expectations.
-            </p>
-          </div>
         </div>
 
         <!-- Team 2 -->
@@ -485,12 +494,6 @@
               <h3 class="text-2xl font-medium mb-2">Quality Assurance</h3>
               <p class="text-sm text-white/80 uppercase tracking-wider">QC Specialists</p>
             </div>
-          </div>
-          <div class="p-6">
-            <p class="text-gray-600 leading-relaxed">
-              Our quality control specialists ensure every marble piece meets rigorous standards through
-              comprehensive inspection protocols and meticulous attention to detail.
-            </p>
           </div>
         </div>
 
@@ -506,11 +509,20 @@
               <p class="text-sm text-white/80 uppercase tracking-wider">Logistics & Operations</p>
             </div>
           </div>
-          <div class="p-6">
-            <p class="text-gray-600 leading-relaxed">
-              Our operations team orchestrates seamless coordination of production,** logistics, and customer
-              service to ensure flawless delivery of premium marble solutions.
-            </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto max-w-7xl mt-10">
+      <div
+        class="group relative bg-gradient-to-b from-stone-50 to-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+        <div class="relative h-96 overflow-hidden">
+          <img src="/img/team.jpg" alt="Operations Team"
+            class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-center text-white">
+            <h3 class="text-2xl font-medium mb-2">Driven by a Strong Team</h3>
+            <p class="text-sm text-white/80 uppercase tracking-wider">Excellence Through Collaboration</p>
           </div>
         </div>
       </div>
@@ -524,12 +536,110 @@
   <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen" id="production">
     <div class="py-12 md:py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header class="mb-8 md:mb-12 text-center">
-          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Our Production Marble</h3>
-          <p class="text-sm sm:text-base text-gray-600">Advanced technology meets precision craftsmanship</p>
-        </header>
+
 
         <div class="">
+
+          <header class="mb-8 md:mb-12 text-center">
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Sawing Machine</h3>
+            <p class="text-sm sm:text-base text-gray-600">Precision cutting technology for flawless marble slabs</p>
+          </header>
+
+          <!-- Sawing Machine -->
+          <div class="mb-5 block w-full" id="sawing-machine">
+            <div
+              class="overflow-hidden rounded-md w-full h-[500px] relative group hover:cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500">
+              <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1000&q=80"
+                alt="Industrial Sawing Machine cutting marble blocks"
+                class="h-full w-full object-cover transition-all duration-700 group-hover:scale-105">
+
+              <div
+                class="absolute p-8 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                style="background: linear-gradient(to top, rgba(30,58,138,0.95), rgba(59,130,246,0.5), transparent);">
+                <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
+                  <span
+                    class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-3">
+                    Advanced Equipment
+                  </span>
+
+                  <h4 class="text-3xl font-bold mb-3">Multi-Blade Sawing Machine</h4>
+
+                  <p class="text-base text-white/95 leading-relaxed mb-4">
+                    Our industrial multi-blade sawing machines deliver unparalleled precision in transforming massive
+                    marble blocks into perfectly dimensioned slabs. Equipped with diamond-tipped blades and computerized
+                    controls, we achieve consistent thickness and mirror-smooth edges on every cut.
+                  </p>
+
+                  <div class="flex flex-wrap gap-4 text-sm">
+                    <span class="flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        </path>
+                      </svg>
+                      ±0.5mm Accuracy
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        </path>
+                      </svg>
+                      Diamond Blade Technology
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                        </path>
+                      </svg>
+                      Auto-Tensioning System
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-4 mb-20">
+
+            <!-- A-Frame Vertical Storage -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img
+                  src="https://images.unsplash.com/photo-1574903841563-4722dd62b9cb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1411"
+                  alt="A-Frame Vertical Storage" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Method 1</span>
+                  <h4 class="text-xl font-bold mb-1">A-Frame Vertical Storage</h4>
+                  <p class="text-sm text-white/90">Space-efficient vertical storage with foam separators and corner
+                    guards, minimizing surface contact and maximizing warehouse capacity.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Vertical Rack System -->
+            <a href="#" onclick="return false;">
+              <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                <img
+                  src="https://images.unsplash.com/photo-1678664527011-c70b1b7f757e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1631"
+                  alt="Vertical Rack System" class="h-full w-full object-cover transition-all duration-500">
+                <div
+                  class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Method 2</span>
+                  <h4 class="text-xl font-bold mb-1">Vertical Rack System</h4>
+                  <p class="text-sm text-white/90">Numbered slot organization for clear traceability, perfect for mixed
+                    slab sizes and enabling quick, frequent access to inventory.</p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+          <header class="mb-8 md:mb-12 text-center">
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Our Production Marble</h3>
+            <p class="text-sm sm:text-base text-gray-600">Advanced technology meets precision craftsmanship</p>
+          </header>
           <!-- Production Process -->
           <a href="" class="mb-10 block w-full" id="production-process">
             <div
@@ -576,44 +686,105 @@
             </div>
           </a>
 
-          <!-- Sawing Machine -->
-          <a href="" class="mb-10 block w-full" id="sawing-machine">
-            <div
-              class="overflow-hidden rounded-2xl w-full h-[500px] relative group hover:cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500">
-              <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1000&q=80" alt="Sawing Machine"
-                class="h-full w-full object-cover transition-all duration-700">
-              <div
-                class="absolute p-8 flex flex-col justify-end text-white bottom-0 right-0 left-0 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                style="background: linear-gradient(to top, rgba(30,58,138,0.95), rgba(59,130,246,0.5), transparent);">
-                <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
-                  <span
-                    class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs uppercase tracking-widest text-white mb-3">Advanced
-                    Equipment</span>
-                  <h4 class="text-3xl font-bold mb-3">Sawing Machine</h4>
-                  <p class="text-base text-white/95 leading-relaxed mb-4">
-                    State-of-the-art cutting technology ensures precise dimensions and smooth edges. Our industrial-grade
-                    sawing machines handle large marble blocks with exceptional accuracy and efficiency.
-                  </p>
-                  <div class="flex gap-4 text-sm">
-                    <span class="flex items-center gap-2">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                        </path>
-                      </svg>
-                      Precision Cutting
-                    </span>
-                    <span class="flex items-center gap-2">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                        </path>
-                      </svg>
-                      High Capacity
-                    </span>
-                  </div>
+          <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen" id="marble-collection">
+            <div class="py-10">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+
+                  <!-- Quarry Extraction -->
+                  <a href="#" onclick="return false;">
+                    <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                      <img src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=800&q=80"
+                        alt="Quarry Extraction" class="h-full w-full object-cover transition-all duration-500">
+                      <div
+                        class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Stage 1</span>
+                        <h4 class="text-xl font-bold mb-1">Quarry Extraction</h4>
+                        <p class="text-sm text-white/90">Marble blocks are extracted from the quarry using controlled
+                          drilling and cutting.</p>
+                      </div>
+                    </div>
+                  </a>
+
+                  <!-- Block Cutting -->
+                  <a href="#" onclick="return false;">
+                    <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                      <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80"
+                        alt="Block Cutting" class="h-full w-full object-cover transition-all duration-500">
+                      <div
+                        class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Stage 2</span>
+                        <h4 class="text-xl font-bold mb-1">Block Cutting</h4>
+                        <p class="text-sm text-white/90">Heavy-duty saws slice marble blocks into precise, uniform slabs.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+
+                  <!-- Slab Polishing -->
+                  <a href="#" onclick="return false;">
+                    <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                      <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=800&q=80"
+                        alt="Slab Polishing" class="h-full w-full object-cover transition-all duration-500">
+                      <div
+                        class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Stage 3</span>
+                        <h4 class="text-xl font-bold mb-1">Slab Polishing</h4>
+                        <p class="text-sm text-white/90">Polishing machines refine each slab to achieve a premium glossy
+                          surface.</p>
+                      </div>
+                    </div>
+                  </a>
+
                 </div>
+
+                <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
+
+                  <!-- Quality Inspection -->
+                  <a href="#" onclick="return false;">
+                    <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                      <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80"
+                        alt="Quality Inspection" class="h-full w-full object-cover transition-all duration-500">
+                      <div
+                        class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Stage 4</span>
+                        <h4 class="text-xl font-bold mb-1">Quality Inspection</h4>
+                        <p class="text-sm text-white/90">Slabs are inspected for color consistency, veins, surface
+                          defects, and thickness.</p>
+                      </div>
+                    </div>
+                  </a>
+
+                  <!-- Finishing & Packaging -->
+                  <a href="#" onclick="return false;">
+                    <div class="overflow-hidden rounded w-full h-80 relative group hover:cursor-pointer">
+                      <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800&q=80"
+                        alt="Final Finishing" class="h-full w-full object-cover transition-all duration-500">
+                      <div
+                        class="absolute p-4 flex flex-col justify-end text-white bottom-0 right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <span class="text-xs uppercase tracking-wider text-white/70 mb-1">Stage 5</span>
+                        <h4 class="text-xl font-bold mb-1">Finishing & Packaging</h4>
+                        <p class="text-sm text-white/90">Edges are refined and slabs are packaged securely for worldwide
+                          delivery.</p>
+                      </div>
+                    </div>
+                  </a>
+
+                </div>
+
               </div>
             </div>
-          </a>
+          </section>
+
+
+
+
 
 
         </div>
@@ -633,7 +804,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Standard Packaging -->
-          <a href="">
+          <a href="{{ route('our-packaging') }}">
             <div
               class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"
@@ -651,7 +822,7 @@
           </a>
 
           <!-- Special Packaging (Moulded Foam) -->
-          <a href="">
+          <a href="{{ route('our-packaging') }}">
             <div
               class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&q=80"
@@ -669,7 +840,7 @@
           </a>
 
           <!-- Wood Packaging -->
-          <a href="">
+          <a href="{{ route('our-packaging') }}">
             <div
               class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img
@@ -688,7 +859,7 @@
           </a>
 
           <!-- Polywood Packaging -->
-          <a href="">
+          <a href="{{ route('our-packaging') }}">
             <div
               class="overflow-hidden rounded-lg w-full h-96 relative group hover:cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80"
@@ -708,6 +879,43 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Stuffing SOP -->
+  <section class="py-16 sm:py-20 bg-white" id="stuffing-area">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-start">
+      <div class="rounded overflow-hidden shadow">
+        <div class="aspect-[4/3] bg-cover bg-center"
+          style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80');">
+        </div>
+      </div>
+      <div>
+        <div class="text-center mb-16">
+          <span class="text-sm uppercase tracking-[0.2em] text-stone-500 font-medium">Stuffing Area</span>
+          <h2 class="text-4xl md:text-5xl font-light mt-4 mb-6 text-stone-900">Stuffing SOP (Brief)</h2>
+        </div>
+        <ol class="space-y-4 text-stone-700">
+          <li><span class="font-medium text-stone-900">1. Receiving & QC:</span> physical check, photos, measure; record
+            any nonconformities.</li>
+          <li><span class="font-medium text-stone-900">2. Final Packing:</span> protective film → foam → inter-slab
+            separators → banding.</li>
+          <li><span class="font-medium text-stone-900">3. Labeling & Documents:</span> HS codes, handling marks,
+            shock/tilt indicators, packing list.</li>
+          <li><span class="font-medium text-stone-900">4. Container Arrangement:</span> A-frame/vertical racks; lock with
+            dunnage and stoppers.</li>
+          <li><span class="font-medium text-stone-900">5. Photos & Seal:</span> layout documentation; apply container
+            seal
+            and record seal number.</li>
+          <li><span class="font-medium text-stone-900">6. Handover:</span> deliver documents to forwarder; update system
+            status.</li>
+        </ol>
+        <div class="mt-6 p-4 bg-stone-50 border border-stone-200 text-sm text-stone-700">
+          Note: use one-way forklift lanes and sound the horn when entering blind spots.
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- CTA -->
   <section class="relative py-24 overflow-hidden"

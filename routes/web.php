@@ -113,6 +113,7 @@ Route::prefix('about')->group(function () {
 });
 
 Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us');
+Route::get('about-us/our-packaging', [AboutUsController::class, 'ourPackaging'])->name('our-packaging');
 Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 Route::post('contact-us', [ContactUsController::class, 'store'])->name('contact-us.store');
 
@@ -120,6 +121,8 @@ Route::get('our-solid-stone', [GuestOurSolidStoneController::class, 'index'])->n
 Route::get('our-solid-stone/marble-colors', [GuestOurSolidStoneController::class, 'marble'])->name('oss.marble');
 Route::get('our-solid-stone/onyx-colors', [GuestOurSolidStoneController::class, 'onyx'])->name('oss.onyx');
 Route::get('our-solid-stone/terazzo-colors', [GuestOurSolidStoneController::class, 'terazzo'])->name('oss.terazzo');
+Route::get('our-solid-stone/petrified-wood-colors', [GuestOurSolidStoneController::class, 'petrifiedWood'])->name('oss.petrifiedWood');
+Route::get('our-solid-stone/granite-local-colors', [GuestOurSolidStoneController::class, 'granite'])->name('oss.granite');
 
 
 Route::get('our-finishing', [GuestOurFinishingController::class, 'index'])->name('our-finishing');

@@ -1,6 +1,16 @@
 @extends('layouts.page')
 @section('title', 'Onyx Collection Colors')
 @section('content')
+
+  <section class="max-w-7xl mx-auto py-5">
+    <header class="text-center">
+      <h1 class="font-bold lg:text-4xl md:text-3xl text-2xl">Onyx Color</h1>
+      <p class="mt-2 text-base">Unique for its glowing layers and refined textures, onyx introduces artistic luxury and
+        ambient lighting effects to modern interiors.</p>
+    </header>
+  </section>
+
+
   <section class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 p-4">
       <a href="" class="relative block rounded overflow-hidden h-80 group">
