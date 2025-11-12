@@ -208,7 +208,7 @@
 
   {{-- Terrazzo Collection --}}
   <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen" id="terrazzo-collection">
-    <div class="py-12 md:py-16 lg:py-20">
+    <div class="py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header class="mb-8 md:mb-12 text-center">
           <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Modern Terrazzo Collection</h3>
@@ -301,7 +301,7 @@
   </section>
 
   {{-- Natural Stone Collection --}}
-  <section class="bg-gradient-to-b from-white to-gray-50 py-12 md:py-16 lg:py-20">
+  <section class="bg-gradient-to-b from-white to-gray-50 pb-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <header class="mb-8 md:mb-12 text-center">
         <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Natural Stone Collection</h3>

@@ -48,9 +48,9 @@
   </section>
 
   <!-- Core Values -->
-  <section class="py-20 bg-stone-50" id="our-commitments">
+  <section class="py-10 bg-stone-50" id="our-commitments">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
+      <div class="text-center mb-10">
         <span class="text-sm uppercase tracking-[0.2em] text-stone-500">Our Commitments</span>
         <h2 class="text-4xl font-light mt-4 mb-6 text-stone-900">What Sets Us Apart</h2>
       </div>
@@ -102,9 +102,9 @@
 
 
   <!-- Storage Methods -->
-  <section class="py-16 sm:py-20 bg-stone-50" id="stone-storage">
+  <section class="py-10 bg-stone-50" id="stone-storage">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
+      <div class="text-center mb-10">
         <span class="text-sm uppercase tracking-[0.2em] text-stone-500 font-medium">Stone Storage</span>
         <h2 class="text-4xl md:text-5xl font-light mt-4 mb-6 text-stone-900">Professional Storage Solutions</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -219,9 +219,9 @@
 
 
   <!-- Our Factory -->
-  <section class="py-16 sm:py-20 bg-stone-50" id="our-factory">
+  <section class="bg-stone-50" id="our-factory">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
+      <div class="text-center mb-10">
         <span class="text-sm uppercase tracking-[0.2em] text-stone-500 font-medium">Our Factory</span>
         <h2 class="text-4xl md:text-5xl font-light mt-4 mb-6 text-stone-900">State-of-the-Art Facilities</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -331,10 +331,10 @@
 
 
   {{-- Warehouse Section --}}
-  <section class="py-16 sm:py-20 bg-gradient-to-b from-stone-50 to-white" id="warehouse">
+  <section class="py-10 bg-gradient-to-b from-stone-50 to-white" id="warehouse">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
-      <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="inline-block px-3 py-1 bg-stone-900 text-white text-xs uppercase tracking-widest rounded-full mb-4">
           Our Facility
         </span>
@@ -457,9 +457,9 @@
 
 
   <!-- Our Team -->
-  <section class="py-20 md:py-28 bg-white" id="our-team">
+  <section class="py-10 bg-white" id="our-team">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
+      <div class="text-center mb-10">
         <span class="text-sm uppercase tracking-[0.2em] text-stone-500 font-medium">Our Team</span>
         <h2 class="text-4xl md:text-5xl font-light mt-4 mb-6 text-stone-900">The People Behind Excellence</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -534,12 +534,9 @@
 
   {{-- Our Production --}}
   <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen" id="production">
-    <div class="py-12 md:py-16 lg:py-20">
+    <div class="">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
-        <div class="">
-
+        <div class="py-10">
           <header class="mb-8 md:mb-12 text-center">
             <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Sawing Machine</h3>
             <p class="text-sm sm:text-base text-gray-600">Precision cutting technology for flawless marble slabs</p>
@@ -687,7 +684,7 @@
           </a>
 
           <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen" id="marble-collection">
-            <div class="py-10">
+            <div class="">
               <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
@@ -781,12 +778,6 @@
               </div>
             </div>
           </section>
-
-
-
-
-
-
         </div>
       </div>
     </div>
@@ -794,7 +785,7 @@
 
 
   {{-- Our Packaging --}}
-  <section class="bg-gradient-to-b from-white to-gray-50 min-h-screen" id="packaging">
+  <section class="bg-gradient-to-b from-white to-gray-50 min-h-screen -mt-36" id="packaging">
     <div class="py-12 md:py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header class="mb-8 md:mb-12 text-center">
@@ -917,62 +908,71 @@
   </section>
 
 
-  <!-- CTA Section with Motto -->
-  <section class="relative py-24 overflow-hidden"
-    style="background-image: linear-gradient(135deg, rgba(15,23,42,.85) 0%, rgba(30,41,59,.75) 100%), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
-
-    <!-- Decorative Elements -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-10 left-10 w-32 h-32 border-2 border-white rounded-full"></div>
-      <div class="absolute bottom-10 right-10 w-24 h-24 border-2 border-white rounded-full"></div>
-    </div>
-
-    <div class="container mx-auto px-4 text-center relative z-10">
-      <div class="max-w-4xl mx-auto">
-        <!-- Motto Badge -->
-        <div
-          class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full mb-6 border border-white/20">
-          <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+  <!-- Motto + 5-Grid Photos (No Background Image) -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Badge (optional) -->
+        <div class="inline-flex items-center gap-2 px-6 py-2 rounded-full mb-6 border border-slate-300 text-slate-700">
+          <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path
               d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
-          <span class="text-white text-sm font-medium tracking-wide">Our Commitment</span>
+          <span class="text-sm font-medium tracking-wide">Motto</span>
         </div>
 
-        <!-- Main Motto -->
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+        <!-- Motto -->
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-2 leading-tight">
           Customer Satisfaction
         </h2>
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-amber-400 mb-8 leading-tight">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-amber-500 mb-6 leading-tight">
           is Our Future
         </h2>
 
-        <!-- Supporting Text -->
-        <p class="text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
-          We believe that every satisfied customer is a step towards our continued excellence. Your trust drives our
-          innovation, and your satisfaction shapes our tomorrow.
+        <!-- Deskripsi -->
+        <p class="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          We believe that every satisfied customer is a step towards our continued excellence.
+          Your trust drives our innovation, and your satisfaction shapes our tomorrow.
         </p>
+      </div>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          <a href="{{ route('contact-us') }}"
-            class="group inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 text-base md:text-lg font-semibold hover:bg-amber-400 hover:text-slate-900 transition-all duration-300 rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto justify-center">
-            <span>Start Your Project</span>
-            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+      <!-- 5 Grid Foto (berjajar) -->
+      <div class="mt-12 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <!-- Card Foto -->
+        <figure class="overflow-hidden rounded-xl bg-slate-100">
+          <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1200&q=80&auto=format&fit=crop"
+            alt="Wooden crate packaging for marble slabs"
+            class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 hover:scale-105"
+            loading="lazy">
+        </figure>
 
-          <a href="/products/all"
-            class="group inline-flex items-center gap-3 border-2 border-white text-white px-8 py-4 text-base md:text-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300 rounded-lg hover:scale-105 w-full sm:w-auto justify-center">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-            <span>Explore Products</span>
-          </a>
-        </div>
+        <figure class="overflow-hidden rounded-xl bg-slate-100">
+          <img src="https://images.unsplash.com/photo-1577702312706-e23ff063064f?auto=format&fit=crop&q=80&w=1600"
+            alt="Fumigated export boxes"
+            class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 hover:scale-105"
+            loading="lazy">
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-slate-100">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80&auto=format&fit=crop"
+            alt="Protective foam padding for marble"
+            class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 hover:scale-105"
+            loading="lazy">
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-slate-100">
+          <img src="https://images.unsplash.com/photo-1686632800715-b705ba1b0eb6?auto=format&fit=crop&q=80&w=1600"
+            alt="Secure strapping system"
+            class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 hover:scale-105"
+            loading="lazy">
+        </figure>
+
+        <figure class="overflow-hidden rounded-xl bg-slate-100">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=1600"
+            alt="Quality inspection"
+            class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 hover:scale-105"
+            loading="lazy">
+        </figure>
       </div>
     </div>
   </section>
