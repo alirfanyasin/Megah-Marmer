@@ -26,7 +26,7 @@
                 @endif
 
                 <!-- Product Image -->
-                <img src="{{ asset('storage/' . $product->image[0]) }}" alt="Product Image"
+                <img src="{{ $product->first_image_url }}" alt="Product Image"
                   class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105">
 
                 <!-- Icon Buttons (Love & Eye) - Muncul saat hover -->

@@ -23,7 +23,7 @@
                 : (is_string($product->image)
                     ? $product->image
                     : null);
-            $imgUrl = $img ? Storage::url($img) : asset('images/placeholder.jpg');
+            $imgUrl = $product->first_image_url;
 
             $hasDiscount = (int) ($product->discount ?? 0) > 0;
             $finalPrice = $hasDiscount

@@ -6,12 +6,16 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {{-- Left Side - Image Gallery (Scrollable) --}}
       @php
-        $images = is_array($product->image) ? $product->image : json_decode($product->image, true);
+        $images = is_array($product->image) ? $product->image : (json_decode($product->image, true) ?? []);
+        $getImageUrl = function($img) {
+            if (!$img) return asset('images/placeholder.jpg');
+            return \Illuminate\Support\Str::startsWith($img, ['http://', 'https://']) ? $img : asset('storage/' . $img);
+        };
       @endphp
       <div class="space-y-4">
         {{-- Main Image --}}
         <div class="relative aspect-square bg-gray-100 rounded overflow-hidden">
-          <img src="{{ asset('storage/' . $images[0]) }}" alt="Celeste TV Unit"
+          <img src="{{ $getImageUrl($images[0] ?? null) }}" alt="Celeste TV Unit"
             class="w-full h-full object-cover cursor-pointer">
         </div>
 
@@ -19,7 +23,7 @@
         <div class="grid grid-cols-2 gap-4">
           @foreach (array_slice($images, 1) as $thumb)
             <div class="aspect-square bg-gray-100 rounded overflow-hidden cursor-pointer hover:opacity-80 transition">
-              <img src="{{ asset('storage/' . $thumb) }}" alt="Product Thumbnail" class="w-full h-full object-cover">
+              <img src="{{ $getImageUrl($thumb) }}" alt="Product Thumbnail" class="w-full h-full object-cover">
             </div>
           @endforeach
         </div>
@@ -280,7 +284,7 @@
               <a
                 href="{{ route('category.products.detail', ['id_category' => $category->id, 'id_sub_category' => $categorySub->id, 'id_product' => $recomprod->id]) }}">
                 <div class="relative">
-                  <img src="{{ asset('storage/' . $recomprod->image[0]) }}" alt="{{ $recomprod->name }}"
+                  <img src="{{ $recomprod->first_image_url }}" alt="{{ $recomprod->name }}"
                     class="w-full h-80 object-cover">
                   <div
                     class="absolute bottom-4 left-4 text-white right-4 z-10 group-hover:-translate-y-2 transition-all duration-300">
